@@ -3,15 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34024.191
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Ages", "01.Ages\01.Ages.csproj", "{76B007B0-DA74-4668-8908-9DB0B4CF47DB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01.Ages", "01.Ages\01.Ages.csproj", "{76B007B0-DA74-4668-8908-9DB0B4CF47DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.Division", "02.Division\02.Division.csproj", "{E117A8E7-DFA3-46C9-9C34-558E81B71996}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02.Division", "02.Division\02.Division.csproj", "{E117A8E7-DFA3-46C9-9C34-558E81B71996}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.Vacation", "03.Vacation\03.Vacation.csproj", "{B5B06EF5-6F49-46E1-84E6-71A8653AA70F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03.Vacation", "03.Vacation\03.Vacation.csproj", "{B5B06EF5-6F49-46E1-84E6-71A8653AA70F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.PrintAndSum", "04.PrintAndSum\04.PrintAndSum.csproj", "{57F213F6-7545-475E-ADC3-4A85B7DD4389}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04.PrintAndSum", "04.PrintAndSum\04.PrintAndSum.csproj", "{57F213F6-7545-475E-ADC3-4A85B7DD4389}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.Login", "05.Login\05.Login.csproj", "{83D29EDC-C1E3-48C2-809B-23CE9AF3230F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05.Login", "05.Login\05.Login.csproj", "{83D29EDC-C1E3-48C2-809B-23CE9AF3230F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.StrongNumber", "06.StrongNumber\06.StrongNumber.csproj", "{FF9F3269-0C0A-4E15-B4AA-D453A5F5479C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07.Vending", "07.Vending\07.Vending.csproj", "{56AB40FB-A43F-4B7C-95B0-23C4A3FEC6B1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{83D29EDC-C1E3-48C2-809B-23CE9AF3230F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83D29EDC-C1E3-48C2-809B-23CE9AF3230F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83D29EDC-C1E3-48C2-809B-23CE9AF3230F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FF9F3269-0C0A-4E15-B4AA-D453A5F5479C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF9F3269-0C0A-4E15-B4AA-D453A5F5479C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF9F3269-0C0A-4E15-B4AA-D453A5F5479C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF9F3269-0C0A-4E15-B4AA-D453A5F5479C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56AB40FB-A43F-4B7C-95B0-23C4A3FEC6B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56AB40FB-A43F-4B7C-95B0-23C4A3FEC6B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56AB40FB-A43F-4B7C-95B0-23C4A3FEC6B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56AB40FB-A43F-4B7C-95B0-23C4A3FEC6B1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

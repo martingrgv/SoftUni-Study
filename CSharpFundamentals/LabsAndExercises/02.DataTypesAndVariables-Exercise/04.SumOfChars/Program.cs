@@ -4,7 +4,20 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            int sum = 0;
+
+            // Input
+            int interval = int.Parse(Console.ReadLine());
+
+            // Logic
+            for (int i = 0; i < interval; i++)
+            {
+                char currentLetter = char.Parse(Console.ReadLine());
+                sum += (int)currentLetter;
+            }
+
+            // Output
+            Console.WriteLine("The sum equals: {0}", sum);
         }
     }
 }

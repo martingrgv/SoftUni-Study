@@ -13,6 +13,7 @@ namespace _07.MaxSequenceOfEqualElements
             int longestSequenceNum = 0;
 
             int sequenceCount = 0;
+
             for (int i = 0; i < numbers.Length - 1; i++)
             {
                 if (numbers[i] == numbers[i + 1])

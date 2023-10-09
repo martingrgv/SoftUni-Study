@@ -1,6 +1,4 @@
-﻿using System.Runtime.InteropServices.JavaScript;
-
-namespace _04.PrintingTriangle
+﻿namespace _04.PrintingTriangle
 {
     internal class Program
     {

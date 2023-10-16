@@ -6,7 +6,7 @@ namespace _01.SumAdjacentEqualNumbers
     {
         static void Main(string[] args)
         {
-            List<int> numbers = Console.ReadLine().Split(" ").Select(int.Parse).ToList();
+            List<double> numbers = Console.ReadLine().Split(" ").Select(double.Parse).ToList();
 
             for (int i = 0; i < numbers.Count - 1; i++)
             {

@@ -1,4 +1,4 @@
-﻿amespace _2.GaussTrick
+﻿namespace _2.GaussTrick
 {
     internal class Program
     {

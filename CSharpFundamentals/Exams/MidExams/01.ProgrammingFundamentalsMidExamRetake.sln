@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.ComputerStore", "01.ComputerStore\01.ComputerStore.csproj", "{99809876-2E4E-4F7F-A568-28D0224AE923}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.TheLift", "02.TheLift\02.TheLift.csproj", "{9939AFBD-E851-4DDB-8913-4BA5B138E7B1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.MemoryGame", "03.MemoryGame\03.MemoryGame.csproj", "{775CD97B-2480-4FE9-B462-638A85B91427}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{99809876-2E4E-4F7F-A568-28D0224AE923}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99809876-2E4E-4F7F-A568-28D0224AE923}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{99809876-2E4E-4F7F-A568-28D0224AE923}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99809876-2E4E-4F7F-A568-28D0224AE923}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9939AFBD-E851-4DDB-8913-4BA5B138E7B1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9939AFBD-E851-4DDB-8913-4BA5B138E7B1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9939AFBD-E851-4DDB-8913-4BA5B138E7B1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9939AFBD-E851-4DDB-8913-4BA5B138E7B1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{775CD97B-2480-4FE9-B462-638A85B91427}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{775CD97B-2480-4FE9-B462-638A85B91427}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{775CD97B-2480-4FE9-B462-638A85B91427}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{775CD97B-2480-4FE9-B462-638A85B91427}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

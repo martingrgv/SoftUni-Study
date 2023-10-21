@@ -1,25 +1,35 @@
-﻿using System.Data;
-
-namespace _01.ComputerStore;
+﻿namespace _01.ComputerStore;
 
 class Program
 {
     static void Main(string[] args)
     {
         string input = Console.ReadLine();
-        bool isSpecial = input == "special" ? true : false;
 
         double partsCost = 0;
-        int partsCount = 0;
+        double taxedCost = 0;
 
-        while (input != "special" || input != "regular")
+        while (true)
         {
-            int price = int.Parse(input);
+            if (input == "special" || input == "regular")
+            {
+                if (partsCost == 0)
+                {
+                    System.Console.WriteLine("Invalid order!");
+                    return;
+                }
+                else
+                {
+                    break;
+                }
+            }
+
+            double price = double.Parse(input);
             
             if (price > 0)
             {
-                partsCount++;
-                partsCost += int.Parse(input);
+                partsCost += price;
+                taxedCost += price * 0.2;
             }
             else if (price == 0)
             {
@@ -29,11 +39,14 @@ class Program
             {
                 System.Console.WriteLine("Invalid price!");
             }
+
+            input = Console.ReadLine();
         }
 
         // Apply taxes
-        double taxedCost = partsCost + ((partsCost * 0.2) * partsCount);
         double total = partsCost + taxedCost;
+
+        bool isSpecial = input == "special" ? true : false;
 
         if (isSpecial) // Apply special customer discount
         {
@@ -41,8 +54,8 @@ class Program
         }
 
         System.Console.WriteLine("Congratulations you've just bought a new computer!");
-        System.Console.WriteLine($"Price without taxes: {partsCost:f2}");
-        System.Console.WriteLine($"Taxes: {taxedCost:f2}");
+        System.Console.WriteLine($"Price without taxes: {partsCost:f2}$");
+        System.Console.WriteLine($"Taxes: {taxedCost:f2}$");
         System.Console.WriteLine("-----------");
         System.Console.WriteLine($"Total price: {total:f2}$");
     }

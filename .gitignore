@@ -398,4 +398,5 @@ FodyWeavers.xsd
 *.sln.iml
 .vscode/launch.json
 .vscode/tasks.json
-CSharpFundamentals/Exams/MidExams/.DS_Store
+.DS_Store
+Retakes/.DS_Store

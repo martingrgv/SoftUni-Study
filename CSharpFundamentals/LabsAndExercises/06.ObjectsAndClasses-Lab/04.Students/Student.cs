@@ -1,6 +1,6 @@
 ﻿namespace _04.Students;
 
-class Student
+public class Student
 {
     public string FirstName { get; set; }
     public string LastName { get; set; }

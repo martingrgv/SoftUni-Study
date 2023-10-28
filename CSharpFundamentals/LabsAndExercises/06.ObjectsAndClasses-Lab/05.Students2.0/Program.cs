@@ -9,36 +9,45 @@ internal class Program
         AddStudents(students, input);
 
         string city = Console.ReadLine();
-
-        List<Student> homeTownStudents = students.Where(s => s.HomeTown == city).ToList();
-
-        foreach (var student in homeTownStudents)
-        {
-            System.Console.WriteLine($"{student.FirstName} {student.LastName} is {student.Age} years old.");
-        }
+        PrintStudents(students, city);
     }
 
     public static void AddStudents(List<Student> students, string[] input)
     {
         while (input[0] != "end")
         {
-                Student student = new Student(
-                    input[0],
-                    input[1],
-                    int.Parse(input[2]),
-                    input[3]);
+            string firstName = input[0];
+            string lastName = input[1];
+            int age = int.Parse(input[2]);
+            string homeTown = input[3];
 
-            if (!IsStudentExisting(students, input[0], input[1]))
+            Student student = new Student(
+                firstName,
+                lastName,
+                age,
+                homeTown);
+
+            if (!IsStudentExisting(students, firstName, lastName))
             {
                 students.Add(student);
             }
             else
             {
-                // OVERWRITE EXISTING STUDENT!
+                ChangeStudentInfo(students, student);
             }
 
             input = Console.ReadLine().Split(" ");
         }
+    }
+
+    static bool IsStudentExisting(Student student, Student currentStudent)
+    {
+        if (student.FirstName == currentStudent.FirstName && student.LastName == currentStudent.LastName)
+        {
+            return true;
+        }
+
+        return false;
     }
 
     static bool IsStudentExisting(List<Student> students, string firstName, string lastName)
@@ -52,5 +61,46 @@ internal class Program
         }
 
         return false;
+    }
+
+    static void ChangeStudentInfo(List<Student> students, Student currentStudent)
+    {
+       foreach (var student in students)
+       {
+            if (IsStudentExisting(student, currentStudent)) 
+            {
+                student.FirstName = currentStudent.FirstName;
+                student.LastName = currentStudent.LastName;
+                student.Age = currentStudent.Age;
+                student.HomeTown = currentStudent.HomeTown;
+            }
+       }
+    }
+
+    static void PrintStudents(List<Student> students, string city)
+    {
+        List<Student> homeTownStudents = students.Where(s => s.HomeTown == city).ToList();
+
+        foreach (var student in homeTownStudents)
+        {
+            System.Console.WriteLine($"{student.FirstName} {student.LastName} is {student.Age} years old.");
+        }
+    }
+
+}
+
+ class Student
+{
+    public string FirstName { get; set; }
+    public string LastName { get; set; }
+    public int Age { get; set; }
+    public string HomeTown { get; set; }
+
+    public Student(string firstName, string lastName, int age, string homeTown)
+    {
+        this.FirstName = firstName;
+        this.LastName = lastName;
+        this.Age = age;
+        this.HomeTown = homeTown;
     }
 }

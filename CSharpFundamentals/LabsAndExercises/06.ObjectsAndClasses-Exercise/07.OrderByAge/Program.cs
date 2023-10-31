@@ -5,47 +5,53 @@
         static void Main(string[] args)
         {
             List<Person> people = new List<Person>();
-            string[] input = Console.ReadLine().Split(" ");
 
-            while (input[0] != "End")
+            string? input;
+            while ((input = Console.ReadLine()) != "End")
             {
                 Person p = GetPerson(input);
-                UpdatePerson(people, p);
 
-                input = Console.ReadLine().Split(" ");
+                if (PersonIdExists(p, people))
+                {
+                    UpdatePerson(p, people);
+                }
+                else
+                {
+                    people.Add(p);
+                }
             }
 
             PrintPeople(people);
         }
 
-        static Person GetPerson(string[] input)
+        static Person GetPerson(string input)
         {
-            string name = input[0];
-            string id = input[1];
-            int age = int.Parse(input[2]);
+            string[] arguments = input.Split(" ");
+            string name = arguments[0];
+            string id = arguments[1];
+            int age = int.Parse(arguments[2]);
 
-            Person p = new Person(name, id, age);
-
-            return p;
+            return new Person(name, id, age);
         }
 
-        static void UpdatePerson(List<Person> people, Person p)
+        static Person? GetPersonById(Person p, List<Person> people)
         {
-            people.Where(person => );
+            return people.Find(person => person.Id == p.Id);
+        }
 
+        static bool PersonIdExists(Person p, List<Person> people)
+        {
+            return people.Any(person => person.Id == p.Id);
+        }
 
-            for (int i = 0; i < people.Count; i++)
+        static void UpdatePerson(Person p, List<Person> people)
+        {
+            Person? foundPerson = GetPersonById(p, people);
+
+            if (foundPerson != null)
             {
-                if (people[i].Id == p.Id)
-                {
-                    people[i].Name = p.Name;
-                    people[i].Age = p.Age;
-                }
-                else
-                {
-                    people.Add(p);
-                    break;
-                }
+                foundPerson.Name = p.Name;
+                foundPerson.Age = p.Age;
             }
         }
 

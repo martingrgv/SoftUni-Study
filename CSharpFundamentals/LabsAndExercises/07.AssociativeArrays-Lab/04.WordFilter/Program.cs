@@ -9,7 +9,7 @@
                             .Where(w => w.Length % 2 == 0)
                             .ToArray();
 
-            Console.WriteLine(string.Join(" ", words));
+            Console.WriteLine(string.Join("\n", words));
         }
     }
 }

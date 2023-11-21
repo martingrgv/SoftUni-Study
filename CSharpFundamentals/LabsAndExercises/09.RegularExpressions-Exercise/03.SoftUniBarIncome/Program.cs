@@ -8,81 +8,76 @@ namespace _03.SoftUniBarIncome
         public decimal Price { get; set; }
         public int Quantity { get; set; }
         public decimal Total { get { return Price * Quantity; } }
+
+        public Product(string name, decimal price, int quantity)
+        {
+            Name = name;
+            Price = price;
+            Quantity = quantity;
+        }
     }
 
     class Program
     {
         static void Main(string[] args)
         {
-            var products = new Dictionary<string, Product>();
+            decimal total = 0;
 
             string input;
             while ((input = Console.ReadLine()) != "end of shift")
             {
-                string username = GetUsername(input);
+                string username = GetToken(input, @"%([A-Z][a-z]+)%");
+                Product product = GetProduct(input);
 
-                if (username != string.Empty)
+                if (UserExists(username, product))
                 {
-                    Product p = GetProduct(input);
-
-                    if (p.Name != null)
-                    {
-                        if (products.ContainsKey(username))
-                        {
-                            products[username] = p;
-                        }
-                        else
-                        {
-                            products.Add(username, p);
-                        }
-                    }
+                    System.Console.WriteLine($"{username}: {product.Name} - {product.Total:f2}");
+                    total += product.Total;
                 }
             }
-
-            PrintTotalIncome(products);
+            
+            System.Console.WriteLine($"Total income: {total:f2}");
         }
 
-        private static string GetUsername(string input)
-        {
-            string pattern = @"%(?<User>[A-Z][a-z]+)%.*?<(?<Product>\w+)>.*?\|(?<Quantity>\d+)\|.*?(?<Price>\d+\.\d+|\d+)\$";
-            Match match = Regex.Match(input, pattern);
-
-            return match.Groups["User"].Value;
-        }
+        private static string GetToken(string input, string pattern) => Regex.Match(input, pattern).Groups[1].Value;
 
         private static Product GetProduct(string input)
         {
-            string pattern = @"%(?<User>[A-Z][a-z]+)%.*?<(?<Product>\w+)>.*?\|(?<Quantity>\d+)\|.*?(?<Price>\d+\.\d+|\d+)\$";
-            Match match = Regex.Match(input, pattern);
+            string productName = GetToken(input, @"<(\w+)>");
+            string quantityString = GetToken(input, @"\|(\d+)\|");
+            string priceString = GetToken(input, @"(\d+\.\d+|\d+)\$");
 
-            if (Regex.IsMatch(input, pattern))
+            if (IsTokenValid(productName) && 
+                IsTokenValid(quantityString) && 
+                IsTokenValid(priceString))
             {
-                string productName = match.Groups["Product"].Value;
-                int productQuantity = int.Parse(match.Groups["Quantity"].Value);
-                decimal productPrice = decimal.Parse(match.Groups["Price"].Value);
+                int quantity = int.Parse(quantityString);
+                decimal price = decimal.Parse(priceString);
 
-                Product p = new Product();
-                p.Name = productName;
-                p.Quantity = productQuantity;
-                p.Price = productPrice;
-
-                return p;
+                return new Product(productName, price, quantity);
             }
 
-            return new Product();
+            return null;
         }
 
-        private static void PrintTotalIncome(Dictionary<string, Product> products)
+        private static bool UserExists(string username, Product product)
         {
-            decimal total = 0;
-
-            foreach (var product in products)
+            if (username != string.Empty && product != null)
             {
-                Console.WriteLine($"{product.Key}: {product.Value.Name} - {product.Value.Total:f2}");
-                total += product.Value.Total;
+                return true;
             }
 
-            Console.WriteLine($"Total income: {total:f2}");
+            return false;
+        }
+        
+        private static bool IsTokenValid(string token)
+        {
+            if (token != string.Empty)
+            {
+                return true;
+            }
+
+            return false;
         }
     }
 }

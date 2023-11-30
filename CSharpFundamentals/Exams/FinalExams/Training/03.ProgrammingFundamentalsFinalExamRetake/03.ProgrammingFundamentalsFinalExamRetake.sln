@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.SecretChat", "01.SecretC
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.MirrorWords", "02.MirrorWords\02.MirrorWords.csproj", "{AC73DC94-44F7-437F-AA96-33C9F4C548F2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.NeedForSpeedIII", "03.NeedForSpeedIII\03.NeedForSpeedIII.csproj", "{A3BF9EC3-1C7F-4E62-855F-DCF882C123F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{AC73DC94-44F7-437F-AA96-33C9F4C548F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC73DC94-44F7-437F-AA96-33C9F4C548F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC73DC94-44F7-437F-AA96-33C9F4C548F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3BF9EC3-1C7F-4E62-855F-DCF882C123F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3BF9EC3-1C7F-4E62-855F-DCF882C123F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3BF9EC3-1C7F-4E62-855F-DCF882C123F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3BF9EC3-1C7F-4E62-855F-DCF882C123F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

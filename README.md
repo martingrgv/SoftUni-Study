@@ -15,7 +15,7 @@
   </tr>
   <tr>
     <td>Programming Fundamentals</td>
-    <td>In process...</td>
+    <td>In progress...</td>
   </tr>
 </table>
 
@@ -28,19 +28,19 @@
   </tr>
   <tr>
     <td>C# Advanced</td>
-    <td>In process...</td>
+    <td>In progress...</td>
   </tr>
   <tr>
     <td>JS Front-End</td>
-    <td>In process...</td>
+    <td>In progress...</td>
   </tr>
   <tr>
     <td>C# DB</td>
-    <td>In process...</td>
+    <td>In progress...</td>
   </tr>
   <tr>
     <td>C# Web</td>
-    <td>In process...</td>
+    <td>In progress...</td>
   </tr>
 </table>
 
@@ -52,7 +52,7 @@
   </tr>
   <tr>
     <td>Diploma</td>
-    <td>In process...</td>
+    <td>In progress...</td>
   </tr>
 </table>
 

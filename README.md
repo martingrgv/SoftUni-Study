@@ -11,11 +11,11 @@
   </tr>
   <tr>
     <td>Programming Basics</td>
-    <td><a href="https://softuni.bg/certificates/details/163685/56e61635">Go To Link</a></td>
+    <td><a href="https://softuni.bg/certificates/details/163685/56e61635">Show certificate</a></td>
   </tr>
   <tr>
     <td>Programming Fundamentals</td>
-    <td>In progress...</td>
+    <td><a href="https://softuni.bg/certificates/details/194630/db826997">Show certificate</a></td>
   </tr>
 </table>
 

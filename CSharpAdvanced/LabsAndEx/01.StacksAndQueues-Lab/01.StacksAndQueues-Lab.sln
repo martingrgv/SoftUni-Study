@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1.ReverseAString", "1.ReverseAString\1.ReverseAString.csproj", "{0DC24310-B911-4F81-8CA6-01773A59CA7A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.ReverseAString", "1.ReverseAString\01.ReverseAString.csproj", "{0DC24310-B911-4F81-8CA6-01773A59CA7A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.StackSum", "02.StackSum\02.StackSum.csproj", "{5CFBDFB7-3A6B-4B0C-808B-A8D0B510C32A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0DC24310-B911-4F81-8CA6-01773A59CA7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DC24310-B911-4F81-8CA6-01773A59CA7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DC24310-B911-4F81-8CA6-01773A59CA7A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5CFBDFB7-3A6B-4B0C-808B-A8D0B510C32A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5CFBDFB7-3A6B-4B0C-808B-A8D0B510C32A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5CFBDFB7-3A6B-4B0C-808B-A8D0B510C32A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5CFBDFB7-3A6B-4B0C-808B-A8D0B510C32A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

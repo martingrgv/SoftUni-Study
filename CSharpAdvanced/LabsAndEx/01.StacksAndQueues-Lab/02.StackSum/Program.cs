@@ -35,12 +35,7 @@
             }
 
             // Print sum of elements
-            int sum = 0;
-
-            while (stack.Count > 0)
-                sum += stack.Pop();
-
-            Console.WriteLine("Sum: " + sum);
+            Console.WriteLine("Sum: " + stack.Sum());
         }
     }
 }

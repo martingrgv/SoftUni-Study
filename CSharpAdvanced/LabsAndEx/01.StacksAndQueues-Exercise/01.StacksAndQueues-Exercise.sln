@@ -9,7 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02.BasicQueueOperations", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03.MaximumAndMinimuElement", "03.MaximumAndMinimuElement\03.MaximumAndMinimuElement.csproj", "{E2631B07-FF75-41E2-9DD4-44F9DB22CE09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.FastFood", "04.FastFood\04.FastFood.csproj", "{F03D4F9C-157F-41E2-9979-D504B01FF3E7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04.FastFood", "04.FastFood\04.FastFood.csproj", "{F03D4F9C-157F-41E2-9979-D504B01FF3E7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.FashionBoutique", "05.FashionBoutique\05.FashionBoutique.csproj", "{B545BD9A-01A9-4968-B2D3-496825844F76}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.SongsQueue", "06.SongsQueue\06.SongsQueue.csproj", "{34FB4804-847A-4332-8FB6-7CFFA961679F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07.TruckTour", "07.TruckTour\07.TruckTour.csproj", "{741B769E-F486-43BA-A3B1-431CDC0978D6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +39,18 @@ Global
 		{F03D4F9C-157F-41E2-9979-D504B01FF3E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F03D4F9C-157F-41E2-9979-D504B01FF3E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F03D4F9C-157F-41E2-9979-D504B01FF3E7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B545BD9A-01A9-4968-B2D3-496825844F76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B545BD9A-01A9-4968-B2D3-496825844F76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B545BD9A-01A9-4968-B2D3-496825844F76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B545BD9A-01A9-4968-B2D3-496825844F76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34FB4804-847A-4332-8FB6-7CFFA961679F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34FB4804-847A-4332-8FB6-7CFFA961679F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34FB4804-847A-4332-8FB6-7CFFA961679F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34FB4804-847A-4332-8FB6-7CFFA961679F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{741B769E-F486-43BA-A3B1-431CDC0978D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{741B769E-F486-43BA-A3B1-431CDC0978D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{741B769E-F486-43BA-A3B1-431CDC0978D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{741B769E-F486-43BA-A3B1-431CDC0978D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

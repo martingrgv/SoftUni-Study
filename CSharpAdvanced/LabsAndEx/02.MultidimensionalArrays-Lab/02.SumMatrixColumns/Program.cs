@@ -24,6 +24,7 @@
             }
 
         }
+
         private static int[,] ReadNumberMatrix(int rows, int cols, string separator)
         {
             int[,] matrix = new int[rows, cols];

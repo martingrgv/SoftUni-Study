@@ -5,13 +5,17 @@ VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01.SumMatrixElements", "01.SumMatrixElements\01.SumMatrixElements.csproj", "{66D9748C-13F1-46A8-A4DC-BD4496100113}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.SumMatrixColumns", "02.SumMatrixColumns\02.SumMatrixColumns.csproj", "{23DCD43D-D93E-483A-A51C-14DF40D2A46A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02.SumMatrixColumns", "02.SumMatrixColumns\02.SumMatrixColumns.csproj", "{23DCD43D-D93E-483A-A51C-14DF40D2A46A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.PrimaryDiagonal", "03.PrimaryDiagonal\03.PrimaryDiagonal.csproj", "{32B56230-C083-4CF1-B5A3-4369453D23C0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03.PrimaryDiagonal", "03.PrimaryDiagonal\03.PrimaryDiagonal.csproj", "{32B56230-C083-4CF1-B5A3-4369453D23C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.SymbolInMatrix", "04.SymbolInMatrix\04.SymbolInMatrix.csproj", "{C91FDAF3-4F92-4883-8C23-2FD01076C2F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04.SymbolInMatrix", "04.SymbolInMatrix\04.SymbolInMatrix.csproj", "{C91FDAF3-4F92-4883-8C23-2FD01076C2F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.SquareWithMaximumSum", "05.SquareWithMaximumSum\05.SquareWithMaximumSum.csproj", "{B3349267-0725-4662-A4C2-83A86C001E70}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05.SquareWithMaximumSum", "05.SquareWithMaximumSum\05.SquareWithMaximumSum.csproj", "{B3349267-0725-4662-A4C2-83A86C001E70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.JaggedArrayModification", "06.JaggedArrayModification\06.JaggedArrayModification.csproj", "{1924E3EB-001A-4219-81B7-78DD7DB244C2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07.PascalTriangle", "07.PascalTriangle\07.PascalTriangle.csproj", "{A4B92C36-87B2-4CBC-931D-27413B3B6756}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +43,14 @@ Global
 		{B3349267-0725-4662-A4C2-83A86C001E70}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B3349267-0725-4662-A4C2-83A86C001E70}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B3349267-0725-4662-A4C2-83A86C001E70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1924E3EB-001A-4219-81B7-78DD7DB244C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1924E3EB-001A-4219-81B7-78DD7DB244C2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1924E3EB-001A-4219-81B7-78DD7DB244C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1924E3EB-001A-4219-81B7-78DD7DB244C2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4B92C36-87B2-4CBC-931D-27413B3B6756}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4B92C36-87B2-4CBC-931D-27413B3B6756}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4B92C36-87B2-4CBC-931D-27413B3B6756}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4B92C36-87B2-4CBC-931D-27413B3B6756}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

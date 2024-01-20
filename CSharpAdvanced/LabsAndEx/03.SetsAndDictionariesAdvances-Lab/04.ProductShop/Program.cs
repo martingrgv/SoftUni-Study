@@ -22,7 +22,7 @@
 
                 Console.WriteLine($"{shop.Key}->");
 
-                foreach (var product in shop.Value)
+                foreach (var product in shopProducts)
                 {
                     string productName = product.Key;
                     double productPrice = product.Value;

@@ -11,6 +11,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04.EvenTimes", "04.EvenTime
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01.UniqueUsernames", "01.UniqueUsernames\01.UniqueUsernames.csproj", "{8EB67927-B4D1-4176-985B-54367C0AE3C0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.CountSymbols", "05.CountSymbols\05.CountSymbols.csproj", "{3DA555BB-CEF3-4C88-B6FF-740992959CFD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.Wardrobe", "06.Wardrobe\06.Wardrobe.csproj", "{BAD60490-7BD8-45C9-BCDF-FAF682129F16}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{8EB67927-B4D1-4176-985B-54367C0AE3C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8EB67927-B4D1-4176-985B-54367C0AE3C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8EB67927-B4D1-4176-985B-54367C0AE3C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DA555BB-CEF3-4C88-B6FF-740992959CFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DA555BB-CEF3-4C88-B6FF-740992959CFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DA555BB-CEF3-4C88-B6FF-740992959CFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DA555BB-CEF3-4C88-B6FF-740992959CFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAD60490-7BD8-45C9-BCDF-FAF682129F16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAD60490-7BD8-45C9-BCDF-FAF682129F16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAD60490-7BD8-45C9-BCDF-FAF682129F16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAD60490-7BD8-45C9-BCDF-FAF682129F16}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

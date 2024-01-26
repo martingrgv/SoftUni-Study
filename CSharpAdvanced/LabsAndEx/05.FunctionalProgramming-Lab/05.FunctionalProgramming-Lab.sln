@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.SortEvenNumbers", "01.SortEvenNumbers\01.SortEvenNumbers.csproj", "{A25204FB-B459-4721-AAB9-1E1D4C89F0DC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01.SortEvenNumbers", "01.SortEvenNumbers\01.SortEvenNumbers.csproj", "{A25204FB-B459-4721-AAB9-1E1D4C89F0DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DelegateCalculator", "DelegateCalculator\DelegateCalculator.csproj", "{2BD54012-8730-453E-ADFA-4905DA1E328A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DelegateCalculator", "DelegateCalculator\DelegateCalculator.csproj", "{2BD54012-8730-453E-ADFA-4905DA1E328A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.SumNumbers", "02.SumNumbers\02.SumNumbers.csproj", "{C827E37E-B598-47F8-9CDE-53791CBB9EEF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02.SumNumbers", "02.SumNumbers\02.SumNumbers.csproj", "{C827E37E-B598-47F8-9CDE-53791CBB9EEF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.CountUppercaseWords", "03.CountUppercaseWords\03.CountUppercaseWords.csproj", "{7941C983-89DE-4785-973C-328F97235A48}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03.CountUppercaseWords", "03.CountUppercaseWords\03.CountUppercaseWords.csproj", "{7941C983-89DE-4785-973C-328F97235A48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.AddVAT", "04.AddVAT\04.AddVAT.csproj", "{33FF85F6-E7A9-45CA-B54F-FC39F1F78B56}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{7941C983-89DE-4785-973C-328F97235A48}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7941C983-89DE-4785-973C-328F97235A48}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7941C983-89DE-4785-973C-328F97235A48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33FF85F6-E7A9-45CA-B54F-FC39F1F78B56}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33FF85F6-E7A9-45CA-B54F-FC39F1F78B56}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33FF85F6-E7A9-45CA-B54F-FC39F1F78B56}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33FF85F6-E7A9-45CA-B54F-FC39F1F78B56}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

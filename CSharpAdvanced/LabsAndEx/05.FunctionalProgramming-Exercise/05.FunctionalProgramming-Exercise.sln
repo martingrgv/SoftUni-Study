@@ -17,9 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06.ReverseAndExclude", "06.
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07.PredicateForNames", "07.PredicateForNames\07.PredicateForNames.csproj", "{44093688-AFDF-4024-BFC4-9880C681EC7D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08.ListOfPredicates", "08.ListOfPredicates\08.ListOfPredicates.csproj", "{8C609C58-1808-48B6-BC27-430E3848FD77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08.ListOfPredicates", "08.ListOfPredicates\08.ListOfPredicates.csproj", "{8C609C58-1808-48B6-BC27-430E3848FD77}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09.PredicateParty", "09.PredicateParty\09.PredicateParty.csproj", "{DD637E97-9F07-47B8-8C8E-B55D58125699}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09.PredicateParty", "09.PredicateParty\09.PredicateParty.csproj", "{DD637E97-9F07-47B8-8C8E-B55D58125699}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.ThePartyReservationFilterModule", "10.ThePartyReservationFilterModule\10.ThePartyReservationFilterModule.csproj", "{BA97DB48-87CC-4EB7-8FD8-870119D3BC52}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{DD637E97-9F07-47B8-8C8E-B55D58125699}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD637E97-9F07-47B8-8C8E-B55D58125699}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD637E97-9F07-47B8-8C8E-B55D58125699}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BA97DB48-87CC-4EB7-8FD8-870119D3BC52}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA97DB48-87CC-4EB7-8FD8-870119D3BC52}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA97DB48-87CC-4EB7-8FD8-870119D3BC52}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA97DB48-87CC-4EB7-8FD8-870119D3BC52}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

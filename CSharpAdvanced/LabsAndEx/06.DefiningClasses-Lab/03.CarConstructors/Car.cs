@@ -20,20 +20,15 @@ public class Car
         this.FuelConsumption = 10;
     }
 
-    public Car(string make, string model, int year)
+    public Car(string make, string model, int year) : this()
     {
         this.Make = make;
         this.Model = model;
         this.Year = year;
-        this.FuelQuantity = 200;
-        this.FuelConsumption = 10;
     }
 
-    public Car(string make, string model, int year, double fuelQuantity, double fuelConsumption)
+    public Car(string make, string model, int year, double fuelQuantity, double fuelConsumption) : this(make, model, year)
     {
-        this.Make = make;
-        this.Model = model;
-        this.Year = year;
         this.FuelQuantity = fuelQuantity;
         this.FuelConsumption = fuelConsumption;
     }

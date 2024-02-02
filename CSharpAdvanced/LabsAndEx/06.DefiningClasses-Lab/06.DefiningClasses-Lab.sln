@@ -5,9 +5,11 @@ VisualStudioVersion = 17.8.34408.163
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01.Car", "01.Car\01.Car.csproj", "{B82D89F5-7538-4487-8730-B2CEEEC71991}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.CarExtension", "02.CarExtension\02.CarExtension.csproj", "{690EE4B0-91B2-4BE2-B6B0-AECD1B8755F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02.CarExtension", "02.CarExtension\02.CarExtension.csproj", "{690EE4B0-91B2-4BE2-B6B0-AECD1B8755F7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.CarConstructors", "03.CarConstructors\03.CarConstructors.csproj", "{03BD1B1F-5434-403F-ACA4-09A3F894C9CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "03.CarConstructors", "03.CarConstructors\03.CarConstructors.csproj", "{03BD1B1F-5434-403F-ACA4-09A3F894C9CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.CarEngineAndTires", "04.CarEngineAndTires\04.CarEngineAndTires.csproj", "{F50B5E08-E7AA-4FCB-81DB-53B5074A6D54}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{03BD1B1F-5434-403F-ACA4-09A3F894C9CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03BD1B1F-5434-403F-ACA4-09A3F894C9CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03BD1B1F-5434-403F-ACA4-09A3F894C9CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F50B5E08-E7AA-4FCB-81DB-53B5074A6D54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F50B5E08-E7AA-4FCB-81DB-53B5074A6D54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F50B5E08-E7AA-4FCB-81DB-53B5074A6D54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F50B5E08-E7AA-4FCB-81DB-53B5074A6D54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,16 +1,18 @@
-﻿namespace GenericScale
-{
-    public class EqualityScale<T1, T2>
-    {
-        private T1 element1;
-        private T2 element2;
+﻿using System.Runtime.CompilerServices;
 
-        public EqualityScale(T1 element1, T2 element2)
+namespace GenericScale
+{
+    public class EqualityScale<T>
+    {
+        private T left;
+        private T right;
+
+        public EqualityScale(T left, T right)
         {
-            this.element1 = element1;
-            this.element2 = element2;
+            this.left = left;
+            this.right = right;
         }
 
-        public bool AreEqual() => element1 == element2;
+        public bool AreEqual() => left.Equals(right);
     }
 }

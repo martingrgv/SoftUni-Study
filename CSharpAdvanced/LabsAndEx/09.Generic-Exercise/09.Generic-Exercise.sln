@@ -13,9 +13,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "04.GenericSwapMethodInt", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "05.GenericCountMethodStrings", "05.GenericCountMethodStrings\05.GenericCountMethodStrings.csproj", "{C39B6DFA-5220-400E-8C6C-D0CA77678CD6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "06.GenericCountMethodDoubles", "06.GenericCountMethodDoubles\06.GenericCountMethodDoubles.csproj", "{A97B20E2-FB55-4FDA-87A7-8705699D9302}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "06.GenericCountMethodDoubles", "06.GenericCountMethodDoubles\06.GenericCountMethodDoubles.csproj", "{A97B20E2-FB55-4FDA-87A7-8705699D9302}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "07.Tuple", "07.Tuple\07.Tuple.csproj", "{F85A156C-87EB-4FBA-8866-67740D54667F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07.Tuple", "07.Tuple\07.Tuple.csproj", "{F85A156C-87EB-4FBA-8866-67740D54667F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "08.Threeuple", "08.Threeuple\08.Threeuple.csproj", "{938C9C5E-F2AD-48A5-A7AB-5565C317E5EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{F85A156C-87EB-4FBA-8866-67740D54667F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F85A156C-87EB-4FBA-8866-67740D54667F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F85A156C-87EB-4FBA-8866-67740D54667F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{938C9C5E-F2AD-48A5-A7AB-5565C317E5EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{938C9C5E-F2AD-48A5-A7AB-5565C317E5EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{938C9C5E-F2AD-48A5-A7AB-5565C317E5EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{938C9C5E-F2AD-48A5-A7AB-5565C317E5EE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -12,18 +12,9 @@
             Library library2 = new Library(bookOne, book2, book3);
 
             foreach (var book in library2)
-                Console.WriteLine(book.Title);
-
-            //foreach (var book in library)
-            //{
-            //    Console.WriteLine(book.ToString());
-            //}
-
-            //foreach (var book in library2)
-            //{
-            //    Console.WriteLine(book.ToString());
-            //    Console.WriteLine("-----------");
-            //}
+            {
+                Console.WriteLine(book);
+            }
         }
     }
 }

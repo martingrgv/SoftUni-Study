@@ -1,0 +1,15 @@
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/02.Collection/bin/Debug/net8.0/02.Collection
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/02.Collection/bin/Debug/net8.0/02.Collection.deps.json
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/02.Collection/bin/Debug/net8.0/02.Collection.runtimeconfig.json
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/02.Collection/bin/Debug/net8.0/02.Collection.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/02.Collection/bin/Debug/net8.0/02.Collection.pdb
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/02.Collection/obj/Debug/net8.0/02.Collection.GeneratedMSBuildEditorConfig.editorconfig
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/02.Collection/obj/Debug/net8.0/02.Collection.AssemblyInfoInputs.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/02.Collection/obj/Debug/net8.0/02.Collection.AssemblyInfo.cs
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/02.Collection/obj/Debug/net8.0/02.Collection.csproj.CoreCompileInputs.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/02.Collection/obj/Debug/net8.0/02.Collection.sourcelink.json
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/02.Collection/obj/Debug/net8.0/02.Collection.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/02.Collection/obj/Debug/net8.0/refint/02.Collection.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/02.Collection/obj/Debug/net8.0/02.Collection.pdb
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/02.Collection/obj/Debug/net8.0/02.Collection.genruntimeconfig.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/02.Collection/obj/Debug/net8.0/ref/02.Collection.dll

@@ -1,0 +1,15 @@
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/03.Stack/bin/Debug/net6.0/03.Stack
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/03.Stack/bin/Debug/net6.0/03.Stack.deps.json
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/03.Stack/bin/Debug/net6.0/03.Stack.runtimeconfig.json
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/03.Stack/bin/Debug/net6.0/03.Stack.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/03.Stack/bin/Debug/net6.0/03.Stack.pdb
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/03.Stack/obj/Debug/net6.0/03.Stack.csproj.AssemblyReference.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/03.Stack/obj/Debug/net6.0/03.Stack.GeneratedMSBuildEditorConfig.editorconfig
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/03.Stack/obj/Debug/net6.0/03.Stack.AssemblyInfoInputs.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/03.Stack/obj/Debug/net6.0/03.Stack.AssemblyInfo.cs
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/03.Stack/obj/Debug/net6.0/03.Stack.csproj.CoreCompileInputs.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/03.Stack/obj/Debug/net6.0/03.Stack.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/03.Stack/obj/Debug/net6.0/refint/03.Stack.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/03.Stack/obj/Debug/net6.0/03.Stack.pdb
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/03.Stack/obj/Debug/net6.0/03.Stack.genruntimeconfig.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/03.Stack/obj/Debug/net6.0/ref/03.Stack.dll

@@ -1,0 +1,15 @@
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/07.CustomComparator/bin/Debug/net6.0/07.CustomComparator
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/07.CustomComparator/bin/Debug/net6.0/07.CustomComparator.deps.json
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/07.CustomComparator/bin/Debug/net6.0/07.CustomComparator.runtimeconfig.json
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/07.CustomComparator/bin/Debug/net6.0/07.CustomComparator.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/07.CustomComparator/bin/Debug/net6.0/07.CustomComparator.pdb
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/07.CustomComparator/obj/Debug/net6.0/07.CustomComparator.csproj.AssemblyReference.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/07.CustomComparator/obj/Debug/net6.0/07.CustomComparator.GeneratedMSBuildEditorConfig.editorconfig
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/07.CustomComparator/obj/Debug/net6.0/07.CustomComparator.AssemblyInfoInputs.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/07.CustomComparator/obj/Debug/net6.0/07.CustomComparator.AssemblyInfo.cs
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/07.CustomComparator/obj/Debug/net6.0/07.CustomComparator.csproj.CoreCompileInputs.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/07.CustomComparator/obj/Debug/net6.0/07.CustomComparator.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/07.CustomComparator/obj/Debug/net6.0/refint/07.CustomComparator.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/07.CustomComparator/obj/Debug/net6.0/07.CustomComparator.pdb
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/07.CustomComparator/obj/Debug/net6.0/07.CustomComparator.genruntimeconfig.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/07.CustomComparator/obj/Debug/net6.0/ref/07.CustomComparator.dll

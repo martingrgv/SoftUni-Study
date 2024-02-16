@@ -1,0 +1,15 @@
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/Exams/Training/C#AdvancedRegularExam-21October2023/02.FishingCompetition/bin/Debug/net6.0/02.FishingCompetition
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/Exams/Training/C#AdvancedRegularExam-21October2023/02.FishingCompetition/bin/Debug/net6.0/02.FishingCompetition.deps.json
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/Exams/Training/C#AdvancedRegularExam-21October2023/02.FishingCompetition/bin/Debug/net6.0/02.FishingCompetition.runtimeconfig.json
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/Exams/Training/C#AdvancedRegularExam-21October2023/02.FishingCompetition/bin/Debug/net6.0/02.FishingCompetition.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/Exams/Training/C#AdvancedRegularExam-21October2023/02.FishingCompetition/bin/Debug/net6.0/02.FishingCompetition.pdb
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/Exams/Training/C#AdvancedRegularExam-21October2023/02.FishingCompetition/obj/Debug/net6.0/02.FishingCompetition.csproj.AssemblyReference.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/Exams/Training/C#AdvancedRegularExam-21October2023/02.FishingCompetition/obj/Debug/net6.0/02.FishingCompetition.GeneratedMSBuildEditorConfig.editorconfig
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/Exams/Training/C#AdvancedRegularExam-21October2023/02.FishingCompetition/obj/Debug/net6.0/02.FishingCompetition.AssemblyInfoInputs.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/Exams/Training/C#AdvancedRegularExam-21October2023/02.FishingCompetition/obj/Debug/net6.0/02.FishingCompetition.AssemblyInfo.cs
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/Exams/Training/C#AdvancedRegularExam-21October2023/02.FishingCompetition/obj/Debug/net6.0/02.FishingCompetition.csproj.CoreCompileInputs.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/Exams/Training/C#AdvancedRegularExam-21October2023/02.FishingCompetition/obj/Debug/net6.0/02.FishingCompetition.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/Exams/Training/C#AdvancedRegularExam-21October2023/02.FishingCompetition/obj/Debug/net6.0/refint/02.FishingCompetition.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/Exams/Training/C#AdvancedRegularExam-21October2023/02.FishingCompetition/obj/Debug/net6.0/02.FishingCompetition.pdb
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/Exams/Training/C#AdvancedRegularExam-21October2023/02.FishingCompetition/obj/Debug/net6.0/02.FishingCompetition.genruntimeconfig.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/Exams/Training/C#AdvancedRegularExam-21October2023/02.FishingCompetition/obj/Debug/net6.0/ref/02.FishingCompetition.dll

@@ -28,7 +28,7 @@
   </tr>
   <tr>
     <td>C# Advanced</td>
-    <td>In progress...</td>
+    <td><a href="https://softuni.bg/certificates/details/203494/75af0ad7">Show certificate</a></td>
   </tr>
   <tr>
     <td>JS Front-End</td>

@@ -30,6 +30,10 @@
     <td>C# Advanced</td>
     <td><a href="https://softuni.bg/certificates/details/203494/75af0ad7">Show certificate</a></td>
   </tr>
+   <tr>
+    <td>C# OOP</td>
+    <td>In progress...</td>
+  </tr>
   <tr>
     <td>JS Front-End</td>
     <td>In progress...</td>

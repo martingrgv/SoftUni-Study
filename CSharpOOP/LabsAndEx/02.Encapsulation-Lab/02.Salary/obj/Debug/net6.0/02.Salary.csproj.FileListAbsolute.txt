@@ -1,0 +1,15 @@
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/02.Encapsulation-Lab/02.Salary/bin/Debug/net6.0/02.Salary
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/02.Encapsulation-Lab/02.Salary/bin/Debug/net6.0/02.Salary.deps.json
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/02.Encapsulation-Lab/02.Salary/bin/Debug/net6.0/02.Salary.runtimeconfig.json
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/02.Encapsulation-Lab/02.Salary/bin/Debug/net6.0/02.Salary.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/02.Encapsulation-Lab/02.Salary/bin/Debug/net6.0/02.Salary.pdb
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/02.Encapsulation-Lab/02.Salary/obj/Debug/net6.0/02.Salary.csproj.AssemblyReference.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/02.Encapsulation-Lab/02.Salary/obj/Debug/net6.0/02.Salary.GeneratedMSBuildEditorConfig.editorconfig
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/02.Encapsulation-Lab/02.Salary/obj/Debug/net6.0/02.Salary.AssemblyInfoInputs.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/02.Encapsulation-Lab/02.Salary/obj/Debug/net6.0/02.Salary.AssemblyInfo.cs
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/02.Encapsulation-Lab/02.Salary/obj/Debug/net6.0/02.Salary.csproj.CoreCompileInputs.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/02.Encapsulation-Lab/02.Salary/obj/Debug/net6.0/02.Salary.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/02.Encapsulation-Lab/02.Salary/obj/Debug/net6.0/refint/02.Salary.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/02.Encapsulation-Lab/02.Salary/obj/Debug/net6.0/02.Salary.pdb
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/02.Encapsulation-Lab/02.Salary/obj/Debug/net6.0/02.Salary.genruntimeconfig.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/02.Encapsulation-Lab/02.Salary/obj/Debug/net6.0/ref/02.Salary.dll

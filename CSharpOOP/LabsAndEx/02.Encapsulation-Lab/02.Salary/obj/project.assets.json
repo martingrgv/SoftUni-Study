@@ -8,24 +8,31 @@
     "net6.0": []
   },
   "packageFolders": {
-    "/Users/azichka/.nuget/packages/": {}
+    "C:\\Users\\marti\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/02.Encapsulation-Lab/02.Salary/02.Salary.csproj",
+      "projectUniqueName": "D:\\Code\\SoftUni-University\\CSharpOOP\\LabsAndEx\\02.Encapsulation-Lab\\02.Salary\\02.Salary.csproj",
       "projectName": "02.Salary",
-      "projectPath": "/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/02.Encapsulation-Lab/02.Salary/02.Salary.csproj",
-      "packagesPath": "/Users/azichka/.nuget/packages/",
-      "outputPath": "/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/02.Encapsulation-Lab/02.Salary/obj/",
+      "projectPath": "D:\\Code\\SoftUni-University\\CSharpOOP\\LabsAndEx\\02.Encapsulation-Lab\\02.Salary\\02.Salary.csproj",
+      "packagesPath": "C:\\Users\\marti\\.nuget\\packages\\",
+      "outputPath": "D:\\Code\\SoftUni-University\\CSharpOOP\\LabsAndEx\\02.Encapsulation-Lab\\02.Salary\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "/Users/azichka/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\marti\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -38,6 +45,11 @@
         "warnAsError": [
           "NU1605"
         ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
       }
     },
     "frameworks": {
@@ -59,7 +71,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.313/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200\\RuntimeIdentifierGraph.json"
       }
     }
   }

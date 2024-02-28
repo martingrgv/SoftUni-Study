@@ -1,0 +1,15 @@
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/01.Shapes/obj/Debug/net6.0/01.Shapes.csproj.AssemblyReference.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/01.Shapes/obj/Debug/net6.0/01.Shapes.GeneratedMSBuildEditorConfig.editorconfig
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/01.Shapes/obj/Debug/net6.0/01.Shapes.AssemblyInfoInputs.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/01.Shapes/obj/Debug/net6.0/01.Shapes.AssemblyInfo.cs
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/01.Shapes/obj/Debug/net6.0/01.Shapes.csproj.CoreCompileInputs.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/01.Shapes/bin/Debug/net6.0/01.Shapes
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/01.Shapes/bin/Debug/net6.0/01.Shapes.deps.json
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/01.Shapes/bin/Debug/net6.0/01.Shapes.runtimeconfig.json
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/01.Shapes/bin/Debug/net6.0/01.Shapes.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/01.Shapes/bin/Debug/net6.0/01.Shapes.pdb
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/01.Shapes/obj/Debug/net6.0/01.Shapes.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/01.Shapes/obj/Debug/net6.0/refint/01.Shapes.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/01.Shapes/obj/Debug/net6.0/01.Shapes.pdb
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/01.Shapes/obj/Debug/net6.0/01.Shapes.genruntimeconfig.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/01.Shapes/obj/Debug/net6.0/ref/01.Shapes.dll

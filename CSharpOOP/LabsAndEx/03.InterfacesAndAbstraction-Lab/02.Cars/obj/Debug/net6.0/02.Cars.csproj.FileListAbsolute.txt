@@ -1,0 +1,15 @@
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/bin/Debug/net6.0/02.Cars
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/bin/Debug/net6.0/02.Cars.deps.json
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/bin/Debug/net6.0/02.Cars.runtimeconfig.json
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/bin/Debug/net6.0/02.Cars.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/bin/Debug/net6.0/02.Cars.pdb
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/obj/Debug/net6.0/02.Cars.csproj.AssemblyReference.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/obj/Debug/net6.0/02.Cars.GeneratedMSBuildEditorConfig.editorconfig
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/obj/Debug/net6.0/02.Cars.AssemblyInfoInputs.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/obj/Debug/net6.0/02.Cars.AssemblyInfo.cs
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/obj/Debug/net6.0/02.Cars.csproj.CoreCompileInputs.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/obj/Debug/net6.0/02.Cars.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/obj/Debug/net6.0/refint/02.Cars.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/obj/Debug/net6.0/02.Cars.pdb
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/obj/Debug/net6.0/02.Cars.genruntimeconfig.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/obj/Debug/net6.0/ref/02.Cars.dll

@@ -1,0 +1,15 @@
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/02.MultipleImplementation/bin/Debug/net6.0/02.MultipleImplementation
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/02.MultipleImplementation/bin/Debug/net6.0/02.MultipleImplementation.deps.json
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/02.MultipleImplementation/bin/Debug/net6.0/02.MultipleImplementation.runtimeconfig.json
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/02.MultipleImplementation/bin/Debug/net6.0/02.MultipleImplementation.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/02.MultipleImplementation/bin/Debug/net6.0/02.MultipleImplementation.pdb
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/02.MultipleImplementation/obj/Debug/net6.0/02.MultipleImplementation.csproj.AssemblyReference.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/02.MultipleImplementation/obj/Debug/net6.0/02.MultipleImplementation.GeneratedMSBuildEditorConfig.editorconfig
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/02.MultipleImplementation/obj/Debug/net6.0/02.MultipleImplementation.AssemblyInfoInputs.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/02.MultipleImplementation/obj/Debug/net6.0/02.MultipleImplementation.AssemblyInfo.cs
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/02.MultipleImplementation/obj/Debug/net6.0/02.MultipleImplementation.csproj.CoreCompileInputs.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/02.MultipleImplementation/obj/Debug/net6.0/02.MultipleImplementation.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/02.MultipleImplementation/obj/Debug/net6.0/refint/02.MultipleImplementation.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/02.MultipleImplementation/obj/Debug/net6.0/02.MultipleImplementation.pdb
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/02.MultipleImplementation/obj/Debug/net6.0/02.MultipleImplementation.genruntimeconfig.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/02.MultipleImplementation/obj/Debug/net6.0/ref/02.MultipleImplementation.dll

@@ -1,0 +1,15 @@
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/RockPaper/bin/Debug/net7.0/RockPaper
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/RockPaper/bin/Debug/net7.0/RockPaper.deps.json
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/RockPaper/bin/Debug/net7.0/RockPaper.runtimeconfig.json
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/RockPaper/bin/Debug/net7.0/RockPaper.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/RockPaper/bin/Debug/net7.0/RockPaper.pdb
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/RockPaper/obj/Debug/net7.0/RockPaper.csproj.AssemblyReference.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/RockPaper/obj/Debug/net7.0/RockPaper.GeneratedMSBuildEditorConfig.editorconfig
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/RockPaper/obj/Debug/net7.0/RockPaper.AssemblyInfoInputs.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/RockPaper/obj/Debug/net7.0/RockPaper.AssemblyInfo.cs
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/RockPaper/obj/Debug/net7.0/RockPaper.csproj.CoreCompileInputs.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/RockPaper/obj/Debug/net7.0/RockPaper.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/RockPaper/obj/Debug/net7.0/refint/RockPaper.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/RockPaper/obj/Debug/net7.0/RockPaper.pdb
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/RockPaper/obj/Debug/net7.0/RockPaper.genruntimeconfig.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/RockPaper/obj/Debug/net7.0/ref/RockPaper.dll

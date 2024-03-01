@@ -1,0 +1,15 @@
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/04.BorderControl/obj/Debug/net6.0/04.BorderControl.csproj.AssemblyReference.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/04.BorderControl/obj/Debug/net6.0/04.BorderControl.GeneratedMSBuildEditorConfig.editorconfig
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/04.BorderControl/obj/Debug/net6.0/04.BorderControl.AssemblyInfoInputs.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/04.BorderControl/obj/Debug/net6.0/04.BorderControl.AssemblyInfo.cs
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/04.BorderControl/obj/Debug/net6.0/04.BorderControl.csproj.CoreCompileInputs.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/04.BorderControl/bin/Debug/net6.0/04.BorderControl
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/04.BorderControl/bin/Debug/net6.0/04.BorderControl.deps.json
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/04.BorderControl/bin/Debug/net6.0/04.BorderControl.runtimeconfig.json
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/04.BorderControl/bin/Debug/net6.0/04.BorderControl.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/04.BorderControl/bin/Debug/net6.0/04.BorderControl.pdb
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/04.BorderControl/obj/Debug/net6.0/04.BorderControl.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/04.BorderControl/obj/Debug/net6.0/refint/04.BorderControl.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/04.BorderControl/obj/Debug/net6.0/04.BorderControl.pdb
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/04.BorderControl/obj/Debug/net6.0/04.BorderControl.genruntimeconfig.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/04.BorderControl/obj/Debug/net6.0/ref/04.BorderControl.dll

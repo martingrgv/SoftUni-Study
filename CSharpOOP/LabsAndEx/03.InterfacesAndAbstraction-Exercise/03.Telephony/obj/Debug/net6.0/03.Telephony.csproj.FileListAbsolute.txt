@@ -1,0 +1,15 @@
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/03.Telephony/obj/Debug/net6.0/03.Telephony.csproj.AssemblyReference.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/03.Telephony/obj/Debug/net6.0/03.Telephony.GeneratedMSBuildEditorConfig.editorconfig
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/03.Telephony/obj/Debug/net6.0/03.Telephony.AssemblyInfoInputs.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/03.Telephony/obj/Debug/net6.0/03.Telephony.AssemblyInfo.cs
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/03.Telephony/obj/Debug/net6.0/03.Telephony.csproj.CoreCompileInputs.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/03.Telephony/bin/Debug/net6.0/03.Telephony
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/03.Telephony/bin/Debug/net6.0/03.Telephony.deps.json
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/03.Telephony/bin/Debug/net6.0/03.Telephony.runtimeconfig.json
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/03.Telephony/bin/Debug/net6.0/03.Telephony.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/03.Telephony/bin/Debug/net6.0/03.Telephony.pdb
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/03.Telephony/obj/Debug/net6.0/03.Telephony.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/03.Telephony/obj/Debug/net6.0/refint/03.Telephony.dll
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/03.Telephony/obj/Debug/net6.0/03.Telephony.pdb
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/03.Telephony/obj/Debug/net6.0/03.Telephony.genruntimeconfig.cache
+/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/03.Telephony/obj/Debug/net6.0/ref/03.Telephony.dll

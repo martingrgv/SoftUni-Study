@@ -7,6 +7,7 @@ namespace PizzaCalories
         static void Main(string[] args)
         {
             Dough dough = new Dough();
+            Topping topping = new Topping();
 
             try
             {
@@ -14,6 +15,7 @@ namespace PizzaCalories
                 while ((input = Console.ReadLine()) != "END")
                 {
                     dough = GetDough(input);
+                    topping = GetTopping(input);
                 }
 
                 Console.WriteLine($"{dough.Calories:f2}");
@@ -30,7 +32,7 @@ namespace PizzaCalories
             string[] doughData = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
 
             Flour? flour = GetFlour(doughData[1]);
-            BakingTechnique? bakingTechnique = GetBakingTechnique(doughData[2]);
+            PizzaTechnique? bakingTechnique = GetBakingTechnique(doughData[2]);
             double grams = double.Parse(doughData[3]);
 
             return new Dough(flour, bakingTechnique, grams);
@@ -49,19 +51,35 @@ namespace PizzaCalories
             }
         }
         
-        private static BakingTechnique? GetBakingTechnique(string techniqueName)
+        private static PizzaTechnique? GetBakingTechnique(string techniqueName)
         {
             switch(techniqueName)
             {
                 case "Crispy":
-                    return BakingTechnique.Crispy;
+                    return PizzaTechnique.Crispy;
                 case "Chewy":
-                    return BakingTechnique.Chewy;
+                    return PizzaTechnique.Chewy;
                 case "Homemade":
-                    return BakingTechnique.Homemade;
+                    return PizzaTechnique.Homemade;
                 default:
                     return null;
             }
+        }
+
+        private static Topping GetTopping(string input)
+        {
+            string[] toppingData = input.Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+            ToppingType? toppingType = GetToppingType(toppingData[1]);
+            PizzaTechnique? bakingTechnique = GetBakingTechnique(doughData[2]);
+            double grams = double.Parse(doughData[3]);
+
+            return new Dough(flour, bakingTechnique, grams);
+        }
+
+        private static ToppingType? GetToppingType()
+        {
+
         }
     }
 }

@@ -6,10 +6,18 @@
         Wholegrain
     }
 
-    public enum BakingTechnique
+    public enum PizzaTechnique
     {
         Crispy,
         Chewy,
         Homemade
+    }
+
+    public enum ToppingType
+    {
+        Meat,
+        Veggies,
+        Cheese,
+        Sauce
     }
 }

@@ -5,7 +5,7 @@ namespace PizzaCalories.Models
     public class Dough
     {
         private Flour? flourType;
-        private BakingTechnique? bakingTechnique;
+        private PizzaTechnique? bakingTechnique;
         private double grams;
 
         private double flourCalories;
@@ -16,7 +16,7 @@ namespace PizzaCalories.Models
             // Empty constructor
         }
 
-        public Dough(Flour? flourType, BakingTechnique? bakingTechnique, double grams)
+        public Dough(Flour? flourType, PizzaTechnique? bakingTechnique, double grams)
         {
             FlourType = flourType;
             BakingTechnique = bakingTechnique;
@@ -44,20 +44,20 @@ namespace PizzaCalories.Models
             }
         }
 
-        public BakingTechnique? BakingTechnique
+        public PizzaTechnique? BakingTechnique
         {
             get { return bakingTechnique; }
             private set
             {
                 switch (value)
                 {
-                    case PizzaCalories.BakingTechnique.Crispy:
+                    case PizzaTechnique.Crispy:
                         bakingCalories = 0.9;
                         break;
-                    case PizzaCalories.BakingTechnique.Chewy:
+                    case PizzaTechnique.Chewy:
                         bakingCalories = 1.1;
                         break;
-                    case PizzaCalories.BakingTechnique.Homemade:
+                    case PizzaTechnique.Homemade:
                         bakingCalories = 1;
                         break;
                     default:
@@ -86,7 +86,7 @@ namespace PizzaCalories.Models
         {
             get
             {
-                return (2 * grams) * flourCalories * bakingCalories;
+                return (2 * Grams) * flourCalories * bakingCalories;
             }
         }
 

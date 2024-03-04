@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34607.119
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Operations", "Operations\Operations.csproj", "{96CB17D2-BCD6-41CF-B361-F8C2F6C72B9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animals", "Animals\Animals.csproj", "{A5C8D491-1AD2-46F5-A67C-59355ABF331F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96CB17D2-BCD6-41CF-B361-F8C2F6C72B9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96CB17D2-BCD6-41CF-B361-F8C2F6C72B9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96CB17D2-BCD6-41CF-B361-F8C2F6C72B9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96CB17D2-BCD6-41CF-B361-F8C2F6C72B9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5C8D491-1AD2-46F5-A67C-59355ABF331F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5C8D491-1AD2-46F5-A67C-59355ABF331F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5C8D491-1AD2-46F5-A67C-59355ABF331F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5C8D491-1AD2-46F5-A67C-59355ABF331F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {54A0C125-4C7D-4786-81F7-40D53825A8D8}
+	EndGlobalSection
+EndGlobal

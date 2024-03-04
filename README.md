@@ -62,4 +62,4 @@
 
 <br/>
 
-<p align="right">https://softuni.bg/curriculum</p>
+<p align="right">curriculum: https://softuni.bg/curriculum</p>

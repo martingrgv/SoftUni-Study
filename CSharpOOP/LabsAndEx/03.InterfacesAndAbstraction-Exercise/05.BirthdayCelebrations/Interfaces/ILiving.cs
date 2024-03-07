@@ -5,4 +5,3 @@
 		public DateOnly Birthdate { get; }
 	}
 }
-

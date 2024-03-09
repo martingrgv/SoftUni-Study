@@ -29,10 +29,10 @@ namespace Vehicles
                         case "Drive":
                             if (command[1] == "Car") car.Drive(double.Parse(command[2]));
                             else if (command[1] == "Truck") truck.Drive(double.Parse(command[2]));
-                            else if (command[1] == "Bus") bus.Drive(double.Parse(command[2]));
+                            else if (command[1] == "Bus") bus.DriveWithPeople(double.Parse(command[2]));
                             break;
                         case "DriveEmpty":
-                            bus.DriveWithPeople(double.Parse(command[2]));
+                            bus.Drive(double.Parse(command[2]));
                             break;
                         case "Refuel":
                             if (command[1] == "Car") car.Refuel(double.Parse(command[2]));

@@ -10,7 +10,6 @@
 
         public void DriveWithPeople(double distance)
         {
-            // TODO: Fix fuelQuantity
             double totalConsumption = (FuelConsumption + fuelConsumptionModifier) * distance;
             if (totalConsumption > FuelQuantity)
             {

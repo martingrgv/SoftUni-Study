@@ -25,7 +25,14 @@ namespace Vehicles.Models
                     throw new ArgumentException("Fuel quantity cannot be negative!");
                 }
 
-                fuelQuantity = value;
+                if (value > TankCapacity)
+                {
+                    fuelQuantity = 0;
+                }
+                else
+                {
+                    fuelQuantity = value;
+                }
             }
         }
 

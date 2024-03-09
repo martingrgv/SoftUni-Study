@@ -4,7 +4,7 @@
     {
         private const double fuelConsumptionModifier = 0.9;
 
-        public Car(double fuelQuantity, double fuelConsumption) : base(fuelQuantity, fuelConsumption + fuelConsumptionModifier)
+        public Car(double fuelQuantity, double fuelConsumption, double tankCapacity) : base(fuelQuantity, fuelConsumption + fuelConsumptionModifier, tankCapacity)
         {
 
         }

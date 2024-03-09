@@ -6,9 +6,11 @@ namespace Vehicles.Models
     {
         private double fuelQuantity;
         private double fuelConsumption;
+        private double tankCapacity;
 
-        protected Vehicle(double fuelQuantity, double fuelConsumption)
+        protected Vehicle(double fuelQuantity, double fuelConsumption, double tankCapacity)
         {
+            TankCapacity = tankCapacity;
             FuelQuantity = fuelQuantity;
             FuelConsumption = fuelConsumption;
         }
@@ -41,6 +43,20 @@ namespace Vehicles.Models
             }
         }
 
+        public double TankCapacity
+        {
+            get { return tankCapacity; }
+            set
+            {
+                if (value <= 0)
+                {
+                    throw new ArgumentException("Fuel tank capacity cannot be negative or zero!");
+                }
+
+                tankCapacity = value;
+            }
+        }
+
         public void Drive(double distance)
         {
             double totalConsumption = FuelConsumption * distance;
@@ -59,6 +75,10 @@ namespace Vehicles.Models
             if (fuelAmount <= 0)
             {
                 throw new ArgumentException("Fuel must be a positive number");
+            }
+            else if (fuelAmount > TankCapacity)
+            {
+                throw new ArgumentException($"Cannot fit {fuelAmount} fuel in the tank");
             }
 
             FuelQuantity += fuelAmount;

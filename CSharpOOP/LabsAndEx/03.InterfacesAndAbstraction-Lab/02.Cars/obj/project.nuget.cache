@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "ie4WN0U8tayrcUp8Hqs4a8e6ARtdjm9zdgYftOdsWLG66SbH9Lo3vLXBWbc7ufLnu+WgLLrc9O6iVBNgbcjUxA==",
+  "dgSpecHash": "F2SRFGeqtoSuIabfaj4hkVKoIcO6kJdcNLpgZ1N4/WovItWoST/FOjU6GisoZHykC988bSIMVEIUIhKrK7P2Pw==",
   "success": true,
-  "projectFilePath": "/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/02.Cars.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "/home/martingrgv/Code/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/02.Cars.csproj",
+  "expectedPackageFiles": [
+    "/home/martingrgv/.nuget/packages/microsoft.netcore.app.host.linux-x64/6.0.27/microsoft.netcore.app.host.linux-x64.6.0.27.nupkg.sha512"
+  ],
   "logs": []
 }

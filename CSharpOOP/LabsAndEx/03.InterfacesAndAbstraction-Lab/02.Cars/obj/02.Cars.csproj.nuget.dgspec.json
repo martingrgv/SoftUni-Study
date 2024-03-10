@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/02.Cars.csproj": {}
+    "/home/martingrgv/Code/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/02.Cars.csproj": {}
   },
   "projects": {
-    "/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/02.Cars.csproj": {
+    "/home/martingrgv/Code/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/02.Cars.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/02.Cars.csproj",
+        "projectUniqueName": "/home/martingrgv/Code/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/02.Cars.csproj",
         "projectName": "02.Cars",
-        "projectPath": "/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/02.Cars.csproj",
-        "packagesPath": "/Users/azichka/.nuget/packages/",
-        "outputPath": "/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/obj/",
+        "projectPath": "/home/martingrgv/Code/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/02.Cars.csproj",
+        "packagesPath": "/home/martingrgv/.nuget/packages/",
+        "outputPath": "/home/martingrgv/Code/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Lab/02.Cars/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/Users/azichka/.nuget/NuGet/NuGet.Config"
+          "/home/martingrgv/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
@@ -48,12 +48,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[6.0.27, 6.0.27]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.313/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/lib64/dotnet/sdk/8.0.102/RuntimeIdentifierGraph.json"
         }
       }
     }

@@ -25,6 +25,6 @@ public abstract class Bird : Animal
 
     public override string ToString()
     {
-        return base.ToString() + $"[{Name}, {WingSize}, {Weight:f2}, {FoodEaten}]";
+        return base.ToString() + $"[{Name}, {WingSize}, {Weight}, {FoodEaten}]";
     }
 }

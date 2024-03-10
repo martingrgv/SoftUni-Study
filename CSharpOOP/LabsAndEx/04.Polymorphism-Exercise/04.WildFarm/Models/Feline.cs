@@ -25,6 +25,6 @@ public abstract class Feline : Mammal
 
     public override string ToString()
     {
-        return $"{GetType().Name} [{Name}, {Breed}, {Weight:f2}, {LivingRegion}, {FoodEaten}]";
+        return $"{GetType().Name} [{Name}, {Breed}, {Weight}, {LivingRegion}, {FoodEaten}]";
     }
 }

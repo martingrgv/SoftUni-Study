@@ -25,6 +25,6 @@ public abstract class Mammal : Animal
 
     public override string ToString()
     {
-        return base.ToString() + $"[{Name}, {Weight:f2}, {LivingRegion}, {FoodEaten}]";
+        return base.ToString() + $"[{Name}, {Weight}, {LivingRegion}, {FoodEaten}]";
     }
 }

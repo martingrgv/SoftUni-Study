@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.EnterNumbers", "02.Enter
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.Cards", "03.Cards\03.Cards.csproj", "{C5534626-40EF-4EAD-B94D-6FC31D0D2DBD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.SumOfInts", "04.SumOfInts\04.SumOfInts.csproj", "{DC9D2200-2A6C-410A-B8BE-9CEBBFC7FC4E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{C5534626-40EF-4EAD-B94D-6FC31D0D2DBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5534626-40EF-4EAD-B94D-6FC31D0D2DBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5534626-40EF-4EAD-B94D-6FC31D0D2DBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DC9D2200-2A6C-410A-B8BE-9CEBBFC7FC4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DC9D2200-2A6C-410A-B8BE-9CEBBFC7FC4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DC9D2200-2A6C-410A-B8BE-9CEBBFC7FC4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DC9D2200-2A6C-410A-B8BE-9CEBBFC7FC4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

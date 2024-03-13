@@ -6,25 +6,25 @@ public class Program
     {
         int sum = 0;
         string[] data = Console.ReadLine()
-                                .Split(' ', StringSplitOptions.RemoveEmptyEntries);
+                                .Split(' ');
 
-        for (int i = 0; i < data.Length; i++)
+        foreach (var element in data)
         {
             try
             {
-                sum += int.Parse(data[i]);
-            }
-            catch (OverflowException)
-            {
-                Console.WriteLine($"The element '{data[i]}' is out of range!");
+                sum += int.Parse(element);
             }
             catch (FormatException)
             {
-                Console.WriteLine($"The element '{data[i]}' is in wrong format!");
+                Console.WriteLine($"The element '{element}' is in wrong format!");
+            }
+            catch (OverflowException)
+            {
+                Console.WriteLine($"The element '{element}' is out of range!");
             }
             finally
             {
-                Console.WriteLine($"Element '{data[i]}' processed - current sum: {sum}");
+                Console.WriteLine($"Element '{element}' processed - current sum: {sum}");
             }
         }
 

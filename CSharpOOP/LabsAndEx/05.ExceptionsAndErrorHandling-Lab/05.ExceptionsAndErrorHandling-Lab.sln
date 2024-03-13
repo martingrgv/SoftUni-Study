@@ -8,6 +8,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.Cards", "03.Cards\03.Car
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.SumOfInts", "04.SumOfInts\04.SumOfInts.csproj", "{DC9D2200-2A6C-410A-B8BE-9CEBBFC7FC4E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "05.PlayCatch", "05.PlayCatch\05.PlayCatch.csproj", "{39C929B2-2FC1-4B9F-9428-850DF46C201E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -30,5 +32,9 @@ Global
 		{DC9D2200-2A6C-410A-B8BE-9CEBBFC7FC4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DC9D2200-2A6C-410A-B8BE-9CEBBFC7FC4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DC9D2200-2A6C-410A-B8BE-9CEBBFC7FC4E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39C929B2-2FC1-4B9F-9428-850DF46C201E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39C929B2-2FC1-4B9F-9428-850DF46C201E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39C929B2-2FC1-4B9F-9428-850DF46C201E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39C929B2-2FC1-4B9F-9428-850DF46C201E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

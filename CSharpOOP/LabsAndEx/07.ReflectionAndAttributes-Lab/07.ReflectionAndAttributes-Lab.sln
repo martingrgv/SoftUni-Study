@@ -4,6 +4,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.Stealer", "01.Stealer\01
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.High-QualityMistakes", "02.High-QualityMistakes\02.High-QualityMistakes.csproj", "{B4C2004D-A9D7-452E-8C66-C43A6280CA7F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.MissionPrivateImpossible", "03.MissionPrivateImpossible\03.MissionPrivateImpossible.csproj", "{E829EBFE-463A-465F-A071-15280BD5C8C5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,5 +20,9 @@ Global
 		{B4C2004D-A9D7-452E-8C66-C43A6280CA7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B4C2004D-A9D7-452E-8C66-C43A6280CA7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B4C2004D-A9D7-452E-8C66-C43A6280CA7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E829EBFE-463A-465F-A071-15280BD5C8C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E829EBFE-463A-465F-A071-15280BD5C8C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E829EBFE-463A-465F-A071-15280BD5C8C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E829EBFE-463A-465F-A071-15280BD5C8C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

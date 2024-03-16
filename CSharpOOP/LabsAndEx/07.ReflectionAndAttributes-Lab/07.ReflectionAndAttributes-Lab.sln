@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.High-QualityMistakes", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.MissionPrivateImpossible", "03.MissionPrivateImpossible\03.MissionPrivateImpossible.csproj", "{E829EBFE-463A-465F-A071-15280BD5C8C5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "04.Collector", "04.Collector\04.Collector.csproj", "{14D8B307-5D2D-41A5-A03E-7FEB482227E3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{E829EBFE-463A-465F-A071-15280BD5C8C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E829EBFE-463A-465F-A071-15280BD5C8C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E829EBFE-463A-465F-A071-15280BD5C8C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{14D8B307-5D2D-41A5-A03E-7FEB482227E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{14D8B307-5D2D-41A5-A03E-7FEB482227E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{14D8B307-5D2D-41A5-A03E-7FEB482227E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{14D8B307-5D2D-41A5-A03E-7FEB482227E3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

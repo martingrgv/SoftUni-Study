@@ -1,4 +1,5 @@
-﻿using CommandPattern.Core.Models;
+﻿using System;
+using CommandPattern.Core.Models;
 using CommandPattern.Core.Contracts;
 
 namespace CommandPattern

@@ -1,6 +1,6 @@
 using System;
 
-namespace CommandPattern.Core.Models;
+namespace ValidationAttributes.Attributes;
 
 public abstract class MyValidationAttribute : Attribute
 {

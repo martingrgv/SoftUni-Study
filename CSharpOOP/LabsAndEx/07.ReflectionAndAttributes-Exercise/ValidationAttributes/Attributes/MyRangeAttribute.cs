@@ -1,6 +1,4 @@
-using System;
-
-namespace CommandPattern.Core.Models;
+namespace ValidationAttributes.Attributes;
 
 public class MyRangeAttribute : MyValidationAttribute
 {
@@ -15,6 +13,6 @@ public class MyRangeAttribute : MyValidationAttribute
     
     public override bool isValid(object obj)
     {
-        throw new NotImplementedException();
+        return (int)obj >= minValue && (int)obj <= maxValue;
     }
 }

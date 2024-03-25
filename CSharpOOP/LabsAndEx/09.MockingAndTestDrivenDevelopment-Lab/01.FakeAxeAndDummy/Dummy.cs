@@ -1,6 +1,7 @@
 ﻿using System;
+using _01.FakeAxeAndDummy;
 
-public class Dummy
+public class Dummy : ITarget
 {
     private int health;
     private int experience;

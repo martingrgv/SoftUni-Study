@@ -1,9 +1,6 @@
-﻿namespace FakeAxeAndDummy;
-
-public class StartUp
+﻿public class StartUp
 {
-    public static void Main(string[] args)
+    static void Main(string[] args)
     {
-        
     }
 }

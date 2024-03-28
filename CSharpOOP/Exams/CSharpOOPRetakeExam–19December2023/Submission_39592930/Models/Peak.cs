@@ -1,5 +1,5 @@
-﻿using System;
-using HighwayToPeak.Models.Contracts;
+﻿using HighwayToPeak.Models.Contracts;
+using HighwayToPeak.Utilities.Messages;
 
 namespace HighwayToPeak.Models
 {
@@ -8,18 +8,22 @@ namespace HighwayToPeak.Models
         private string name;
         private int elevation;
         private string difficultyLevel;
-		public Peak()
+
+		public Peak(string name, int elevation, string difficultyLevel)
 		{
+            Name = name;
+            Elevation = elevation;
+            DifficultyLevel = difficultyLevel;
 		}
 
         public string Name
         {
             get { return name; }
-            set
+            private set
             { 
                 if (string.IsNullOrWhiteSpace(value))
                 {
-                    throw new ArgumentException("Peak name cannot be null or whitespace.");
+                    throw new ArgumentException(ExceptionMessages.PeakNameNullOrWhiteSpace);
 		        }
 
                 name = value;
@@ -29,21 +33,22 @@ namespace HighwayToPeak.Models
         public int Elevation
         { 
             get { return elevation; }
-            set
+            private set
             { 
-                // Could be more than 0 only
-                if (value < 0)
+                // Changed < to <=
+                if (value <= 0)
                 {
-                    throw new ArgumentException("Peak elevation must be a positive value.");
+                    throw new ArgumentException(ExceptionMessages.PeakElevationNegative);
 		        }
 
                 elevation = value;
 	        }
 	    }
 
-        public string DifficultyLevel
-        { 
-            get { return difficultyLevel; }
+        public string DifficultyLevel 
+	    {
+	        get { return difficultyLevel; }
+            private set { difficultyLevel = value; }
 	    }
 
         public override string ToString()

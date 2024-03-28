@@ -5,9 +5,16 @@ namespace HighwayToPeak.Models
 {
     public abstract class Climber : IClimber
     {
+        // might create error
+        public const int MAX_STAMINA_UNIT = 10;
+
         private string name;
         private int stamina;
         private List<string> conqueredPeaks;
+
+        private const int MODERATE_DIFFICULTY_LEVEL_UNIT = 2;
+        private const int HARD_DIFFICULTY_LEVEL_UNIT = 4;
+        private const int EXTREME_DIFFICULTY_LEVEL_UNIT = 6;
 
         public Climber(string name, int stamina)
         {
@@ -56,13 +63,13 @@ namespace HighwayToPeak.Models
             switch (difficulty)
             {
                 case "Moderate":
-                    Stamina -= 2;
+                    Stamina -= MODERATE_DIFFICULTY_LEVEL_UNIT;
                     break;
                 case "Hard":
-                    Stamina -= 4;
+                    Stamina -= HARD_DIFFICULTY_LEVEL_UNIT;
                     break;
                 case "Extreme":
-                    Stamina -= 6;
+                    Stamina -= EXTREME_DIFFICULTY_LEVEL_UNIT;
                     break;
 	        }
 	    }
@@ -73,7 +80,7 @@ namespace HighwayToPeak.Models
         {
             return $"{GetType().Name} - Name: {Name}, Stamina: {Stamina}"
                 + Environment.NewLine
-                + $"Peaks conquered: no peaks conquered/{conqueredPeaks.Count}";
+                + $"Peaks conquered: {(ConqueredPeaks.Count <= 0 ? "no peaks conquered" : conqueredPeaks.Count)}";
         }
     }
 }

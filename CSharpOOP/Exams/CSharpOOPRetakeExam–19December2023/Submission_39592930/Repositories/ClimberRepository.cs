@@ -9,6 +9,7 @@ namespace HighwayToPeak.Repositories
 
 		public ClimberRepository()
 		{
+            climbers = new List<IClimber>();
 		}
 
         public IReadOnlyCollection<IClimber> All

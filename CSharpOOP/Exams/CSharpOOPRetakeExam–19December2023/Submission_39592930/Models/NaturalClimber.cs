@@ -14,6 +14,9 @@
         {
             for (int i = 0; i < daysCount; i++)
 			    Stamina += REST_UNIT;           
+
+            if (Stamina >= MAX_STAMINA_UNIT)
+                Stamina = MAX_STAMINA_UNIT;
         }
     }
 }

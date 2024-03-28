@@ -14,7 +14,7 @@
         {
             this.reader = new Reader();
             this.writer = new Writer();
-            //this.controller = new Controller();
+            this.controller = new Controller();
         }
         public void Run()
         {
@@ -68,13 +68,13 @@
                     }
                     writer.WriteLine(result);
                     writer.WriteText(result);
-                }
-                catch (Exception ex)
-                {
-                    writer.WriteLine(ex.Message);
-                    writer.WriteText(ex.Message);
-                }
-            }
-        }
+			    }
+				catch (Exception ex)
+				{
+					writer.WriteLine(ex.Message);
+					writer.WriteText(ex.Message);
+			    }
+			}
+	    }
     }
 }

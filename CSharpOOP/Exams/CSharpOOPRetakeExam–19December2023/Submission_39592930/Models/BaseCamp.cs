@@ -13,7 +13,7 @@ namespace HighwayToPeak.Models
 
         public IReadOnlyCollection<string> Residents 
 	    { 
-	        get { return (IReadOnlyCollection<string>) residents.AsReadOnly().OrderBy(r => r); } 
+	        get { return (IReadOnlyCollection<string>) residents.AsReadOnly().OrderBy(r => r).ToList(); } 
 	    }
 
         public void ArriveAtCamp(string climberName)

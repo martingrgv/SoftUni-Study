@@ -9,6 +9,7 @@ namespace HighwayToPeak.Repositories
 
 		public PeakRepository()
 		{
+            peaks = new List<IPeak>();
 		}
 
         public IReadOnlyCollection<IPeak> All

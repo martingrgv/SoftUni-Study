@@ -54,7 +54,7 @@
                     lastVolume = 100;
                 }
             }
-             if(direction == "DOWN")
+            if(direction == "DOWN")
             {
                 lastVolume -= Math.Abs(units);
                 if(lastVolume < 0)

@@ -44,7 +44,10 @@ public abstract class Diver : IDiver
             oxygenLevel = value;
         }
     }
-    public IReadOnlyCollection<string> Catch { get; }
+    public IReadOnlyCollection<string> Catch
+    {
+        get { return catches.AsReadOnly(); }
+    }
 
     public double CompetitionPoints
     {

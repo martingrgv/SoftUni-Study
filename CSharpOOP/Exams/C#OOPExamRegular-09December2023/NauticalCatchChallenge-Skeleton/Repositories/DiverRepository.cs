@@ -6,6 +6,11 @@ namespace NauticalCatchChallenge.Repositories;
 public class DiverRepository : IRepository<IDiver>
 {
     private List<IDiver> models;
+
+    public DiverRepository()
+    {
+        models = new List<IDiver>();
+    }
     
     public IReadOnlyCollection<IDiver> Models
     {

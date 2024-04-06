@@ -1,0 +1,6 @@
+MaxineHarper is successfully registered for the competition -> DiverRepository.
+JamalCarter is successfully registered for the competition -> DiverRepository.
+SkyDiver is not allowed in our competition.
+OscarWallace is successfully registered for the competition -> DiverRepository.
+LilaMoreno is successfully registered for the competition -> DiverRepository.
+LilaMoreno is already a participant -> DiverRepository.

@@ -15,6 +15,7 @@ public abstract class Diver : IDiver
     {
         Name = name;
         OxygenLevel = oxygenLevel;
+        catches = new List<string>();
     }
 
     public string Name

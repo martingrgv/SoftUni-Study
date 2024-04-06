@@ -24,7 +24,7 @@
                 {
                     Environment.Exit(0);
                 }
-                try
+                //try
                 {
                     string result = string.Empty;
 
@@ -68,11 +68,11 @@
                     writer.WriteLine(result);
                     writer.WriteText(result);
                 }
-                catch (Exception ex)
-                {
-                    writer.WriteLine(ex.Message);
-                    writer.WriteText(ex.Message);
-                }
+                //catch (Exception ex)
+                //{
+                //    writer.WriteLine(ex.Message);
+                //    writer.WriteText(ex.Message);
+                //}
             }
         }
     }

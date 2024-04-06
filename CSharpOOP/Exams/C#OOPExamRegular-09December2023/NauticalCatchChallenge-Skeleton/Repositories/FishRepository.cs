@@ -7,6 +7,11 @@ public class FishRepository : IRepository<IFish>
 {
     private List<IFish> models;
 
+    public FishRepository()
+    {
+        models = new List<IFish>();
+    }
+
     public IReadOnlyCollection<IFish> Models
     {
         get { return models.AsReadOnly();  }

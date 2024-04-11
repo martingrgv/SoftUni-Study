@@ -2,6 +2,7 @@ using System;
 using NUnit.Framework;
 using System.Linq;
 using System.Collections.Generic;
+using System.Diagnostics.Metrics;
 
 namespace SocialMediaManager.Tests
 {
@@ -70,6 +71,31 @@ namespace SocialMediaManager.Tests
         public void InfluencerRepository_RemoveEmptyName_ThrowsError()
         {
             Assert.Throws<ArgumentNullException>(() => repository.RemoveInfluencer(""));
+        }
+
+        [Test]
+        public void InfluencerRepository_GetInfluencerWithMostFollowers()
+        {
+            Influencer influencer1 = new Influencer("Peter", 10);
+            Influencer influencer2 = new Influencer("Georgi", 30);
+
+            repository.RegisterInfluencer(influencer1);
+            repository.RegisterInfluencer(influencer2);
+
+            Assert.AreEqual(influencer2, repository.GetInfluencerWithMostFollowers());
+        }
+
+        [Test]
+        public void InfluencerRepository_GetInfluencer_ReturnsInfluencer()
+        {
+            Influencer influencer1 = new Influencer("Peter", 10);
+            Influencer influencer2 = new Influencer("Georgi", 30);
+
+            repository.RegisterInfluencer(influencer1);
+            repository.RegisterInfluencer(influencer2);
+            
+            Assert.AreEqual(influencer1, repository.GetInfluencer("Peter"));
+            Assert.AreEqual(influencer2, repository.GetInfluencer("Georgi"));
         }
     }
 }

@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using Handball.Models;
+using System.Linq;
 using Handball.Models.Contracts;
 using Handball.Repositories.Contracts;
 
@@ -26,16 +26,24 @@ public class PlayerRepository : IRepository<IPlayer>
 
     public bool RemoveModel(string name)
     {
-        return players.Remove(p => p.Name == name);
+        IPlayer player = GetModel(name);
+        return players.Remove(player);
     }
 
     public bool ExistsModel(string name)
     {
-        throw new System.NotImplementedException();
+        IPlayer player = GetModel(name);
+        
+        if (player == null)
+        {
+            return false;
+        }
+
+        return true;
     }
 
     public IPlayer GetModel(string name)
     {
-        throw new System.NotImplementedException();
+        return players.FirstOrDefault(p => p.Name == name);
     }
 }

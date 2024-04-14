@@ -17,14 +17,11 @@ public class Team : ITeam
     private double overallRating;
     private List<IPlayer> players;
 
-    private Team()
-    {
-        players = new List<IPlayer>();
-    }
-
     public Team(string name) : base()
     {
+        players = new List<IPlayer>();
         Name = name;
+        PointsEarned = 0;
     }
 
     public string Name
@@ -87,7 +84,12 @@ public class Team : ITeam
     public void Draw()
     {
         pointsEarned += DRAWRATE_INCREASE_VALUE;
-        players.ForEach(p => p.IncreaseRating());
+        var goalkeepers = players.Where(p => p.GetType() == typeof(Goalkeeper));
+
+        foreach (var player in goalkeepers)
+        {
+            player.IncreaseRating();
+        }
     }
 
     public override string ToString()
@@ -95,11 +97,10 @@ public class Team : ITeam
         StringBuilder sb = new StringBuilder();
         sb.AppendLine($"Team: {Name} Points: {PointsEarned}");
         sb.AppendLine($"--Overall rating: {OverallRating}");
-
+        sb.Append($"--Players: ");
+        
         if (players.Count > 0)
         {
-            sb.Append($"--Players: ");
-
             for (int i = 0; i < players.Count - 1; i++)
             {
                 sb.Append($"{players[i].Name}, ");

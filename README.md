@@ -30,7 +30,7 @@
   </tr>
    <tr>
     <td>C# OOP</td>
-    <td>In progress...</td>
+    <td><a href="https://softuni.bg/certificates/details/211178/06f40a50">Show certificate</a></td>
   </tr>
   <tr>
     <td>JS Front-End</td>

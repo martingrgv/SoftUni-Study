@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "pfXzZO9VbLHMHdpKrYOjj6DqhVddjchpsEqVk5Qt+3sojEnt7V5YWiFwoWidHdTyowgiM+IVbU6Cr3Nj+rkLWw==",
+  "dgSpecHash": "Cm93ZIO6jW0TuGo+lxi7MOy/yFgTHk4Ojaa0f4GMULMg3lfi8ORkA7roUPflCpm2Usiez8re4Sc3EOVeo6jijA==",
   "success": true,
-  "projectFilePath": "/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/03.Telephony/03.Telephony.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\marti\\source\\repos\\martingrgv\\SoftUni-Study\\CSharpOOP\\LabsAndEx\\03.InterfacesAndAbstraction-Exercise\\03.Telephony\\03.Telephony.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\marti\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.29\\microsoft.windowsdesktop.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\marti\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.29\\microsoft.netcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\marti\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.29\\microsoft.aspnetcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\marti\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.29\\microsoft.netcore.app.host.win-x64.6.0.29.nupkg.sha512"
+  ],
   "logs": []
 }

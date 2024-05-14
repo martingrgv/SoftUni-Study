@@ -1,8 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "62u8y8P5kDrNypN2Sm8Fcmd1K/DQ439SoVwdMqmg7DdIZ7LHTVjyCcwdH2sIsmeaHOdarIeWcrNipN8CckhsNw==",
+  "dgSpecHash": "ae/YllJ+MVqoYKwIwflQNO/jaqm9P537X/ZC6So3OKjwu068oBBrAayCojXBF34CLWjN1ZltQ1XEMaLPtzXqXA==",
   "success": true,
-  "projectFilePath": "/Users/azichka/Mart^/SoftUni-Study/CSharpOOP/LabsAndEx/03.InterfacesAndAbstraction-Exercise/04.BorderControl/04.BorderControl.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\marti\\source\\repos\\martingrgv\\SoftUni-Study\\CSharpOOP\\LabsAndEx\\03.InterfacesAndAbstraction-Exercise\\04.BorderControl\\04.BorderControl.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\marti\\.nuget\\packages\\microsoft.windowsdesktop.app.ref\\6.0.29\\microsoft.windowsdesktop.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\marti\\.nuget\\packages\\microsoft.netcore.app.ref\\6.0.29\\microsoft.netcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\marti\\.nuget\\packages\\microsoft.aspnetcore.app.ref\\6.0.29\\microsoft.aspnetcore.app.ref.6.0.29.nupkg.sha512",
+    "C:\\Users\\marti\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\6.0.29\\microsoft.netcore.app.host.win-x64.6.0.29.nupkg.sha512"
+  ],
   "logs": []
 }

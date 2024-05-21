@@ -1,7 +1,7 @@
 -- 14. Car Rental Database
 
---CREATE DATABASE CarRental
---USE CarRental
+CREATE DATABASE CarRental
+USE CarRental
 
 CREATE TABLE Categories(
 	Id BIGINT PRIMARY KEY IDENTITY(1, 1),

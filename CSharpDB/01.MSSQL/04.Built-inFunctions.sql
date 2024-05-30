@@ -104,3 +104,38 @@ SELECT
 	, SUBSTRING(Email, CHARINDEX('@', Email) + 1, LEN(Email)) AS 'Email Provider'
 FROM Users
 ORDER BY [Email Provider], Username
+
+--16.
+SELECT 
+	Username
+	, IpAddress AS 'IP Address'
+FROM Users
+WHERE IpAddress LIKE '___.1%.%.___'
+ORDER BY Username
+
+--17.
+SELECT
+	[Name]
+	,[Part of the Day] =
+		CASE
+			WHEN DATEPART(HOUR, [Start]) < 12 THEN 'Morning'
+			WHEN DATEPART(HOUR, [Start]) < 18 THEN 'Afternoon'
+			ELSE 'Evening'
+		END
+	,[Duration] =
+		CASE
+			WHEN Duration <= 3 THEN 'Extra Short'
+			WHEN Duration BETWEEN 4 AND 6 THEN 'Short'
+			WHEN Duration > 6 THEN 'Long'
+			WHEN Duration IS NULL THEN 'Extra Long'
+		END
+FROM Games	
+ORDER BY [Name], [Duration], [Part of the Day]
+
+--18.
+SELECT 
+	[ProductName]
+	,[OrderDate]
+	,DATEADD(DAY, 3, [OrderDate]) AS [Pay Due]
+	,DATEADD(MONTH, 1, [OrderDate]) AS [Deliver Due]
+FROM Orders

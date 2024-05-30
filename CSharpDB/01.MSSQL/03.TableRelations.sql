@@ -94,3 +94,71 @@ VALUES (1, 101),
 	(3, 103),
 	(2, 102),
 	(2, 103)
+
+--04.
+CREATE TABLE Teachers(
+	TeacherID INT PRIMARY KEY,
+	[Name] NVARCHAR(20) NOT NULL,
+	ManagerID INT
+	CONSTRAINT FK_Teachers_Managers
+	FOREIGN KEY (ManagerID) REFERENCES Teachers(TeacherID)
+)
+
+INSERT INTO Teachers(TeacherID, [Name], ManagerID)
+VALUES (101, 'John', NULL),
+	(102, 'Maya', 106),
+	(103, 'Silvia', 106),
+	(104, 'Ted', 105),
+	(105, 'Mark', 101),
+	(106, 'Greta', 101)
+
+--05.
+DROP TABLE Cities
+DROP TABLE Customers
+DROP TABLE Items
+DROP TABLE ItemTypes
+DROP TABLE OrderItems
+DROP TABLE Orders
+
+CREATE TABLE Cities(
+	CityID INT PRIMARY KEY,
+	[Name] NVARCHAR(80) NOT NULL
+)
+
+CREATE TABLE ItemTypes(
+	ItemTypeID INT PRIMARY KEY,
+	[Name] NVARCHAR(30) NOT NULL
+)
+
+CREATE TABLE Customers(
+	CustomerID INT PRIMARY KEY,
+	[Name] NVARCHAR(50) NOT NULL,
+	Birthday DATE NOT NULL,
+	CityID INT NOT NULL,
+	CONSTRAINT FK_Customer_CityID
+	FOREIGN KEY (CityID) REFERENCES Cities(CityID)
+)
+
+CREATE TABLE Items(
+	ItemID INT PRIMARY KEY,
+	[Name] NVARCHAR(60) NOT NULL,
+	ItemTypeID INT,
+	CONSTRAINT FK_Items_ItemsType
+	FOREIGN KEY (ItemTypeID) REFERENCES ItemTypes(ItemTypeID)
+)
+
+CREATE TABLE Orders(
+	OrderID INT,
+	CustomerID INT NOT NULL,
+	CONSTRAINT FK_Orders_CustomerID
+	FOREIGN KEY (CustomerID) REFERENCES Customers(CustomerID)
+)
+
+CREATE TABLE OrderItems(
+	OrderID INT,
+	ItemID INT,
+	CONSTRAINT PK_OrdersID_ItemsID
+	PRIMARY KEY (OrderID, ItemID),
+	CONSTRAINT FK_OrderItems_ItemsID
+	FOREIGN KEY (ItemID) REFERENCES Items(ItemID)
+)

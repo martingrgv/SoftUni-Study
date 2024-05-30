@@ -37,7 +37,11 @@
     <td>In progress...</td>
   </tr>
   <tr>
-    <td>C# DB</td>
+    <td>MSSQL</td>
+    <td>In progress...</td>
+  </tr>
+  <tr>
+    <td>Entity Framework</td>
     <td>In progress...</td>
   </tr>
   <tr>

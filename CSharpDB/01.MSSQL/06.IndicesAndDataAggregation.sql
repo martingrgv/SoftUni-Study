@@ -1,5 +1,3 @@
-SELECT * FROM WizzardDeposits
-
 --01.
 SELECT
 	COUNT(*) AS [Count]
@@ -110,3 +108,83 @@ SELECT
 	(DepositAmount - LEAD([DepositAmount]) OVER (ORDER BY Id)) AS [Difference]
 FROM WizzardDeposits
 ) AS SubQuery
+
+--13.
+SELECT
+	DepartmentID
+	,SUM(Employees.Salary) AS TotalSalary
+FROM Employees
+GROUP BY DepartmentID
+ORDER BY DepartmentID
+
+--14.
+SELECT
+	DepartmentID
+	,MIN(Employees.Salary) AS MinimumSalary
+FROM Employees
+WHERE DepartmentID IN (2, 5, 7)
+AND HireDate > '01.01.2000'
+GROUP BY DepartmentID
+ORDER BY DepartmentID
+
+--15.
+SELECT * INTO RicherEmployees
+FROM Employees
+WHERE Salary > 30000
+
+DELETE FROM RicherEmployees
+WHERE ManagerID = 42
+
+UPDATE RicherEmployees
+SET Salary += 5000
+WHERE DepartmentID = 1
+
+SELECT 
+	DepartmentId
+	,AVG(Salary) AS AvarageSalary
+FROM RicherEmployees
+GROUP BY DepartmentID
+
+--16.
+SELECT
+	DepartmentID
+	,MAX(Salary) AS MaxSalary
+FROM Employees
+GROUP BY DepartmentID
+HAVING MAX(Salary) NOT BETWEEN 30000 AND 70000
+
+--17.
+SELECT
+	COUNT(*) AS Count
+FROM Employees
+WHERE ManagerID IS NULL
+
+--18.
+SELECT 
+	DepartmentID
+	,ThirdRanking 
+FROM
+(
+	SELECT
+		DepartmentID
+		,MAX(Salary) AS ThirdRanking
+		,DENSE_RANK() OVER (PARTITION BY DepartmentID ORDER BY Salary DESC) AS SalaryRanking
+	FROM Employees
+	GROUP BY DepartmentID, Salary
+) AS SubQuery
+WHERE SubQuery.SalaryRanking = 3
+
+--19.
+WITH DepartmentAvarageSalaries AS
+(
+	SELECT 
+		DepartmentID, AVG(Salary) AS AvarageSalary
+	FROM Employees
+	GROUP BY DepartmentID
+)
+SELECT TOP 10
+	FirstName, LastName, e.DepartmentID
+FROM Employees AS e
+JOIN DepartmentAvarageSalaries AS das ON das.DepartmentID = e.DepartmentID
+WHERE e.Salary > das.AvarageSalary
+ORDER BY e.DepartmentID

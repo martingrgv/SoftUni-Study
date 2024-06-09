@@ -142,12 +142,23 @@ WHERE ArrivalDate < '2023-12-31' AND
 	h.Id % 2 != 0
 ORDER BY c.[Name], ArrivalDate
 
-SELECT * FROM Countries
+--09.
+SELECT 
+	h.[Name] AS HotelName,
+	r.Price AS RoomPrice
+FROM Bookings AS b
+JOIN Tourists AS t ON  b.TouristId = t.Id
+JOIN Hotels AS h ON b.HotelId = h.Id
+JOIN Rooms AS r ON b.RoomId = r.Id
+WHERE RIGHT(t.[Name], 2) NOT LIKE '%EZ%'
+ORDER BY r.Price DESC
 
-DELETE FROM Countries
-DELETE FROM Destinations
-DELETE FROM Hotels
-DELETE FROM HotelsRooms
-DELETE FROM Rooms
-DELETE FROM Tourists
-DELETE FROM Bookings
+--10.
+SELECT 
+	h.[Name] AS HotelName,
+	SUM(r.Price * DATEDIFF(DAY, ArrivalDate, DepartureDate)) AS HotelRevenue
+FROM Bookings AS b
+JOIN Hotels AS h ON b.HotelId = h.Id
+JOIN Rooms AS r ON b.RoomId = r.Id
+GROUP BY h.[Name]
+ORDER BY HotelRevenue DESC

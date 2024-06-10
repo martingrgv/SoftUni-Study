@@ -162,3 +162,42 @@ JOIN Hotels AS h ON b.HotelId = h.Id
 JOIN Rooms AS r ON b.RoomId = r.Id
 GROUP BY h.[Name]
 ORDER BY HotelRevenue DESC
+
+--11.
+CREATE OR ALTER FUNCTION udf_RoomsWithTourists(@name NVARCHAR(40))
+RETURNS INT
+AS
+BEGIN
+	RETURN(
+		SELECT 
+			SUM(AdultsCount + ChildrenCount)
+		FROM Bookings AS b
+		JOIN Rooms AS r ON b.RoomId = r.Id
+		WHERE r.[Type] = @name)
+END
+-- END OF ASSIGNMENT
+
+SELECT dbo.udf_RoomsWithTourists('Double Room')
+
+--12.
+CREATE OR ALTER PROCEDURE usp_SearchByCountry(
+	@country NVARCHAR(50))
+AS
+BEGIN
+	SELECT
+		t.[Name],
+		t.PhoneNumber,
+		t.Email,
+		COUNT(b.Id) AS CountOfBookings
+	FROM Bookings AS b
+	JOIN Tourists AS t ON b.TouristId = t.Id
+	JOIN Hotels AS h ON b.HotelId = h.Id
+	JOIN Countries AS c ON t.CountryId = c.Id
+	WHERE c.[Name] = @country
+	GROUP BY t.[Name], t.PhoneNumber, t.Email
+	ORDER BY [Name] ASC, CountOfBookings DESC
+END
+
+EXEC usp_SearchByCountry 'Greece'
+
+SELECT * FROM Bookings

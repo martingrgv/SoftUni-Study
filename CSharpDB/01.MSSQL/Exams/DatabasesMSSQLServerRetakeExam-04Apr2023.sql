@@ -132,3 +132,16 @@ WHERE c.Id NOT IN (SELECT ClientId FROM ProductsClients)
 ORDER BY c.[Name]
 
 --08.
+SELECT TOP 7
+	Number,
+	Amount,
+	c.[Name]
+FROM Invoices AS i
+JOIN Clients AS c ON i.ClientId = c.Id
+WHERE IssueDate <= '2023-01-01' AND
+	Currency = 'EUR' OR
+	Amount >= 500 AND
+	LEFT(NumberVAT, 2) LIKE '%DE%'
+ORDER BY Number, Amount DESC
+
+--09.

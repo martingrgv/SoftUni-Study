@@ -186,3 +186,20 @@ END
 SELECT dbo.udf_ProductWithClients('DAF FILTER HU12103X')
 
 --12.
+CREATE PROCEDURE usp_SearchByCountry(
+	@country VARCHAR(10))
+AS
+BEGIN
+	SELECT 
+		v.[Name] AS Vendor,
+		NumberVAT AS VAT,
+		CONCAT(StreetName, ' ', StreetNumber) AS [Street Info],
+		CONCAT(City, ' ', PostCode)
+	FROM Vendors AS v
+	JOIN Addresses AS a ON v.AddressId = a.Id
+	JOIN Countries AS c ON a.CountryId = c.Id
+	WHERE c.[Name] = @country
+	ORDER BY v.[Name], City
+END
+
+EXEC usp_SearchByCountry 'France'

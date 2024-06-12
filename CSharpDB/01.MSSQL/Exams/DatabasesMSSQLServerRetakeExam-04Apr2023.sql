@@ -169,3 +169,20 @@ GROUP BY c.[Name]
 ORDER BY [Average Price], c.[Name] DESC
 
 --11.
+CREATE FUNCTION udf_ProductWithClients(@name NVARCHAR(35))
+RETURNS INT
+AS
+BEGIN
+	RETURN(
+	SELECT 
+		COUNT(*)
+	FROM ProductsClients AS pc
+	JOIN Products AS p ON pc.ProductId = p.Id
+	WHERE p.[Name] = @name)
+END
+
+--END OF ASSIGNMENT
+
+SELECT dbo.udf_ProductWithClients('DAF FILTER HU12103X')
+
+--12.

@@ -145,3 +145,15 @@ WHERE IssueDate <= '2023-01-01' AND
 ORDER BY Number, Amount DESC
 
 --09.
+SELECT 
+	c.[Name] AS Client,
+	MAX(p.Price) AS Price,
+	c.NumberVAT AS [VAT Number]
+FROM ProductsClients AS pc
+JOIN Products AS p ON pc.ProductId = p.Id
+JOIN Clients AS c ON pc.ClientId = c.Id
+WHERE RIGHT(c.[Name], 2) NOT LIKE '%KG%'
+GROUP BY c.[Name], c.NumberVAT
+ORDER BY Price DESC
+
+--10.

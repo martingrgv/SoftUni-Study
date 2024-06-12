@@ -103,3 +103,8 @@ DELETE FROM Clients
 WHERE Id IN (SELECT Id FROM @ClientsToDelete)
 
 --05.
+SELECT 
+	Number,
+	Currency
+FROM Invoices
+ORDER BY Amount DESC, DueDate ASC

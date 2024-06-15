@@ -132,3 +132,10 @@ WHERE c.[Name] IN ('Strategy Games', 'Wargames')
 ORDER BY YearPublished DESC
 
 --07.
+SELECT DISTINCT
+	c.Id,
+	CONCAT(FirstName, ' ', LastName) AS CreatorName,
+	Email
+FROM Creators AS c
+--JOIN CreatorsBoardgames AS cb ON cb.CreatorId = c.Id
+WHERE c.Id NOT IN (SELECT Id FROM CreatorsBoardgames)

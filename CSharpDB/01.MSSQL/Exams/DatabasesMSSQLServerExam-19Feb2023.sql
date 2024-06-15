@@ -137,5 +137,19 @@ SELECT DISTINCT
 	CONCAT(FirstName, ' ', LastName) AS CreatorName,
 	Email
 FROM Creators AS c
---JOIN CreatorsBoardgames AS cb ON cb.CreatorId = c.Id
-WHERE c.Id NOT IN (SELECT Id FROM CreatorsBoardgames)
+WHERE c.Id NOT IN (SELECT CreatorId FROM CreatorsBoardgames)
+
+--08.
+SELECT TOP 5
+	b.[Name],
+	b.Rating,
+	c.[Name] AS CategoryName
+FROM Boardgames AS b
+JOIN Categories AS c ON b.CategoryId = c.Id
+JOIN PlayersRanges AS pr ON b.PlayersRangeId = pr.Id
+WHERE (Rating > 7 AND
+	b.[Name] LIKE '%a%') OR
+	(Rating > 7.5 AND
+	(pr.PlayersMin = 2 AND
+	pr.PlayersMax = 5))
+ORDER BY b.[Name], b.Rating DESC

@@ -114,3 +114,10 @@ DELETE FROM Addresses
 WHERE Id IN (SELECT Id FROM @AddressesToDelete)
 
 --05.
+SELECT
+	[Name],
+	Rating
+FROM Boardgames
+ORDER BY YearPublished, [Name] DESC
+
+--06.

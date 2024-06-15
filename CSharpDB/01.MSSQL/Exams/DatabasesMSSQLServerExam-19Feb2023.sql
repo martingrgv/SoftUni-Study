@@ -181,3 +181,17 @@ GROUP BY LastName, p.[Name]
 ORDER BY AVG(b.Rating) DESC
 
 --11.
+CREATE FUNCTION udf_CreatorWithBoardgames(@name NVARCHAR(30))
+RETURNS INT
+AS
+BEGIN
+	RETURN(
+		SELECT 
+			COUNT(*)
+		FROM CreatorsBoardgames AS cb
+		JOIN Creators AS c ON cb.CreatorId = c.Id
+		WHERE CreatorId IN (SELECT Id FROM Creators WHERE FirstName = @name)
+	)
+END
+
+--12.

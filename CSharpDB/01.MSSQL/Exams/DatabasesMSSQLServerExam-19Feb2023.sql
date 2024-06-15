@@ -167,3 +167,17 @@ GROUP BY c.FirstName, c.LastName, c.Email
 ORDER BY FullName
 
 --10.
+SELECT 
+	LastName,
+	CEILING(AVG(b.Rating)) AS AverageRating,
+	p.[Name] AS PublisherName
+FROM CreatorsBoardgames AS cb
+JOIN Creators AS c ON cb.CreatorId = c.Id
+JOIN Boardgames AS b ON cb.BoardgameId = b.Id 
+JOIN Publishers AS p ON b.PublisherId = p.Id
+WHERE c.Id IN (cb.CreatorId) AND
+	p.[Name] = 'Stonemaier Games'
+GROUP BY LastName, p.[Name]
+ORDER BY AVG(b.Rating) DESC
+
+--11.

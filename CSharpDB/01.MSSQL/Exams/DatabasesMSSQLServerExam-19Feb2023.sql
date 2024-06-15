@@ -81,3 +81,36 @@ SET [Name] = CONCAT([Name], 'V2')
 WHERE YearPublished >= 2020
 
 --04.
+DECLARE @AddressesToDelete TABLE(Id INT)
+
+INSERT INTO @AddressesToDelete
+	SELECT Id FROM Addresses WHERE LEFT(Town, 1) = 'L'
+
+DELETE FROM CreatorsBoardgames
+WHERE BoardgameId IN(
+	SELECT
+		Id
+	FROM Boardgames
+	WHERE PublisherId IN(
+		SELECT 
+			Id
+		FROM Publishers
+		WHERE AddressId IN (SELECT Id FROM @AddressesToDelete)
+	)
+)
+
+DELETE FROM Boardgames
+WHERE PublisherId IN(
+	SELECT 
+		Id
+	FROM Publishers
+	WHERE AddressId IN (SELECT Id FROM @AddressesToDelete)
+)
+
+DELETE FROM Publishers
+WHERE AddressId IN (SELECT Id FROM @AddressesToDelete)
+
+DELETE FROM Addresses
+WHERE Id IN (SELECT Id FROM @AddressesToDelete)
+
+--05.

@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ValueGeneration.Internal;
 using SoftUni.Data;
 using SoftUni.Models;
 using System.Runtime.ExceptionServices;
@@ -12,7 +13,7 @@ namespace SoftUni
         {
             using (var context = new SoftUniContext())
             {
-                Console.WriteLine(GetEmployee147(context));
+                Console.WriteLine(GetDepartmentsWithMoreThan5Employees(context));
             }
         }
 
@@ -167,6 +168,44 @@ namespace SoftUni
             foreach (var project in employee.Projects)
             {
                 sb.AppendLine(project.Name);
+            }
+
+            return sb.ToString().TrimEnd();
+        }
+
+        public static string GetDepartmentsWithMoreThan5Employees(SoftUniContext context)
+        {
+            var departments = context.Departments
+                .Where(d => d.Employees.Count > 5)
+                .OrderBy(d => d.Employees.Count)
+                .ThenBy(d => d.Name)
+                .Select(d => new
+                {
+                    d.Name,
+                    ManagerName = $"{d.Manager.FirstName} {d.Manager.LastName}",
+                    Emplyoees = d.Employees
+                        .Select(e => new
+                        {
+                            e.FirstName,
+                            e.LastName,
+                            e.JobTitle
+                        })
+                        .OrderBy(e => e.FirstName)
+                        .ThenBy(e => e.LastName)
+                        .ToList()
+                });
+
+
+            StringBuilder sb = new StringBuilder();
+
+            foreach (var department in departments)
+            {
+                sb.AppendLine($"{department.Name} - {department.ManagerName}");
+
+                foreach (var employee in department.Emplyoees)
+                {
+                    sb.AppendLine($"{employee.FirstName} {employee.LastName} - {employee.JobTitle}");
+                }
             }
 
             return sb.ToString().TrimEnd();

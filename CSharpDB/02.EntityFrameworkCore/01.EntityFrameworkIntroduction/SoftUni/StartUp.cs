@@ -1,6 +1,7 @@
-﻿using SoftUni.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using SoftUni.Data;
 using SoftUni.Models;
-using System.ComponentModel.DataAnnotations;
+using System.Runtime.ExceptionServices;
 using System.Text;
 
 namespace SoftUni
@@ -11,7 +12,7 @@ namespace SoftUni
         {
             using (var context = new SoftUniContext())
             {
-                Console.WriteLine(GetAddressesByTown(context));
+                Console.WriteLine(GetEmployee147(context));
             }
         }
 
@@ -128,14 +129,44 @@ namespace SoftUni
                 .OrderByDescending(a => a.EmployeesCount)
                 .ThenBy(a => a.TownName)
                 .ThenBy(a => a.AddressText)
-                .Take(10)
-                .ToList();
+                .Take(10);
 
 
             StringBuilder sb = new StringBuilder();
             foreach (var address in addresses)
             {
                 sb.AppendLine($"{address.AddressText}, {address.TownName} - {address.EmployeesCount} employees");
+            }
+
+            return sb.ToString().TrimEnd();
+        }
+
+        public static string GetEmployee147(SoftUniContext context)
+        {
+            var employee = context.Employees
+                .Select(e => new
+                {
+                    e.EmployeeId,
+                    e.FirstName,
+                    e.LastName,
+                    e.JobTitle,
+                    Projects = e.EmployeesProjects
+                        .Select(ep => new
+                        {
+                            ep.Project.Name
+                        })
+                        .OrderBy(p => p.Name)
+                        .ToList()
+                })
+                .Where(e => e.EmployeeId == 147)
+                .FirstOrDefault();
+
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine($"{employee.FirstName} {employee.LastName} - {employee.JobTitle}");
+
+            foreach (var project in employee.Projects)
+            {
+                sb.AppendLine(project.Name);
             }
 
             return sb.ToString().TrimEnd();

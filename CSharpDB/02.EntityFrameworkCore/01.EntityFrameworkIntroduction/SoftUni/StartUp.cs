@@ -1,8 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.ValueGeneration.Internal;
-using SoftUni.Data;
+﻿using SoftUni.Data;
 using SoftUni.Models;
-using System.Runtime.ExceptionServices;
 using System.Text;
 
 namespace SoftUni
@@ -13,7 +10,7 @@ namespace SoftUni
         {
             using (var context = new SoftUniContext())
             {
-                Console.WriteLine(GetDepartmentsWithMoreThan5Employees(context));
+                Console.WriteLine(GetLatestProjects(context));
             }
         }
 
@@ -206,6 +203,32 @@ namespace SoftUni
                 {
                     sb.AppendLine($"{employee.FirstName} {employee.LastName} - {employee.JobTitle}");
                 }
+            }
+
+            return sb.ToString().TrimEnd();
+        }
+
+        public static string GetLatestProjects(SoftUniContext context)
+        {
+            var projects = context.Projects
+                .Take(10)
+                .Select(p => new
+                {
+                    p.Name,
+                    p.Description,
+                    p.StartDate
+                })
+                .OrderBy(p => p.Name);
+                
+            StringBuilder sb = new StringBuilder();
+
+            foreach (var project in projects)
+            {
+                sb.AppendLine(project.Name +
+                    Environment.NewLine +
+                    project.Description +
+                    Environment.NewLine + 
+                    project.StartDate.ToString("M/d/yyyy h:mm:ss tt"));
             }
 
             return sb.ToString().TrimEnd();

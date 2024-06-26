@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SoftUni.Data;
+using SoftUni.Models;
 
 namespace SoftUni
 {
@@ -9,7 +10,7 @@ namespace SoftUni
         {
             using (var context = new SoftUniContext())
             {
-                Console.WriteLine(GetEmployeesFromResearchAndDevelopment(context));
+                Console.WriteLine(AddNewAddressToEmployee(context));
             }
         }
 
@@ -50,6 +51,31 @@ namespace SoftUni
                 
             return string.Join(Environment.NewLine, employees
                 .Select(e => $"{e.FirstName} {e.LastName} from {e.Department.Name} - ${e.Salary:f2}"));
+        }
+
+        public static string AddNewAddressToEmployee(SoftUniContext context)
+        {
+            Address address = new Address()
+            {
+                AddressText = "Vitoshka 15",
+                TownId = 4
+            };
+
+            var employee = context.Employees
+                .FirstOrDefault(e => e.LastName == "Nakov");
+
+            if (employee != null)
+            {
+                employee.Address = address;
+                context.SaveChanges();
+            }
+
+            var employees = context.Employees
+                .OrderByDescending(e => e.AddressId)
+                .Take(10)
+                .Select(e => e.Address.AddressText);
+
+            return string.Join(Environment.NewLine, employees);
         }
     }
 }

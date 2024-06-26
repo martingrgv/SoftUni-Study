@@ -1,5 +1,6 @@
 ﻿using SoftUni.Data;
 using SoftUni.Models;
+using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace SoftUni
@@ -10,7 +11,7 @@ namespace SoftUni
         {
             using (var context = new SoftUniContext())
             {
-                Console.WriteLine(GetEmployeesInPeriod(context));
+                Console.WriteLine(GetAddressesByTown(context));
             }
         }
 
@@ -110,6 +111,31 @@ namespace SoftUni
                 {
                     sb.AppendLine($"--{project.Name} - {project.StartDate} - {project.EndDate}");
                 }
+            }
+
+            return sb.ToString().TrimEnd();
+        }
+
+        public static string GetAddressesByTown(SoftUniContext context)
+        {
+            var addresses = context.Addresses
+                .Select(a => new
+                {
+                    a.AddressText,
+                    TownName = a.Town.Name,
+                    EmployeesCount = a.Employees.Count
+                }) 
+                .OrderByDescending(a => a.EmployeesCount)
+                .ThenBy(a => a.TownName)
+                .ThenBy(a => a.AddressText)
+                .Take(10)
+                .ToList();
+
+
+            StringBuilder sb = new StringBuilder();
+            foreach (var address in addresses)
+            {
+                sb.AppendLine($"{address.AddressText}, {address.TownName} - {address.EmployeesCount} employees");
             }
 
             return sb.ToString().TrimEnd();

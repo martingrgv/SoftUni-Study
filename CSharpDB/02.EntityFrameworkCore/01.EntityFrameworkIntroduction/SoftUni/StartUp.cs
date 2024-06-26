@@ -1,5 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.Text;
+﻿using Microsoft.EntityFrameworkCore;
 using SoftUni.Data;
 
 namespace SoftUni
@@ -10,7 +9,7 @@ namespace SoftUni
         {
             using (var context = new SoftUniContext())
             {
-                Console.WriteLine(GetEmployeesWithSalaryOver50000(context));
+                Console.WriteLine(GetEmployeesFromResearchAndDevelopment(context));
             }
         }
 
@@ -33,6 +32,24 @@ namespace SoftUni
 
             return string.Join(Environment.NewLine, employees
                 .Select(e => $"{e.FirstName} - {e.Salary:f2}"));
+        }
+        
+        public static string GetEmployeesFromResearchAndDevelopment(SoftUniContext context)
+        {
+            var employees = context.Employees
+                .Select(e => new
+                {
+                    e.FirstName,
+                    e.LastName,
+                    e.Department,
+                    e.Salary
+                })
+                .Where(e => e.Department.Name == "Research and Development")
+                .OrderBy(e => e.Salary)
+                .ThenByDescending(e => e.FirstName);
+                
+            return string.Join(Environment.NewLine, employees
+                .Select(e => $"{e.FirstName} {e.LastName} from {e.Department.Name} - ${e.Salary:f2}"));
         }
     }
 }

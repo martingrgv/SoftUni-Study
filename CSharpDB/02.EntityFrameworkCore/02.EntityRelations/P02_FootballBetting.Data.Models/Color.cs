@@ -1,5 +1,6 @@
 ﻿using P02_FootballBetting.Common;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace P02_FootballBetting.Data.Models
 {
@@ -18,7 +19,10 @@ namespace P02_FootballBetting.Data.Models
         [MaxLength(ValidationConstants.ColorNameMaxLength)]
         public string Name { get; set; } = null!;
 
+        [InverseProperty("PrimaryKitColor")]
         public virtual ICollection<Team> PrimaryKitTeams { get; set; }
+
+        [InverseProperty("SecondaryKitColor")]
         public virtual ICollection<Team> SecondaryKitTeams { get; set; }
     }
 }

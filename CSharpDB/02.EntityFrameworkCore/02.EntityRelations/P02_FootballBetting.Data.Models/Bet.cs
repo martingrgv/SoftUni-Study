@@ -13,8 +13,7 @@ namespace P02_FootballBetting.Data.Models
         public decimal Amount { get; set; }
 
         [Required]
-        [MaxLength(ValidationConstants.BetPredictionMaxLength)]
-        public string Prediction { get; set; } = null!;
+        public PredictionType Prediction { get; set; }
 
         [Required]
         public DateTime DateTime { get; set; }
@@ -30,5 +29,12 @@ namespace P02_FootballBetting.Data.Models
 
         [ForeignKey(nameof(GameId))]
         public virtual Game Game { get; set; }
+    }
+    
+    public enum PredictionType
+    {
+        Draw,
+        HomeTeam,
+        AwayTeam
     }
 }

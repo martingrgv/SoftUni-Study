@@ -29,18 +29,28 @@ namespace P02_FootballBetting.Data
         public DbSet<Town> Towns { get; set; } 
         public DbSet<Country> Countries { get; set; }
 
-        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        //{
-        //    if (!optionsBuilder.IsConfigured)
-        //    {
-        //        optionsBuilder.UseSqlServer(connectionString);
-        //    }
-        //}
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer(connectionString);
+            }
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<PlayerStatistic>()
                 .HasKey(pk => new { pk.GameId, pk.PlayerId });
+
+            //modelBuilder.Entity<Team>()
+            //    .HasOne(e => e.PrimaryKitColor)
+            //    .WithMany(e => e.PrimaryKitTeams)
+            //    .HasForeignKey(e => e.PrimaryKitColorId);
+
+            //modelBuilder.Entity<Team>()
+            //    .HasOne(e => e.SecondaryKitColor)
+            //    .WithMany(e => e.SecondaryKitTeams)
+            //    .HasForeignKey(e => e.SecondaryKitColorId);
 
             base.OnModelCreating(modelBuilder);
         }

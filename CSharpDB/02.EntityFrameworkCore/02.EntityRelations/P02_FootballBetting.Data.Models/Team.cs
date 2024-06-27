@@ -33,13 +33,13 @@ namespace P02_FootballBetting.Data.Models
         public int PrimaryKitColorId { get; set; }
 
         [ForeignKey(nameof(PrimaryKitColorId))]
-        public virtual Color PrimaryKitColor { get; set; } = null!;
+        public virtual Color PrimaryKitColor { get; set; }
 
         [Required]
         public int SecondaryKitColorId { get; set; }
 
         [ForeignKey(nameof(SecondaryKitColorId))]
-        public virtual Color SecondaryKitColor { get; set; } = null!;
+        public virtual Color SecondaryKitColor { get; set; }
 
         [Required]
         public int TownId { get; set; }
@@ -48,7 +48,11 @@ namespace P02_FootballBetting.Data.Models
         public virtual Town Town { get; set; }
 
         public virtual ICollection<Player> Players { get; set; }
+
+        [InverseProperty("HomeTeam")]
         public virtual ICollection<Game> HomeGames { get; set; }
+
+        [InverseProperty("AwayTeam")]
         public virtual ICollection<Game> AwayGames { get; set; }
     }
 }

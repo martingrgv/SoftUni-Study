@@ -42,16 +42,6 @@ namespace P02_FootballBetting.Data
             modelBuilder.Entity<PlayerStatistic>()
                 .HasKey(pk => new { pk.GameId, pk.PlayerId });
 
-            //modelBuilder.Entity<Team>()
-            //    .HasOne(e => e.PrimaryKitColor)
-            //    .WithMany(e => e.PrimaryKitTeams)
-            //    .HasForeignKey(e => e.PrimaryKitColorId);
-
-            //modelBuilder.Entity<Team>()
-            //    .HasOne(e => e.SecondaryKitColor)
-            //    .WithMany(e => e.SecondaryKitTeams)
-            //    .HasForeignKey(e => e.SecondaryKitColorId);
-
             base.OnModelCreating(modelBuilder);
         }
     }

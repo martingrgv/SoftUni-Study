@@ -27,10 +27,6 @@ namespace P01_StudentSystem.Data
         public DbSet<Resource> Resources { get; set; }
         public DbSet<Homework> Homeworks { get; set; }
 
-        /// <summary>
-        /// Sets the database in use
-        /// </summary>
-        /// <param name="optionsBuilder">Options</param>
         //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         //{
         //    optionsBuilder.UseSqlServer(connectionString);

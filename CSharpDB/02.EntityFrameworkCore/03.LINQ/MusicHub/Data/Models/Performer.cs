@@ -51,6 +51,6 @@ namespace MusicHub.Data.Models
         /// <summary>
         /// Performer songs
         /// </summary>
-        public ICollection<SongPerformer> PerformerSongs { get; set; }
+        public virtual ICollection<SongPerformer> PerformerSongs { get; set; }
     }
 }

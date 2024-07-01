@@ -16,7 +16,7 @@ namespace MusicHub.Data.Models
         /// Song
         /// </summary>
         [ForeignKey(nameof(SongId))]
-        public Song Song { get; set; } = null!;
+        public virtual Song Song { get; set; } = null!;
 
         /// <summary>
         /// Performer identifier
@@ -27,6 +27,6 @@ namespace MusicHub.Data.Models
         /// Performer
         /// </summary>
         [ForeignKey(nameof(PerformerId))]
-        public Performer Performer { get; set; } = null!;
+        public virtual Performer Performer { get; set; } = null!;
     }
 }

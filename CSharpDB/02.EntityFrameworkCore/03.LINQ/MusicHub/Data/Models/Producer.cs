@@ -44,6 +44,6 @@ namespace MusicHub.Data.Models
         /// <summary>
         /// Producer albums
         /// </summary>
-        public ICollection<Album> Albums { get; set; }
+        public virtual ICollection<Album> Albums { get; set; }
     }
 }

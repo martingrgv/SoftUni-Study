@@ -11,7 +11,7 @@
 
         public const int ProducerNameMaxLength = 30;
 
-        public const int PhoneNumberMaxLength = 12;
+        public const int PhoneNumberMaxLength = 16;
 
         public const int WriterNameMaxLength = 20;
 

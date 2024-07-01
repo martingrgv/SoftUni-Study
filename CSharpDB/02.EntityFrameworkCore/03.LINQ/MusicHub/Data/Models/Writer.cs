@@ -38,6 +38,6 @@ namespace MusicHub.Data.Models
         /// <summary>
         /// Writer songs
         /// </summary>
-        public ICollection<Song> Songs { get; set; }
+        public virtual ICollection<Song> Songs { get; set; }
     }
 }

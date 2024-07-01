@@ -39,7 +39,7 @@ namespace MusicHub.Data.Models
         /// <summary>
         /// Album price
         /// </summary>
-        public decimal Price { get => Songs.Sum(s => s.Price);}       
+        public decimal Price => Songs.Sum(s => s.Price);
 
         /// <summary>
         /// Producer identifier
@@ -50,11 +50,11 @@ namespace MusicHub.Data.Models
         /// Album producer
         /// </summary>
         [ForeignKey(nameof(ProducerId))]
-        public Producer? Producer { get; set; }
+        public virtual Producer? Producer { get; set; }
 
         /// <summary>
         /// Album songs
         /// </summary>
-        public ICollection<Song> Songs { get; set; }
+        public virtual ICollection<Song> Songs { get; set; }
     }
 }

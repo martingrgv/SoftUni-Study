@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using MusicHub.Common;
+using MusicHub.Data.Models.Enums;
 
 namespace MusicHub.Data.Models
 {
@@ -63,7 +64,7 @@ namespace MusicHub.Data.Models
         /// Song album
         /// </summary>
         [ForeignKey(nameof(AlbumId))]
-        public Album? Album { get; set; } = null!;
+        public virtual Album Album { get; set; } = null!;
 
         /// <summary>
         /// Writer identifier
@@ -75,38 +76,11 @@ namespace MusicHub.Data.Models
         /// Song writer
         /// </summary>
         [ForeignKey(nameof(WriterId))]
-        public Writer Writer { get; set; } = null!;
+        public virtual Writer Writer { get; set; } = null!;
 
         /// <summary>
         /// Song performers
         /// </summary>
-        public ICollection<SongPerformer> SongPerformers { get; set; }
-    }
-
-    /// <summary>
-    /// Genre
-    /// </summary>
-    public enum Genre
-    {
-        /// <summary>
-        /// Blues
-        /// </summary>
-        Blues,
-        /// <summary>
-        /// Rap
-        /// </summary>
-        Rap,
-        /// <summary>
-        /// Pop music
-        /// </summary>
-        PopMusic,
-        /// <summary>
-        /// Rock
-        /// </summary>
-        Rock,
-        /// <summary>
-        /// Jazz
-        /// </summary>
-        Jazz
+        public virtual ICollection<SongPerformer> SongPerformers { get; set; }
     }
 }

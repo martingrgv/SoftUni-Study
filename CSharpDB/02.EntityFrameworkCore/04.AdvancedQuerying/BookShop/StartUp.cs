@@ -1,9 +1,10 @@
 ﻿namespace BookShop
 {
-    using BookShop.Models;
     using Data;
     using Microsoft.EntityFrameworkCore;
     using Models.Enums;
+    using System.Globalization;
+    using System.Reflection.Metadata;
     using System.Text;
     using System.Threading.Tasks;
 
@@ -12,7 +13,7 @@
         public static async Task Main()
         {
             using var context = new BookShopContext();
-            Console.WriteLine(GetBooksByCategory(context, "horror mystery drama").Trim());
+            Console.WriteLine(GetBooksReleasedBefore(context, "12-04-1992").Trim());
         }
 
         public static string GetBooksByAgeRestriction(BookShopContext context, string command)
@@ -105,6 +106,19 @@
                 .ToArray();
 
             return string.Join(Environment.NewLine, titles);
+        }
+
+        public static string GetBooksReleasedBefore(BookShopContext context, string date)
+        {
+            var compareDate = DateTime.ParseExact(date, "dd-MM-yyyy", CultureInfo.InvariantCulture);
+
+            var books = context.Books 
+                .Where(b => b.ReleaseDate < compareDate)
+                .OrderByDescending(b => b.ReleaseDate)
+                .Select(b => $"{b.Title} - {b.EditionType} - ${b.Price:f2}")
+                .ToArray();
+
+            return string.Join(Environment.NewLine, books);
         }
     }
 }

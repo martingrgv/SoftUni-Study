@@ -1,6 +1,8 @@
 ﻿namespace BookShop
 {
+    using BookShop.Models;
     using Data;
+    using Microsoft.EntityFrameworkCore;
     using Models.Enums;
     using System.Text;
     using System.Threading.Tasks;
@@ -10,7 +12,7 @@
         public static async Task Main()
         {
             using var context = new BookShopContext();
-            Console.WriteLine(GetBooksByPrice(context).Trim());
+            Console.WriteLine(GetBooksByCategory(context, "horror mystery drama").Trim());
         }
 
         public static string GetBooksByAgeRestriction(BookShopContext context, string command)
@@ -71,6 +73,38 @@
             }
 
             return sb.ToString();
+        }
+        
+        public static string GetBooksNotReleasedIn(BookShopContext context, int year)
+        {
+            var titles = context.Books
+                .Where(b => b.ReleaseDate.Value.Year != year)
+                .Select(b => b.Title);
+
+            StringBuilder sb = new();
+            foreach (var title in titles)
+            {
+                sb.AppendLine(title);
+            }
+
+            return sb.ToString();
+        }
+
+        public static string GetBooksByCategory(BookShopContext context, string input)
+        {
+            string[] categoriesInput = input
+                .ToLower()
+                .Split(' ', StringSplitOptions.RemoveEmptyEntries);
+
+            var titles = context.BooksCategories
+                .Include(bc => bc.Book)
+                .Include(bc => bc.Category)
+                .Where(bc => categoriesInput.Contains(bc.Category.Name.ToLower())) 
+                .Select(bc => bc.Book.Title)
+                .OrderBy(t => t)
+                .ToArray();
+
+            return string.Join(Environment.NewLine, titles);
         }
     }
 }

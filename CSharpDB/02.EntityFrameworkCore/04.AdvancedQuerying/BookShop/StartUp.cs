@@ -1,18 +1,16 @@
 ﻿namespace BookShop
 {
     using Data;
-    using System.Threading.Tasks;
-    using System.Text;
-    using Microsoft.EntityFrameworkCore;
     using Models.Enums;
-    using System.Security.Cryptography.X509Certificates;
+    using System.Text;
+    using System.Threading.Tasks;
 
     public class StartUp
     {
         public static async Task Main()
         {
             using var context = new BookShopContext();
-            Console.WriteLine(GetGoldenBooks(context).Trim());
+            Console.WriteLine(GetBooksByPrice(context).Trim());
         }
 
         public static string GetBooksByAgeRestriction(BookShopContext context, string command)
@@ -49,6 +47,27 @@
             foreach (var title in bookTitles)
             {
                 sb.AppendLine(title);
+            }
+
+            return sb.ToString();
+        }
+
+        public static string GetBooksByPrice(BookShopContext context)
+        {
+            var books = context.Books
+                .Where(b => b.Price > 40)
+                .Select(b => new
+                {
+                    b.Title,
+                    b.Price
+                })
+                .OrderByDescending(b => b.Price);
+
+            StringBuilder sb = new StringBuilder();
+
+            foreach (var book in books)
+            {
+                sb.AppendLine($"{book.Title} - ${book.Price:f2}");
             }
 
             return sb.ToString();

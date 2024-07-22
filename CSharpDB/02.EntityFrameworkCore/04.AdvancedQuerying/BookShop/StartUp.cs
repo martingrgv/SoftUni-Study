@@ -4,7 +4,6 @@
     using Microsoft.EntityFrameworkCore;
     using Models.Enums;
     using System.Globalization;
-    using System.Reflection.Metadata;
     using System.Text;
     using System.Threading.Tasks;
 
@@ -13,7 +12,7 @@
         public static async Task Main()
         {
             using var context = new BookShopContext();
-            Console.WriteLine(GetBooksReleasedBefore(context, "12-04-1992").Trim());
+            Console.WriteLine(CountCopiesByAuthor(context));
         }
 
         public static string GetBooksByAgeRestriction(BookShopContext context, string command)
@@ -119,6 +118,66 @@
                 .ToArray();
 
             return string.Join(Environment.NewLine, books);
+        }
+
+        public static string GetAuthorNamesEndingIn(BookShopContext context, string input)
+        {
+            var authorsFullNames = context.Authors
+                .Where(a => a.FirstName.EndsWith(input))
+                .Select(a => a.FirstName + " " + a.LastName)
+                .OrderBy(a => a)
+                .ToList();
+
+            return string.Join(Environment.NewLine, authorsFullNames);
+        }
+
+        // Fix
+        public static string GetBookTitlesContaining(BookShopContext context, string input)
+        {
+            var titles = context.Books
+                .Select(b => b.Title)
+                .Where(t => t.Contains(input.ToLower()))
+                .OrderBy(t => t)
+                .ToList();
+
+            return string.Join(Environment.NewLine, titles);
+        }
+
+        // Fix
+        public static string GetBooksByAuthor(BookShopContext context, string input)
+        {
+            var booksByAuthors = context.Books
+                .Include(a => a.Author)
+                .Where(b => b.Author.LastName.StartsWith(input))
+                .OrderBy(b => b.BookId)
+                .Select(b => b.Title + " " +
+                    "(" + b.Author.FirstName + b.Author.LastName + ")")
+                .ToList();
+
+            return string.Join(Environment.NewLine, booksByAuthors);
+        }
+
+        public static int CountBooks(BookShopContext context, int lengthCheck)
+        {
+            var books = context.Books
+                .Where(b => b.Title.Length > lengthCheck)
+                .ToList();
+
+            return books.Count;
+        }
+
+        public static string CountCopiesByAuthor(BookShopContext context)
+        {
+            var authorsBooks = context.Authors
+                .Select(a => new
+                {
+                    FullName = a.FirstName + " " + a.LastName,
+                    BooksCount = a.Books.Count
+                })
+                .OrderByDescending(a => a.BooksCount)
+                .ToList();
+
+            return string.Join(Environment.NewLine, authorsBooks.Select(a => a.FullName + " - " + a.BooksCount));
         }
     }
 }

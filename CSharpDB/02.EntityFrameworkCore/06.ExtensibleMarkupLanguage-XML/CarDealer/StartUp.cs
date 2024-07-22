@@ -12,8 +12,8 @@ namespace CarDealer
         {
             var context = new CarDealerContext();
 
-            string inputXml = XDocument.Load("../../../Datasets/suppliers.xml").ToString();
-            string result = ImportSuppliers(context, inputXml);
+            string inputXml = XDocument.Load("../../../Datasets/parts.xml").ToString();
+            string result = ImportParts(context, inputXml);
 
             Console.WriteLine(result);           
         }
@@ -23,7 +23,7 @@ namespace CarDealer
             var serializer = new XmlSerializer(typeof(SupplierImportDTO[]), new XmlRootAttribute("Suppliers"));
             var dtoImports = (SupplierImportDTO[]?) serializer.Deserialize(new StringReader(inputXml));;
 
-            if (dtoImports == null)
+            if (dtoImports == null || dtoImports.Length == 0)
             {
                 throw new InvalidOperationException("No suppliers were extracted from xml!");
             }
@@ -38,7 +38,38 @@ namespace CarDealer
             context.Suppliers.AddRange(suppliers);
             context.SaveChanges();
 
-            return $"Successfully imported {suppliers.Count()}";
+            return $"Successfully imported {suppliers.Length}";
+        }
+
+        public static string ImportParts(CarDealerContext context, string inputXml)
+        {
+            var serializer = new XmlSerializer(typeof(PartImportDTO[]), new XmlRootAttribute("Parts"));
+            var dtoImports = (PartImportDTO[]?)serializer.Deserialize(new StringReader(inputXml));
+
+            if (dtoImports == null || dtoImports.Length == 0)
+            {
+                throw new InvalidOperationException("No parts were extracted from xml!");
+            }
+
+            var supplierIds = context.Suppliers
+                .Select(s => s.Id)
+                .ToArray();
+
+            var partsWithSuppliers = dtoImports
+                .Where(dto => supplierIds.Contains(dto.SupplierId))
+                .Select(dto => new Part
+                {
+                    Name = dto.Name,
+                    Price = dto.Price,
+                    Quantity = dto.Quantity,
+                    SupplierId = dto.SupplierId
+                })
+                .ToArray();
+
+            context.Parts.AddRange(partsWithSuppliers);
+            context.SaveChanges();
+
+            return $"Successfully imported {partsWithSuppliers.Length}";
         }
     }
 }

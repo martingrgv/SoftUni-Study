@@ -11,11 +11,21 @@ namespace CarDealer
         public static void Main()
         {
             var context = new CarDealerContext();
+            context.Database.EnsureDeleted();
+            context.Database.EnsureCreated();
 
-            string inputXml = XDocument.Load("../../../Datasets/parts.xml").ToString();
-            string result = ImportParts(context, inputXml);
+            string inputXmlSuppliers = XDocument.Load("../../../Datasets/suppliers.xml").ToString();
+            string resultSuppliers = ImportSuppliers(context, inputXmlSuppliers);
 
-            Console.WriteLine(result);           
+            string inputXmlParts = XDocument.Load("../../../Datasets/parts.xml").ToString();
+            string resultParts = ImportParts(context, inputXmlParts);
+
+            string inputXmlCars = XDocument.Load("../../../Datasets/cars.xml").ToString();
+            string resultCars = ImportCars(context, inputXmlCars);
+
+            Console.WriteLine($"Suppliers: {resultSuppliers}");           
+            Console.WriteLine($"Parts: {resultParts}");           
+            Console.WriteLine($"Cars: {resultCars}");           
         }
 
         public static string ImportSuppliers(CarDealerContext context, string inputXml)
@@ -70,6 +80,59 @@ namespace CarDealer
             context.SaveChanges();
 
             return $"Successfully imported {partsWithSuppliers.Length}";
+        }
+
+        public static string ImportCars(CarDealerContext context, string inputXml)
+        {
+            var serializer = new XmlSerializer(typeof(CarImportDTO[]), new XmlRootAttribute("Cars"));
+            var dtoImports = (CarImportDTO[]?)serializer.Deserialize(new StringReader(inputXml));
+
+            if (dtoImports == null || dtoImports.Length == 0)
+            {
+                throw new InvalidOperationException("No cars were extracted from xml!");
+            }
+
+            var existingPartsIds = context.Parts
+                .Select(p => p.Id)
+                .ToArray();
+
+            var cars = new List<Car>();
+
+            foreach (var dto in dtoImports)
+            {
+                var car = new Car()
+                {
+                    Make = dto.Make,
+                    Model = dto.Model,
+                    TraveledDistance = dto.TraveledDistance,
+                };
+
+                int[] carPartsIds = dto.PartsIds
+                    .Where(p => existingPartsIds.Contains(p.Id))
+                    .Select(p => p.Id)
+                    .Distinct()
+                    .ToArray();
+
+                var carParts = new List<PartCar>();
+
+                foreach (var partId in carPartsIds)
+                {
+                    carParts.Add(new PartCar()
+                    {
+                        Car = car,
+                        CarId = car.Id,
+                        PartId = partId
+                    });
+                }
+
+                car.PartsCars = carParts;
+                cars.Add(car);
+            }
+
+            context.Cars.AddRange(cars);
+            context.SaveChanges();
+
+            return $"Successfully imported {cars.Count}";
         }
     }
 }

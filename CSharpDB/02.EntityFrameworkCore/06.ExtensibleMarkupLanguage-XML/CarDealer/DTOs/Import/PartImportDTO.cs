@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 namespace CarDealer.DTOs.Import
 {
 
-    [XmlType(nameof(Part))]
+    [XmlType("Part")]
     public class PartImportDTO
     {
         [XmlElement("name")]

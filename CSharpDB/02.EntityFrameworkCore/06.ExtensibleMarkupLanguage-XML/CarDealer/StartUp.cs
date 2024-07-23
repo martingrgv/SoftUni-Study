@@ -1,6 +1,7 @@
 ﻿using CarDealer.Data;
 using CarDealer.DTOs.Import;
 using CarDealer.Models;
+using Microsoft.EntityFrameworkCore;
 using System.Xml.Linq;
 using System.Xml.Serialization;
 
@@ -14,13 +15,14 @@ namespace CarDealer
             context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
 
-            string inputXmlSuppliers = XDocument.Load("../../../Datasets/suppliers.xml").ToString();
+
+            string inputXmlSuppliers = XDocument.Load("Datasets/suppliers.xml").ToString();
             string resultSuppliers = ImportSuppliers(context, inputXmlSuppliers);
 
-            string inputXmlParts = XDocument.Load("../../../Datasets/parts.xml").ToString();
+            string inputXmlParts = XDocument.Load("Datasets/parts.xml").ToString();
             string resultParts = ImportParts(context, inputXmlParts);
 
-            string inputXmlCars = XDocument.Load("../../../Datasets/cars.xml").ToString();
+            string inputXmlCars = XDocument.Load("Datasets/cars.xml").ToString();
             string resultCars = ImportCars(context, inputXmlCars);
 
             Console.WriteLine($"Suppliers: {resultSuppliers}");           

@@ -2,7 +2,7 @@
 
 namespace CarDealer;
 
-[XmlType("Car")]
+[XmlType("car")]
 public class CarsWithDistanceDTO
 {
     [XmlElement("make")]
@@ -11,6 +11,6 @@ public class CarsWithDistanceDTO
     [XmlElement("model")]
     public string Model { get; set; } = null!;
 
-    [XmlElement("traveledDistance")]
+    [XmlElement("traveled-distance")]
     public long TraveledDistance { get; set; }
 }

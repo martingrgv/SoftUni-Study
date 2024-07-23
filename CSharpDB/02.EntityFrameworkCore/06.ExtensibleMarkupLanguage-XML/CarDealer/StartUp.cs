@@ -216,7 +216,7 @@ namespace CarDealer
         public static string GetCarsWithDistance(CarDealerContext context)
         {
             var cars = context.Cars
-                .Where(c => c.TraveledDistance > 2_000_000)
+                .Where(c => c.TraveledDistance >= 2_000_000)
                 .OrderBy(c => c.Make)
                 .ThenBy(c => c.Model)
                 .Take(10)
@@ -231,10 +231,34 @@ namespace CarDealer
                 })
                 .ToArray();
 
-            var xmlExport = SerializeToXml(dtos, "Cars");
-            
-            return xmlExport;
+            return SerializeToXml(dtos, "cars");
         }
+
+        public static string GetCarsFromMakeBmw(CarDealerContext context)
+        {
+            var cars = context.Cars
+                .Where(c => c.Make == "BMW")
+                .OrderBy(c => c.Model)
+                .ThenByDescending(c => c.TraveledDistance)
+                .ToArray();
+
+            var dtos = cars
+                .Select(c => new CarBMWMakeDTO
+                {
+                    Id = c.Id,
+                    Model = c.Model,
+                    TraveledDistance = c.TraveledDistance
+                })
+                .ToArray();
+
+            return SerializeToXml(dtos, "cars");
+        }
+
+
+
+
+
+
 
         private static string SerializeToXml<T>(T dto, string xmlRootAttributeName, bool indent = true, Encoding encoding = null!)
         {
@@ -259,7 +283,7 @@ namespace CarDealer
                 {
                     serializer.Serialize(xmlWriter, dto, xmlSerializerNamespaces);
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     throw;
                 }

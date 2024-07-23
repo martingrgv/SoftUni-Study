@@ -1,8 +1,9 @@
-﻿using System.Xml.Linq;
+﻿using System.Globalization;
+using System.Text;
+using System.Xml;
 using System.Xml.Serialization;
 using CarDealer.Data;
 using CarDealer.DTOs.Import;
-using CarDealer.Migrations;
 using CarDealer.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -13,29 +14,31 @@ namespace CarDealer
         public static void Main()
         {
             var context = new CarDealerContext();
-            context.Database.EnsureDeleted();
-            context.Database.EnsureCreated();
+            // context.Database.EnsureDeleted();
+            // context.Database.EnsureCreated();
 
-            string inputXmlSuppliers = XDocument.Load("Datasets/suppliers.xml").ToString();
-            string resultSuppliers = ImportSuppliers(context, inputXmlSuppliers);
+            // string inputXmlSuppliers = XDocument.Load("Datasets/suppliers.xml").ToString();
+            // string resultSuppliers = ImportSuppliers(context, inputXmlSuppliers);
 
-            string inputXmlParts = XDocument.Load("Datasets/parts.xml").ToString();
-            string resultParts = ImportParts(context, inputXmlParts);
+            // string inputXmlParts = XDocument.Load("Datasets/parts.xml").ToString();
+            // string resultParts = ImportParts(context, inputXmlParts);
 
-            string inputXmlCars = XDocument.Load("Datasets/cars.xml").ToString();
-            string resultCars = ImportCars(context, inputXmlCars);
+            // string inputXmlCars = XDocument.Load("Datasets/cars.xml").ToString();
+            // string resultCars = ImportCars(context, inputXmlCars);
 
-            string inputXmlCustomers = XDocument.Load("Datasets/customers.xml").ToString();
-            string resultCustomers = ImportCustomers(context, inputXmlCustomers);
+            // string inputXmlCustomers = XDocument.Load("Datasets/customers.xml").ToString();
+            // string resultCustomers = ImportCustomers(context, inputXmlCustomers);
 
-            string inputXmlSales = XDocument.Load("Datasets/sales.xml").ToString();
-            string resultSales = ImportSales(context, inputXmlSales);
+            // string inputXmlSales = XDocument.Load("Datasets/sales.xml").ToString();
+            // string resultSales = ImportSales(context, inputXmlSales);
 
-            Console.WriteLine($"Suppliers: {resultSuppliers}");
-            Console.WriteLine($"Parts: {resultParts}");
-            Console.WriteLine($"Cars: {resultCars}");
-            Console.WriteLine($"Customers: {resultCustomers}");
-            Console.WriteLine($"Sales: {resultSales}");
+            // Console.WriteLine($"Suppliers: {resultSuppliers}");
+            // Console.WriteLine($"Parts: {resultParts}");
+            // Console.WriteLine($"Cars: {resultCars}");
+            // Console.WriteLine($"Customers: {resultCustomers}");
+            // Console.WriteLine($"Sales: {resultSales}");
+
+            Console.WriteLine(GetCarsWithDistance(context));
         }
 
         public static string ImportSuppliers(CarDealerContext context, string inputXml)
@@ -208,6 +211,61 @@ namespace CarDealer
             context.SaveChanges();
 
             return $"Successfully imported {sales.Length}";
+        }
+
+        public static string GetCarsWithDistance(CarDealerContext context)
+        {
+            var cars = context.Cars
+                .Where(c => c.TraveledDistance > 2_000_000)
+                .OrderBy(c => c.Make)
+                .ThenBy(c => c.Model)
+                .Take(10)
+                .ToArray();
+            
+            var dtos = cars
+                .Select(car => new CarsWithDistanceDTO
+                {
+                    Make = car.Make,
+                    Model = car.Model,
+                    TraveledDistance = car.TraveledDistance
+                })
+                .ToArray();
+
+            var xmlExport = SerializeToXml(dtos, "Cars");
+            
+            return xmlExport;
+        }
+
+        private static string SerializeToXml<T>(T dto, string xmlRootAttributeName, bool indent = true, Encoding encoding = null!)
+        {
+            encoding ??= new UTF8Encoding(false);
+
+            var serializer = new XmlSerializer(typeof(T), new XmlRootAttribute(xmlRootAttributeName));
+            var settings = new XmlWriterSettings()
+            {
+                Indent = indent,
+                Encoding = encoding
+            };
+
+            var stringBuilder = new StringBuilder();
+
+            using (var stringWriter = new StringWriter(stringBuilder, CultureInfo.InvariantCulture))
+            using (var xmlWriter = XmlWriter.Create(stringWriter, settings))
+            {
+                var xmlSerializerNamespaces = new XmlSerializerNamespaces();
+                xmlSerializerNamespaces.Add(string.Empty, string.Empty);
+
+                try
+                {
+                    serializer.Serialize(xmlWriter, dto, xmlSerializerNamespaces);
+                }
+                catch (Exception e)
+                {
+                    throw;
+                }
+            }
+        
+            return stringBuilder.ToString();
         }
     }
 }

@@ -1,9 +1,9 @@
-﻿using CarDealer.Data;
+﻿using System.Xml.Linq;
+using System.Xml.Serialization;
+using CarDealer.Data;
 using CarDealer.DTOs.Import;
 using CarDealer.Models;
 using Microsoft.EntityFrameworkCore;
-using System.Xml.Linq;
-using System.Xml.Serialization;
 
 namespace CarDealer
 {
@@ -15,7 +15,6 @@ namespace CarDealer
             context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
 
-
             string inputXmlSuppliers = XDocument.Load("Datasets/suppliers.xml").ToString();
             string resultSuppliers = ImportSuppliers(context, inputXmlSuppliers);
 
@@ -25,27 +24,33 @@ namespace CarDealer
             string inputXmlCars = XDocument.Load("Datasets/cars.xml").ToString();
             string resultCars = ImportCars(context, inputXmlCars);
 
-            Console.WriteLine($"Suppliers: {resultSuppliers}");           
-            Console.WriteLine($"Parts: {resultParts}");           
-            Console.WriteLine($"Cars: {resultCars}");           
+            string inputXmlCustomers = XDocument.Load("Datasets/customers.xml").ToString();
+            string resultCustomers = ImportCustomers(context, inputXmlCustomers);
+
+            Console.WriteLine($"Suppliers: {resultSuppliers}");
+            Console.WriteLine($"Parts: {resultParts}");
+            Console.WriteLine($"Cars: {resultCars}");
+            Console.WriteLine($"Cars: {resultCustomers}");
         }
 
         public static string ImportSuppliers(CarDealerContext context, string inputXml)
         {
-            var serializer = new XmlSerializer(typeof(SupplierImportDTO[]), new XmlRootAttribute("Suppliers"));
-            var dtoImports = (SupplierImportDTO[]?) serializer.Deserialize(new StringReader(inputXml));;
+            var serializer = new XmlSerializer(
+                typeof(SupplierImportDTO[]),
+                new XmlRootAttribute("Suppliers")
+            );
+            var dtoImports = (SupplierImportDTO[]?)
+                serializer.Deserialize(new StringReader(inputXml));
+            ;
 
             if (dtoImports == null || dtoImports.Length == 0)
             {
                 throw new InvalidOperationException("No suppliers were extracted from xml!");
             }
 
-            var suppliers = dtoImports.Select(dto => new Supplier()
-            {
-                Name = dto.Name,
-                IsImporter = dto.IsImporter
-            })
-            .ToArray();
+            var suppliers = dtoImports
+                .Select(dto => new Supplier() { Name = dto.Name, IsImporter = dto.IsImporter })
+                .ToArray();
 
             context.Suppliers.AddRange(suppliers);
             context.SaveChanges();
@@ -55,7 +60,10 @@ namespace CarDealer
 
         public static string ImportParts(CarDealerContext context, string inputXml)
         {
-            var serializer = new XmlSerializer(typeof(PartImportDTO[]), new XmlRootAttribute("Parts"));
+            var serializer = new XmlSerializer(
+                typeof(PartImportDTO[]),
+                new XmlRootAttribute("Parts")
+            );
             var dtoImports = (PartImportDTO[]?)serializer.Deserialize(new StringReader(inputXml));
 
             if (dtoImports == null || dtoImports.Length == 0)
@@ -63,9 +71,7 @@ namespace CarDealer
                 throw new InvalidOperationException("No parts were extracted from xml!");
             }
 
-            var supplierIds = context.Suppliers
-                .Select(s => s.Id)
-                .ToArray();
+            var supplierIds = context.Suppliers.Select(s => s.Id).ToArray();
 
             var partsWithSuppliers = dtoImports
                 .Where(dto => supplierIds.Contains(dto.SupplierId))
@@ -86,7 +92,10 @@ namespace CarDealer
 
         public static string ImportCars(CarDealerContext context, string inputXml)
         {
-            var serializer = new XmlSerializer(typeof(CarImportDTO[]), new XmlRootAttribute("Cars"));
+            var serializer = new XmlSerializer(
+                typeof(CarImportDTO[]),
+                new XmlRootAttribute("Cars")
+            );
             var dtoImports = (CarImportDTO[]?)serializer.Deserialize(new StringReader(inputXml));
 
             if (dtoImports == null || dtoImports.Length == 0)
@@ -94,9 +103,7 @@ namespace CarDealer
                 throw new InvalidOperationException("No cars were extracted from xml!");
             }
 
-            var existingPartsIds = context.Parts
-                .Select(p => p.Id)
-                .ToArray();
+            var existingPartsIds = context.Parts.Select(p => p.Id).ToArray();
 
             var cars = new List<Car>();
 
@@ -109,8 +116,8 @@ namespace CarDealer
                     TraveledDistance = dto.TraveledDistance,
                 };
 
-                int[] carPartsIds = dto.PartsIds
-                    .Where(p => existingPartsIds.Contains(p.Id))
+                int[] carPartsIds = dto
+                    .PartsIds.Where(p => existingPartsIds.Contains(p.Id))
                     .Select(p => p.Id)
                     .Distinct()
                     .ToArray();
@@ -119,12 +126,14 @@ namespace CarDealer
 
                 foreach (var partId in carPartsIds)
                 {
-                    carParts.Add(new PartCar()
-                    {
-                        Car = car,
-                        CarId = car.Id,
-                        PartId = partId
-                    });
+                    carParts.Add(
+                        new PartCar()
+                        {
+                            Car = car,
+                            CarId = car.Id,
+                            PartId = partId
+                        }
+                    );
                 }
 
                 car.PartsCars = carParts;
@@ -135,6 +144,35 @@ namespace CarDealer
             context.SaveChanges();
 
             return $"Successfully imported {cars.Count}";
+        }
+
+        public static string ImportCustomers(CarDealerContext context, string inputXml)
+        {
+            var serializer = new XmlSerializer(
+                typeof(CustomerImportDTO[]),
+                new XmlRootAttribute("Customers")
+            );
+            var dtoImports = (CustomerImportDTO[]?)
+                serializer.Deserialize(new StringReader(inputXml));
+
+            if (dtoImports == null || dtoImports.Length == 0)
+            {
+                throw new InvalidOperationException("No customers were extracted from xml!");
+            }
+
+            var customers = dtoImports
+                .Select(dto => new Customer
+                {
+                    Name = dto.Name,
+                    BirthDate = dto.BirthDate,
+                    IsYoungDriver = dto.IsYoungDriver,
+                })
+                .ToArray();
+
+            context.Customers.AddRange(customers);
+            context.SaveChanges();
+
+            return $"Successfully imported {customers.Length}";
         }
     }
 }

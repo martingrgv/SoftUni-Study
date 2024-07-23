@@ -2,6 +2,7 @@
 using System.Xml.Serialization;
 using CarDealer.Data;
 using CarDealer.DTOs.Import;
+using CarDealer.Migrations;
 using CarDealer.Models;
 using Microsoft.EntityFrameworkCore;
 
@@ -27,10 +28,14 @@ namespace CarDealer
             string inputXmlCustomers = XDocument.Load("Datasets/customers.xml").ToString();
             string resultCustomers = ImportCustomers(context, inputXmlCustomers);
 
+            string inputXmlSales = XDocument.Load("Datasets/sales.xml").ToString();
+            string resultSales = ImportSales(context, inputXmlSales);
+
             Console.WriteLine($"Suppliers: {resultSuppliers}");
             Console.WriteLine($"Parts: {resultParts}");
             Console.WriteLine($"Cars: {resultCars}");
-            Console.WriteLine($"Cars: {resultCustomers}");
+            Console.WriteLine($"Customers: {resultCustomers}");
+            Console.WriteLine($"Sales: {resultSales}");
         }
 
         public static string ImportSuppliers(CarDealerContext context, string inputXml)
@@ -173,6 +178,36 @@ namespace CarDealer
             context.SaveChanges();
 
             return $"Successfully imported {customers.Length}";
+        }
+    
+        public static string ImportSales(CarDealerContext context, string inputXml)
+        {
+            var serializer = new XmlSerializer(typeof(SaleImportDTO[]), new XmlRootAttribute("Sales"));
+            var dtoImports = (SaleImportDTO[]?)serializer.Deserialize(new StringReader(inputXml));
+
+            if (dtoImports == null || dtoImports.Length == 0)
+            {
+                throw new InvalidOperationException("No customers were extracted from xml!");
+            }
+
+            var existingCarsIds = context.Cars
+                .Select(c => c.Id)
+                .ToArray();
+
+            var sales = dtoImports
+                .Where(dto => existingCarsIds.Contains(dto.CarId))
+                .Select(dto => new Sale
+                {
+                    CarId = dto.CarId,
+                    CustomerId = dto.CustomerId,
+                    Discount = dto.Discount
+                })
+                .ToArray();
+
+            context.Sales.AddRange(sales);
+            context.SaveChanges();
+
+            return $"Successfully imported {sales.Length}";
         }
     }
 }

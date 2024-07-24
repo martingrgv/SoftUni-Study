@@ -1,8 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using ProductShop.Data;
 using ProductShop.Models;
+using ProductShop.Utilities;
 
 namespace ProductShop
 {
@@ -15,20 +14,27 @@ namespace ProductShop
             context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
 
-            string inputJsonUsers = GetJsonTextFromFile("users");
+            string searchDirectory = "Datasets/";
+
+            string inputJsonUsers = JsonHelper.GetJson(searchDirectory, "users");
             string resultUsers = ImportUsers(context, inputJsonUsers);
 
+            string inputJsonProducts = JsonHelper.GetJson(searchDirectory, "products");
+            string resultProducts = ImportProducts(context, inputJsonProducts);
+
             Console.WriteLine(resultUsers);
-            
+            Console.WriteLine(resultProducts);
         }
 
         public static string ImportUsers(ProductShopContext context, string inputJson)
         {
             var users = JsonConvert.DeserializeObject<User[]>(inputJson);
-            
+
             if (users == null || users.Length == 0)
             {
-                throw new InvalidOperationException("No users were extracted from JSON file.");
+                throw new InvalidOperationException(
+                    $"No {nameof(users)} were extracted from JSON file."
+                );
             }
 
             context.Users.AddRange(users);
@@ -37,10 +43,21 @@ namespace ProductShop
             return $"Successfully imported {users.Length}";
         }
 
-        private static string GetJsonTextFromFile(string filename)
+        public static string ImportProducts(ProductShopContext context, string inputJson)
         {
-            string searchDirectory = "Datasets/";
-            return File.ReadAllText($"{searchDirectory}{filename}.json");
+            var products = JsonConvert.DeserializeObject<Product[]>(inputJson);
+
+            if (products == null || products.Length == 0)
+            {
+                throw new InvalidOperationException(
+                    $"No {nameof(products)} were extracted from JSON file."
+                );
+            }
+
+            context.Products.AddRange(products);
+            context.SaveChanges();
+
+            return $"Successfully imported {products.Length}";
         }
     }
 }

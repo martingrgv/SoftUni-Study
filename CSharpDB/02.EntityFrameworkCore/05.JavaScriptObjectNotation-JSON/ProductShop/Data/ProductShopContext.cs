@@ -46,7 +46,8 @@ namespace ProductShop.Data
 
                 entity.HasMany(x => x.ProductsSold)
                       .WithOne(x => x.Seller)
-                      .HasForeignKey(x => x.SellerId);
+                      .HasForeignKey(x => x.SellerId)
+                      .OnDelete(DeleteBehavior.NoAction);
             });
         }
     }

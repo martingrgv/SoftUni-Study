@@ -22,8 +22,17 @@ namespace ProductShop
             string inputJsonProducts = JsonHelper.GetJson(searchDirectory, "products");
             string resultProducts = ImportProducts(context, inputJsonProducts);
 
+            string inputJsonCategories = JsonHelper.GetJson(searchDirectory, "categories");
+            string resultCategories = ImportCategories(context, inputJsonCategories);
+
+            string inputJsonCategoriesProducts = JsonHelper.GetJson(searchDirectory, "categories-products");
+            string resultCategoriesProducts = ImportCategoryProducts(context, inputJsonCategoriesProducts);
+
             Console.WriteLine(resultUsers);
             Console.WriteLine(resultProducts);
+            Console.WriteLine(resultCategories);
+            Console.WriteLine(resultCategoriesProducts);
+                       
         }
 
         public static string ImportUsers(ProductShopContext context, string inputJson)
@@ -58,6 +67,43 @@ namespace ProductShop
             context.SaveChanges();
 
             return $"Successfully imported {products.Length}";
+        }
+
+        public static string ImportCategories(ProductShopContext context, string inputJson) 
+        {
+            var categories = JsonConvert.DeserializeObject<Category[]>(inputJson)!
+                .Where(c => c.Name != null)
+                .ToArray();
+
+            if (categories == null || categories.Length == 0)
+            {
+                throw new InvalidOperationException(
+                    $"No {nameof(categories)} were extracted from JSON file."
+                );
+            }
+
+            context.Categories.AddRange(categories);
+            context.SaveChanges();
+
+            return $"Successfully imported {categories.Length}";
+        }
+
+        public static string ImportCategoryProducts(ProductShopContext context, string inputJson)
+        {
+            var categoriesProducts = JsonConvert.DeserializeObject<CategoryProduct[]>(inputJson);
+
+            if (categoriesProducts == null || categoriesProducts.Length == 0)
+            {
+                throw new InvalidOperationException(
+                    $"No {nameof(categoriesProducts)} were extracted from JSON file."
+                );
+            }
+
+            context.CategoriesProducts.AddRange(categoriesProducts);
+            context.SaveChanges();
+
+            return $"Successfully imported {categoriesProducts.Length}";
+            
         }
     }
 }

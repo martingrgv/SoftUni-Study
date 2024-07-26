@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using ProductShop.Data;
 using ProductShop.DTOs.Export;
@@ -16,24 +17,48 @@ namespace ProductShop
             // string datasetsDirectory = "Datasets/";
             // Console.WriteLine(ImportAllDatasets(context, datasetsDirectory));
 
-            Console.WriteLine(GetProductsInRange(context));
+            //Console.WriteLine(GetProductsInRange(context));
+            //Console.WriteLine(GetSoldProducts(context));
         }
 
         public static string GetProductsInRange(ProductShopContext context)
         {
             var products = context.Products
                 .Where(p => p.Price >= 500 && p.Price <= 1000)
-                .Select(p => new ProductDTO{
+                .Select(p => new ProductSellerDTO{
                     Name = p.Name,
                     Price = p.Price,
                     Seller = $"{p.Seller.FirstName} {p.Seller.LastName}"
                 })
                 .OrderBy(p => p.Price)
-                .ToList();
+                .ToArray();
 
-            string jsonResult = JsonConvert.SerializeObject(products, Formatting.Indented);
+            return JsonConvert.SerializeObject(products, Formatting.Indented);;
+        }
 
-            return jsonResult;
+        public static string GetSoldProducts(ProductShopContext context)
+        {
+            var sellersWithSoldProducts = context.Users
+                .Where(s => s.ProductsSold.Count > 0 &&
+                    s.ProductsSold.Any(p => p.BuyerId != null)) 
+                .OrderBy(s => s.LastName)
+                .ThenBy(s => s.FirstName)
+                .Select(s => new UserSoldProductsDTO
+                {
+                    FirstName = s.FirstName!,
+                    LastName = s.LastName,
+                    SoldProducts = s.ProductsSold.Select(p => new SoldProductDTO
+                    {
+                        Name = p.Name,
+                        Price = p.Price,
+                        BuyerFirstName = p.Buyer!.FirstName!,
+                        BuyerLastName = p.Buyer!.LastName
+                    })
+                    .ToList()
+                })
+                .ToArray();
+
+            return JsonConvert.SerializeObject(sellersWithSoldProducts, Formatting.Indented);
         }
 
         public static string ImportUsers(ProductShopContext context, string inputJson)

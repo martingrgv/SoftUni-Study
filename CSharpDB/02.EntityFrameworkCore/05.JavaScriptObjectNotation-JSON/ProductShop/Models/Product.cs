@@ -1,7 +1,6 @@
 ﻿namespace ProductShop.Models
 {
     using System.Collections.Generic;
-    using System.Diagnostics.CodeAnalysis;
 
     public class Product
     {

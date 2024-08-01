@@ -8,6 +8,6 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = _02.Collection
-build_property.ProjectDir = /Users/azichka/Mart^/SoftUni-Study/CSharpAdvanced/LabsAndEx/10.IteratorsAndComparators-Exercise/02.Collection/
+build_property.ProjectDir = C:\Users\marti\Source\Repos\SoftUni-Study\CSharpAdvanced\LabsAndEx\10.IteratorsAndComparators-Exercise\02.Collection\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 

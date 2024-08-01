@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using static Cadastre.Constants.ValidationConstants;
+using static Cadastre.Common.Constants.ValidationConstants;
 
 namespace Cadastre.Data.Models;
 

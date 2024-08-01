@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using Cadastre.Data.Enumerations;
-using static Cadastre.Constants.ValidationConstants;
+using static Cadastre.Common.Constants.ValidationConstants;
 
 namespace Cadastre.Data.Models;
 
@@ -20,5 +20,5 @@ public class District
     [Required]
     public Region Region { get; set; }
 
-    public IEnumerable<Property> Properties { get; set; } = new List<Property>();
+    public ICollection<Property> Properties { get; set; } = new List<Property>();
 }

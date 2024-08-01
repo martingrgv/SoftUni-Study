@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
+using AutoMapper.Configuration.Annotations;
 using Cadastre.Data.Enumerations;
-using static Cadastre.Constants.ValidationConstants;
+using static Cadastre.Common.Constants.ValidationConstants;
 
 namespace Cadastre.Data.Models
 {
@@ -23,6 +24,6 @@ namespace Cadastre.Data.Models
         [Required]
         public  MaritalStatus MaritalStatus { get; set; }
 
-        public IEnumerable<PropertyCitizen> PropertiesCitizens { get; set; } = new List<PropertyCitizen>();
+        public ICollection<PropertyCitizen> PropertiesCitizens { get; set; } = new List<PropertyCitizen>();
     }
 }

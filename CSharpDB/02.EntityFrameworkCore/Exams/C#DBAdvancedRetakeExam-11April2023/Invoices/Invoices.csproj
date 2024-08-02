@@ -8,6 +8,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="DataProcessor\ExportDto\**" />
+    <Compile Remove="DataProcessor\ImportDto\**" />
+    <Compile Remove="Data\Models\Enums\**" />
+    <EmbeddedResource Remove="DataProcessor\ExportDto\**" />
+    <EmbeddedResource Remove="DataProcessor\ImportDto\**" />
+    <EmbeddedResource Remove="Data\Models\Enums\**" />
+    <None Remove="DataProcessor\ExportDto\**" />
+    <None Remove="DataProcessor\ImportDto\**" />
+    <None Remove="Data\Models\Enums\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="6.0.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.1" />
@@ -16,12 +28,6 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="DataProcessor\ExportDto\" />
-    <Folder Include="DataProcessor\ImportDto\" />
-    <Folder Include="Data\Models\Enums\" />
   </ItemGroup>
 
 </Project>

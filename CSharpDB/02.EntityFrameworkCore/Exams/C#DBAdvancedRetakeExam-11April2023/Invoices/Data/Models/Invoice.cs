@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using Invoices.Data.Enumerations;
+using static Invoices.Core.ValidationConstants;
 
 namespace Invoices.Data.Models
 {
@@ -10,6 +11,7 @@ namespace Invoices.Data.Models
         public int Id { get; set; }
 
         [Required]
+        [Range(InvoiceNumberMinLength, InvoiceNumberMaxLength)]
         public int Number { get; set; }
 
         [Required]

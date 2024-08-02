@@ -1,7 +1,6 @@
 ﻿namespace Invoices.DataProcessor
 {
     using System.ComponentModel.DataAnnotations;
-    using System.Reflection.Metadata.Ecma335;
     using System.Text;
     using Cadastre.Utilities;
     using Invoices.Data;
@@ -31,14 +30,14 @@
                 throw new InvalidOperationException("Could not extract data from xml!");
             }
 
-            StringBuilder sb = new StringBuilder();
+            var stringBuilder = new StringBuilder();
             var clients = new List<Client>();
 
             foreach (var dto in clientsDTOs)
             {
                 if (!IsValid(dto))
                 {
-                    sb.AppendLine(ErrorMessage);
+                    stringBuilder.AppendLine(ErrorMessage);
                     continue;
                 }
 
@@ -52,7 +51,7 @@
                 {
                     if (!IsValid(addressDto))
                     {
-                        sb.AppendLine(ErrorMessage);
+                        stringBuilder.AppendLine(ErrorMessage);
                         continue;
                     }
 
@@ -69,7 +68,7 @@
                 }
 
                 clients.Add(client);
-                sb.AppendLine(string.Format(
+                stringBuilder.AppendLine(string.Format(
                     SuccessfullyImportedClients, client.Name
                 ));
             }
@@ -77,19 +76,109 @@
             context.Clients.AddRange(clients);
             context.SaveChanges();
 
-            return sb.ToString().TrimEnd();
+            return stringBuilder.ToString().TrimEnd();
         }
 
         public static string ImportInvoices(InvoicesContext context, string jsonString)
         {
-            throw new NotImplementedException();
+            var invoicesDtos = JsonSerializerHelper.Deserialize<InvoiceImportDTO[]>(jsonString);
+
+            if (invoicesDtos == null)
+            {
+                throw new InvalidOperationException("Could not extract data from json!");
+            }
+
+            var stringBuilder = new StringBuilder();
+            var invoices = new List<Invoice>();
+
+            foreach (var dto in invoicesDtos)
+            {
+                string dtodate = dto.DueDate.ToString();
+                if (!IsValid(dto))
+                {
+                    stringBuilder.AppendLine(ErrorMessage);
+                    continue;
+                }
+
+                var invoice = new Invoice
+                {
+                    Number = dto.Number,
+                    IssueDate = dto.IssueDate,
+                    DueDate = dto.DueDate,
+                    Amount = dto.Amount,
+                    CurrencyType = dto.CurrencyType,
+                    ClientId = dto.ClientId
+                };
+
+                invoices.Add(invoice);
+                stringBuilder.AppendLine(string.Format(
+                    SuccessfullyImportedInvoices, invoice.Number
+                ));
+            }
+
+            context.Invoices.AddRange(invoices);
+            context.SaveChanges();
+
+            return stringBuilder.ToString().TrimEnd();
         }
 
         public static string ImportProducts(InvoicesContext context, string jsonString)
         {
+            var productsDtos = JsonSerializerHelper.Deserialize<ProductImportDTO[]>(jsonString);
+
+            if (productsDtos == null)
+            {
+                throw new InvalidOperationException("Could not extract data from json!");
+            }
+
+            var stringBuilder = new StringBuilder();
+            var products = new List<Product>();
+
+            foreach (var dto in productsDtos)
+            {
+                if (!IsValid(dto))
+                {
+                    stringBuilder.AppendLine(ErrorMessage);
+                    continue;
+                }
+
+                var product = new Product
+                {
+                    Name = dto.Name,
+                    Price = dto.Price,
+                    CategoryType = dto.CategoryType
+                };
+
+                var existingClientsIds = context.Clients
+                    .Select(c => c.Id)
+                    .ToArray();
+
+                var clientIds = new HashSet<int>(dto.ClientsIds);
+
+                foreach (var id in clientIds)
+                {
+                    if (!existingClientsIds.Contains(id))
+                    {
+                        stringBuilder.AppendLine(ErrorMessage);
+                        continue;
+                    }
+
+                    product.ProductsClients.Add(new ProductClient
+                    {
+                        ClientId = id
+                    });
+                }
+
+                stringBuilder.AppendLine(string.Format(
+                    SuccessfullyImportedProducts, product.Name, product.ProductsClients.Count
+                ));
+            }
 
 
-            throw new NotImplementedException();
+            context.Products.AddRange(products);
+            context.SaveChanges();
+
+            return stringBuilder.ToString().TrimEnd();
         }
 
         public static bool IsValid(object dto)

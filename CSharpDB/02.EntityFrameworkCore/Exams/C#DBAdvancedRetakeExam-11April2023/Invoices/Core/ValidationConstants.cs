@@ -7,8 +7,8 @@ namespace Invoices.Core
         // Product
         public const int ProductNameMinLength = 9;
         public const int ProductNameMaxLength = 30;
-        public const int ProductPriceMinLength = 5;
-        public const int ProductPriceMaxLength = 1000;
+        public const decimal ProductPriceMinLength = 5M;
+        public const decimal ProductPriceMaxLength = 1000M;
 
         //Address
         public const int AddressStreetNameMinLength = 10;

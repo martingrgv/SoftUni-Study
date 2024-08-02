@@ -59,7 +59,7 @@ namespace Invoices.Migrations
 
                     b.HasIndex("ClientId");
 
-                    b.ToTable("Addresses", (string)null);
+                    b.ToTable("Addresses");
                 });
 
             modelBuilder.Entity("Invoices.Data.Models.Client", b =>
@@ -82,7 +82,7 @@ namespace Invoices.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Clients", (string)null);
+                    b.ToTable("Clients");
                 });
 
             modelBuilder.Entity("Invoices.Data.Models.Invoice", b =>
@@ -94,8 +94,7 @@ namespace Invoices.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<decimal>("Amount")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("decimal(18, 2)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("ClientId")
                         .HasColumnType("int");
@@ -116,7 +115,7 @@ namespace Invoices.Migrations
 
                     b.HasIndex("ClientId");
 
-                    b.ToTable("Invoices", (string)null);
+                    b.ToTable("Invoices");
                 });
 
             modelBuilder.Entity("Invoices.Data.Models.Product", b =>
@@ -136,12 +135,11 @@ namespace Invoices.Migrations
                         .HasColumnType("nvarchar(30)");
 
                     b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)")
-                        .HasColumnName("decimal(18, 2)");
+                        .HasColumnType("decimal(18,2)");
 
                     b.HasKey("Id");
 
-                    b.ToTable("Products", (string)null);
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Invoices.Data.Models.ProductClient", b =>
@@ -156,7 +154,7 @@ namespace Invoices.Migrations
 
                     b.HasIndex("ClientId");
 
-                    b.ToTable("ProductsClients", (string)null);
+                    b.ToTable("ProductsClients");
                 });
 
             modelBuilder.Entity("Invoices.Data.Models.Address", b =>

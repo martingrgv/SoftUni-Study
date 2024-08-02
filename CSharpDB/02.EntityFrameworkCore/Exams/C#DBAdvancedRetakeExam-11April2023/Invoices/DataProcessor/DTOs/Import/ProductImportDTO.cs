@@ -14,7 +14,7 @@ namespace Invoices.DataProcessor.DTOs.Import
         public string Name { get; set; } = null!;
 
         [Required]
-        [Range(ProductPriceMinLength, ProductPriceMaxLength)]
+        [Range((double)ProductPriceMinLength, (double)ProductPriceMaxLength)]
         [JsonProperty(nameof(Price))]
         public decimal Price { get; set; }
 

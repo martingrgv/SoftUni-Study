@@ -21,7 +21,7 @@ namespace Invoices.Data.Models
         public DateTime DueDate { get; set; }
 
         [Required]
-        [Column("decimal(18, 2)")]
+        [Column(TypeName = "decimal(18, 2)")]
         public decimal Amount { get; set; }
 
         [Required]

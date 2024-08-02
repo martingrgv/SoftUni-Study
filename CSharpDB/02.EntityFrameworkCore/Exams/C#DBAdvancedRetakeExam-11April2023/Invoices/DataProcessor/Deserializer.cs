@@ -1,6 +1,7 @@
 ﻿namespace Invoices.DataProcessor
 {
     using System.ComponentModel.DataAnnotations;
+    using System.IO.IsolatedStorage;
     using System.Text;
     using Cadastre.Utilities;
     using Invoices.Data;
@@ -93,7 +94,6 @@
 
             foreach (var dto in invoicesDtos)
             {
-                string dtodate = dto.DueDate.ToString();
                 if (!IsValid(dto))
                 {
                     stringBuilder.AppendLine(ErrorMessage);
@@ -168,6 +168,8 @@
                         ClientId = id
                     });
                 }
+
+                products.Add(product);
 
                 stringBuilder.AppendLine(string.Format(
                     SuccessfullyImportedProducts, product.Name, product.ProductsClients.Count

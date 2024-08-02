@@ -143,7 +143,6 @@ Invalid data!
 Invalid data!
 Successfully imported product - ADR Kit PU999/1X with 0 clients.
 Invalid data!
-Successfully imported product - Antifreeze liquid with 6 clients.
 Invalid data!
 Invalid data!
 Invalid data!

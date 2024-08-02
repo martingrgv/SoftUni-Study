@@ -7,6 +7,7 @@
     using Invoices.Data;
     using Invoices.Data.Models;
     using Invoices.DataProcessor.DTOs.Import;
+    using Invoices.Utilities;
 
     public class Deserializer
     {
@@ -103,8 +104,8 @@
                 var invoice = new Invoice
                 {
                     Number = dto.Number,
-                    IssueDate = dto.IssueDate,
-                    DueDate = dto.DueDate,
+                    IssueDate = DateTimeHelper.ConvertTo(dto.IssueDate),
+                    DueDate = DateTimeHelper.ConvertTo(dto.DueDate),
                     Amount = dto.Amount,
                     CurrencyType = dto.CurrencyType,
                     ClientId = dto.ClientId

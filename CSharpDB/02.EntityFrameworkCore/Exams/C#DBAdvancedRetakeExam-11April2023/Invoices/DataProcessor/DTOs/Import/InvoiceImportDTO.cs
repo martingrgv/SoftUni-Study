@@ -15,12 +15,12 @@ namespace Invoices.DataProcessor.DTOs.Import
 
         [Required]
         [JsonProperty(nameof(IssueDate))]
-        public DateTime IssueDate { get; set; }
+        public string IssueDate { get; set; } = null!;
 
         [Required]
         [DateComparison(nameof(IssueDate))]
         [JsonProperty(nameof(DueDate))]
-        public DateTime DueDate { get; set; }
+        public string DueDate { get; set; } = null!;
 
         [Required]
         [JsonProperty(nameof(Amount))]

@@ -1,5 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+﻿using Invoices.Utilities;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.Net.Security;
 
 namespace Invoices.Core.Attributes
@@ -16,11 +18,12 @@ namespace Invoices.Core.Attributes
         protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
         {
             var propertyInfo = validationContext.ObjectType.GetProperty(datePropertyName);
-            var compareValue = propertyInfo!.GetValue(validationContext.ObjectInstance) as DateTime?;
+            var compareValue = propertyInfo!.GetValue(validationContext.ObjectInstance);
 
-            var currentDate = value as DateTime?;
+            var compareDate = DateTimeHelper.ConvertTo((compareValue as string)!);
+            var currentDate = DateTimeHelper.ConvertTo((value as string)!);
 
-            if (currentDate < compareValue)
+            if (currentDate < compareDate)
             {
                 return new ValidationResult($"{datePropertyName} is incorrect!");
             }

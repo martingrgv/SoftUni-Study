@@ -1,4 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using TravelAgency.Data.Configurations;
+using TravelAgency.Data.Models;
 
 namespace TravelAgency.Data
 {
@@ -10,7 +12,13 @@ namespace TravelAgency.Data
 
         public TravelAgencyContext(DbContextOptions options)
             : base(options) { }
-       
+
+        public DbSet<Customer> Customers { get; set; } = null!;
+        public DbSet<Booking> Bookings { get; set; } = null!;
+        public DbSet<Guide> Guides { get; set; } = null!;
+        public DbSet<TourPackage> TourPackages { get; set; } = null!;
+        public DbSet<TourPackageGuide> TourPackagesGuides { get; set; } = null!;
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -21,6 +29,8 @@ namespace TravelAgency.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfiguration(new TourPackageGuideConfiguration());
+
             //modelBuilder.Entity<Guide>().HasData(
             //    new Guide { Id = 1, FullName = "John Doe", Language = Language.Russian },
             //    new Guide { Id = 2, FullName = "Jane Smith", Language = Language.English },

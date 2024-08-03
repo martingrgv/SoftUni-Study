@@ -1,5 +1,7 @@
 ﻿using Cadastre.Utilities;
+using Invoices.Utilities;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json.Linq;
 using System.ComponentModel.DataAnnotations;
 using System.Text;
 using TravelAgency.Data;
@@ -66,7 +68,64 @@ namespace TravelAgency.DataProcessor
         
         public static string ImportBookings(TravelAgencyContext context, string jsonString)
         {
-            throw new NotImplementedException();
+            var bookingDTOs = JsonSerializerHelper.Deserialize<BookingImportDTO[]>(jsonString);
+
+            if (bookingDTOs == null)
+            {
+                throw new InvalidOperationException("Could not import data from JSON!");
+            }
+
+            var strBuilder = new StringBuilder();
+            var bookings = new List<Booking>();
+
+            foreach (var dto in bookingDTOs)
+            {
+                if (!IsValid(dto))
+                {
+                    strBuilder.AppendLine(ErrorMessage);
+                    continue;
+                }
+
+                var customer = context.Customers
+                    .FirstOrDefault(c => c.FullName == dto.CustomerName);
+
+                var tourPackage = context.TourPackages
+                    .FirstOrDefault(tp => tp.PackageName == dto.TourPackageName);
+
+                if (customer == null || tourPackage == null)
+                {
+                    strBuilder.AppendLine(ErrorMessage);
+                    continue;
+                }
+
+                var bookingDate = new DateTime();
+                try
+                {
+                     bookingDate = DateTimeHelper.ConvertTo(dto.BookingDate);
+                }
+                catch (FormatException)
+                {
+                    strBuilder.AppendLine(ErrorMessage);
+                    continue;
+                }
+
+                var booking = new Booking
+                {
+                    BookingDate = bookingDate,
+                    Customer = customer,
+                    TourPackage = tourPackage
+                };
+
+                bookings.Add(booking);
+                strBuilder.AppendLine(string.Format(
+                    SuccessfullyImportedBooking, tourPackage.PackageName, bookingDate.ToString("yyyy-MM-dd")
+                ));
+            }
+
+            context.Bookings.AddRange(bookings);
+            context.SaveChanges();
+
+            return strBuilder.ToString().TrimEnd();
         }
 
         public static bool IsValid(object dto)

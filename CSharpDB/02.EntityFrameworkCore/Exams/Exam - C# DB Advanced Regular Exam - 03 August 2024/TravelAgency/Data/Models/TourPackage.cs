@@ -10,7 +10,7 @@ namespace TravelAgency.Data.Models
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(TourPackagePackageNameMaxLength)]
+        [MaxLength(TourPackageNameMaxLength)]
         public string PackageName { get; set; } = null!;
 
         [MaxLength(TourPackageDescriptionMaxLength)]

@@ -15,8 +15,8 @@
         public const int GuideFullNameMaxLength = 60;
 
         // Tour Package
-        public const int TourPackagePackageNameMinLength = 2;
-        public const int TourPackagePackageNameMaxLength = 40;
+        public const int TourPackageNameMinLength = 2;
+        public const int TourPackageNameMaxLength = 40;
         public const int TourPackageDescriptionMinLength = 0;
         public const int TourPackageDescriptionMaxLength = 200;
     }

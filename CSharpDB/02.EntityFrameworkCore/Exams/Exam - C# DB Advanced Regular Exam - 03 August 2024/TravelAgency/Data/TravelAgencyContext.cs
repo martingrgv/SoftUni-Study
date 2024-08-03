@@ -4,20 +4,13 @@ namespace TravelAgency.Data
 {
     public class TravelAgencyContext : DbContext
     {
-        private const string connectionString = @"";
+        private const string connectionString = @"Server=localhost; Database=TravelAgencyDB; User Id=SA; Password=MasterDev1";
 
-        public TravelAgencyContext()
-        {
-
-        }
+        public TravelAgencyContext() { }
 
         public TravelAgencyContext(DbContextOptions options)
-            : base(options)
-        {
-
-        }
+            : base(options) { }
        
-
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
@@ -28,8 +21,6 @@ namespace TravelAgency.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            
-
             //modelBuilder.Entity<Guide>().HasData(
             //    new Guide { Id = 1, FullName = "John Doe", Language = Language.Russian },
             //    new Guide { Id = 2, FullName = "Jane Smith", Language = Language.English },

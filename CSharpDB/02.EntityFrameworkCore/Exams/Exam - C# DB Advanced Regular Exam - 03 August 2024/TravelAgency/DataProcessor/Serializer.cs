@@ -33,7 +33,31 @@ namespace TravelAgency.DataProcessor
 
         public static string ExportCustomersThatHaveBookedHorseRidingTourPackage(TravelAgencyContext context)
         {
-            throw new NotImplementedException();
+            var filterPackageName = "Horse Riding Tour";
+            var customerDTOs = context.Customers
+                .Where(c => c.Bookings
+                    .Select(b => b.TourPackage.PackageName)
+                    .Contains(filterPackageName)
+                )
+                .Select(c => new CustomerExportDTO
+                {
+                    FullName = c.FullName,
+                    PhoneNumber = c.PhoneNumber,
+                    Bookings = c.Bookings
+                    .OrderBy(b => b.BookingDate)
+                    .Where(b => b.TourPackage.PackageName == filterPackageName)
+                    .Select(b => new BookingExportDTO
+                    {
+                        TourPackageName = b.TourPackage.PackageName,
+                        Date = b.BookingDate.ToString("yyyy-MM-dd")
+                    })
+                    .ToArray()
+                })
+                .OrderBy(c => c.Bookings.Length)
+                .ThenBy(c => c.FullName)
+                .ToArray();
+
+            return JsonSerializerHelper.Serialize(customerDTOs);;
         }
     }
 }

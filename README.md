@@ -38,11 +38,11 @@
   </tr>
   <tr>
     <td>MSSQL</td>
-    <td>In progress...</td>
+    <td><a href="https://softuni.bg/certificates/details/216699/de5feb4a">Show certificate</a></td>
   </tr>
   <tr>
     <td>Entity Framework</td>
-    <td>In progress...</td>
+    <td><a href="https://softuni.bg/certificates/details/221084/4e921d2e">Show certificate</a></td>
   </tr>
   <tr>
     <td>C# Web</td>

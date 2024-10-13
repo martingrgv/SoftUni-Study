@@ -23,6 +23,7 @@ namespace GameZone.Data
 
             builder.ApplyConfiguration(new UserConfiguration());
             builder.ApplyConfiguration(new GenreConfiguration());
+            builder.ApplyConfiguration(new GameConfiguration());
             builder.ApplyConfiguration(new GamerGameConfiguration());
         }
     }

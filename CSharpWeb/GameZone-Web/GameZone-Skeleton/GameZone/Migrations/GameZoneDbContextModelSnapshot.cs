@@ -60,6 +60,18 @@ namespace GameZone.Migrations
                     b.HasIndex("PublisherId");
 
                     b.ToTable("Games");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Assassin's Creed Mirage is a 2023 action-adventure game developed by Ubisoft Bordeaux and published by Ubisoft.The game is the thirteenth major installment in the Assassin's Creed series and the successor to 2020's Assassin's Creed Valhalla.While its historical timeframe precedes that of",
+                            GenreId = 1,
+                            ImageUrl = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.wallpapersden.com%2Fimage%2Fdownload%2Fofficial-assassin-s-creed-mirage-hd_bWtoZmiUmZqaraWkpJRobWllrWdma2VnZWc.jpg&f=1&nofb=1&ipt=72fbe60bee574d188b5189ac5f601188088d9beaf9d22af8f42488f8bf052da9&ipo=images",
+                            PublisherId = "5615c548-7c51-4df4-8630-187395bc1c01",
+                            ReleasedOn = new DateTime(2023, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Title = "Assassin's Creed Mirage"
+                        });
                 });
 
             modelBuilder.Entity("GameZone.Data.Models.GamerGame", b =>
@@ -246,19 +258,35 @@ namespace GameZone.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "d9b49728-4852-4699-958d-64d79549b736",
+                            Id = "5067afe2-1093-4328-ac98-34ecfdf90937",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "9b1de318-b449-421d-a547-53a4e8bf82db",
+                            ConcurrencyStamp = "71627110-7e3a-40ae-8d28-8054f823a607",
                             Email = "guest@mail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "GUEST@MAIL.COM",
                             NormalizedUserName = "GUEST@MAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAELrSruc72wCVEcty9xS7gsx1lJW3O4RmzU90apQnvMGz5hIROJ3YdaTY+0GXf4W7xg==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECd3DQWgLHSDHYTv9KOHNc88fHadW56PGNLYgj8QUUIvnZPuBpgmOrMan9++hm19bg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "eceb6cfa-3b94-4b12-a474-5cf96f55349b",
+                            SecurityStamp = "77ecb5ae-072d-4448-815c-3baaedaa2fd2",
                             TwoFactorEnabled = false,
                             UserName = "guest@mail.com"
+                        },
+                        new
+                        {
+                            Id = "5615c548-7c51-4df4-8630-187395bc1c01",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "e7f47e7b-adf2-47e0-9e36-6606c81e008b",
+                            Email = "publisher@mail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "PUBLISHER@MAIL.COM",
+                            NormalizedUserName = "PUBLISHER@MAIL.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEC8SbNAHM0Ti1b9QxRdAkmicsS002SIJ8q7LI4u+8iI6c/JOItGvEpAS3zSB7kBeRg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "519da165-1214-487f-9f07-299bd16b6b2b",
+                            TwoFactorEnabled = false,
+                            UserName = "publisher@mail.com"
                         });
                 });
 

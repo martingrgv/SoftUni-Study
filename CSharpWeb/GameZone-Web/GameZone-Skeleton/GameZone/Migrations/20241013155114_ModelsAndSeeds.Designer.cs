@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GameZone.Migrations
 {
     [DbContext(typeof(GameZoneDbContext))]
-    [Migration("20241013114831_guestuser_seed")]
-    partial class guestuser_seed
+    [Migration("20241013155114_ModelsAndSeeds")]
+    partial class ModelsAndSeeds
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,6 +23,123 @@ namespace GameZone.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
+
+            modelBuilder.Entity("GameZone.Data.Models.Game", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
+
+                    b.Property<int>("GenreId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PublisherId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<DateTime>("ReleasedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Title")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("GenreId");
+
+                    b.HasIndex("PublisherId");
+
+                    b.ToTable("Games");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Assassin's Creed Mirage is a 2023 action-adventure game developed by Ubisoft Bordeaux and published by Ubisoft.The game is the thirteenth major installment in the Assassin's Creed series and the successor to 2020's Assassin's Creed Valhalla.While its historical timeframe precedes that of",
+                            GenreId = 1,
+                            ImageUrl = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.wallpapersden.com%2Fimage%2Fdownload%2Fofficial-assassin-s-creed-mirage-hd_bWtoZmiUmZqaraWkpJRobWllrWdma2VnZWc.jpg&f=1&nofb=1&ipt=72fbe60bee574d188b5189ac5f601188088d9beaf9d22af8f42488f8bf052da9&ipo=images",
+                            PublisherId = "5615c548-7c51-4df4-8630-187395bc1c01",
+                            ReleasedOn = new DateTime(2023, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Title = "Assassin's Creed Mirage"
+                        });
+                });
+
+            modelBuilder.Entity("GameZone.Data.Models.GamerGame", b =>
+                {
+                    b.Property<int>("GameId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("GamerId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("GameId", "GamerId");
+
+                    b.HasIndex("GamerId");
+
+                    b.ToTable("GamersGames");
+                });
+
+            modelBuilder.Entity("GameZone.Data.Models.Genre", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(25)
+                        .HasColumnType("nvarchar(25)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Genres");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Name = "Action"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Name = "Adventure"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Name = "Fighting"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            Name = "Sports"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            Name = "Racing"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Strategy"
+                        });
+                });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
                 {
@@ -143,19 +260,35 @@ namespace GameZone.Migrations
                     b.HasData(
                         new
                         {
-                            Id = "06b1c132-083d-4566-aaa0-a76d31934bd2",
+                            Id = "5067afe2-1093-4328-ac98-34ecfdf90937",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "eeb9f48c-a06d-41e5-8624-e3fc274cfa7c",
+                            ConcurrencyStamp = "71627110-7e3a-40ae-8d28-8054f823a607",
                             Email = "guest@mail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             NormalizedEmail = "GUEST@MAIL.COM",
                             NormalizedUserName = "GUEST@MAIL.COM",
-                            PasswordHash = "AQAAAAEAACcQAAAAEPDGcQQun6eeU32ejjar2U/L5bIVMcOF+8iuMR3oTMeceY/uVb7gtB4RxH1DhBUszw==",
+                            PasswordHash = "AQAAAAEAACcQAAAAECd3DQWgLHSDHYTv9KOHNc88fHadW56PGNLYgj8QUUIvnZPuBpgmOrMan9++hm19bg==",
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "0389d778-6e85-4869-bccb-5a278c7b072f",
+                            SecurityStamp = "77ecb5ae-072d-4448-815c-3baaedaa2fd2",
                             TwoFactorEnabled = false,
                             UserName = "guest@mail.com"
+                        },
+                        new
+                        {
+                            Id = "5615c548-7c51-4df4-8630-187395bc1c01",
+                            AccessFailedCount = 0,
+                            ConcurrencyStamp = "e7f47e7b-adf2-47e0-9e36-6606c81e008b",
+                            Email = "publisher@mail.com",
+                            EmailConfirmed = false,
+                            LockoutEnabled = false,
+                            NormalizedEmail = "PUBLISHER@MAIL.COM",
+                            NormalizedUserName = "PUBLISHER@MAIL.COM",
+                            PasswordHash = "AQAAAAEAACcQAAAAEC8SbNAHM0Ti1b9QxRdAkmicsS002SIJ8q7LI4u+8iI6c/JOItGvEpAS3zSB7kBeRg==",
+                            PhoneNumberConfirmed = false,
+                            SecurityStamp = "519da165-1214-487f-9f07-299bd16b6b2b",
+                            TwoFactorEnabled = false,
+                            UserName = "publisher@mail.com"
                         });
                 });
 
@@ -244,6 +377,44 @@ namespace GameZone.Migrations
                     b.ToTable("AspNetUserTokens", (string)null);
                 });
 
+            modelBuilder.Entity("GameZone.Data.Models.Game", b =>
+                {
+                    b.HasOne("GameZone.Data.Models.Genre", "Genre")
+                        .WithMany("Games")
+                        .HasForeignKey("GenreId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Publisher")
+                        .WithMany()
+                        .HasForeignKey("PublisherId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Genre");
+
+                    b.Navigation("Publisher");
+                });
+
+            modelBuilder.Entity("GameZone.Data.Models.GamerGame", b =>
+                {
+                    b.HasOne("GameZone.Data.Models.Game", "Game")
+                        .WithMany("GamersGames")
+                        .HasForeignKey("GameId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", "Gamer")
+                        .WithMany()
+                        .HasForeignKey("GamerId")
+                        .OnDelete(DeleteBehavior.NoAction)
+                        .IsRequired();
+
+                    b.Navigation("Game");
+
+                    b.Navigation("Gamer");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
@@ -293,6 +464,16 @@ namespace GameZone.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("GameZone.Data.Models.Game", b =>
+                {
+                    b.Navigation("GamersGames");
+                });
+
+            modelBuilder.Entity("GameZone.Data.Models.Genre", b =>
+                {
+                    b.Navigation("Games");
                 });
 #pragma warning restore 612, 618
         }

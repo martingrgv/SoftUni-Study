@@ -9,11 +9,7 @@ namespace GameZone.Data.Configurations
 	{
 		public void Configure(EntityTypeBuilder<IdentityUser> builder)
 		{
-			DbSeeder.SeedUsers();
-			builder.HasData(new IdentityUser[]
-			{
-				DbSeeder.GuestUser
-			});
+			builder.HasData(DbSeeder.SeedUsers());
 		}
 	}
 }

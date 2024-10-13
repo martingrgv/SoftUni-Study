@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace GameZone.Data.Configurations
 {
-	public class GenreConfiguration : IEntityTypeConfiguration<Genre>
+	public class GameConfiguration : IEntityTypeConfiguration<Game>
 	{
-		public void Configure(EntityTypeBuilder<Genre> builder)
+		public void Configure(EntityTypeBuilder<Game> builder)
 		{
-			builder.HasData(DbSeeder.SeedGenres());
+			builder.HasData(DbSeeder.SeedGames());
 		}
 	}
 }

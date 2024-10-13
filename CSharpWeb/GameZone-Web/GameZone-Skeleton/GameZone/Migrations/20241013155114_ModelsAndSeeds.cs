@@ -5,15 +5,10 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GameZone.Migrations
 {
-    public partial class added_models : Migration
+    public partial class ModelsAndSeeds : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
-            migrationBuilder.DeleteData(
-                table: "AspNetUsers",
-                keyColumn: "Id",
-                keyValue: "06b1c132-083d-4566-aaa0-a76d31934bd2");
-
             migrationBuilder.CreateTable(
                 name: "Genres",
                 columns: table => new
@@ -82,7 +77,11 @@ namespace GameZone.Migrations
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
                 columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "d9b49728-4852-4699-958d-64d79549b736", 0, "9b1de318-b449-421d-a547-53a4e8bf82db", "guest@mail.com", false, false, null, "GUEST@MAIL.COM", "GUEST@MAIL.COM", "AQAAAAEAACcQAAAAELrSruc72wCVEcty9xS7gsx1lJW3O4RmzU90apQnvMGz5hIROJ3YdaTY+0GXf4W7xg==", null, false, "eceb6cfa-3b94-4b12-a474-5cf96f55349b", false, "guest@mail.com" });
+                values: new object[,]
+                {
+                    { "5067afe2-1093-4328-ac98-34ecfdf90937", 0, "71627110-7e3a-40ae-8d28-8054f823a607", "guest@mail.com", false, false, null, "GUEST@MAIL.COM", "GUEST@MAIL.COM", "AQAAAAEAACcQAAAAECd3DQWgLHSDHYTv9KOHNc88fHadW56PGNLYgj8QUUIvnZPuBpgmOrMan9++hm19bg==", null, false, "77ecb5ae-072d-4448-815c-3baaedaa2fd2", false, "guest@mail.com" },
+                    { "5615c548-7c51-4df4-8630-187395bc1c01", 0, "e7f47e7b-adf2-47e0-9e36-6606c81e008b", "publisher@mail.com", false, false, null, "PUBLISHER@MAIL.COM", "PUBLISHER@MAIL.COM", "AQAAAAEAACcQAAAAEC8SbNAHM0Ti1b9QxRdAkmicsS002SIJ8q7LI4u+8iI6c/JOItGvEpAS3zSB7kBeRg==", null, false, "519da165-1214-487f-9f07-299bd16b6b2b", false, "publisher@mail.com" }
+                });
 
             migrationBuilder.InsertData(
                 table: "Genres",
@@ -96,6 +95,11 @@ namespace GameZone.Migrations
                     { 5, "Racing" },
                     { 6, "Strategy" }
                 });
+
+            migrationBuilder.InsertData(
+                table: "Games",
+                columns: new[] { "Id", "Description", "GenreId", "ImageUrl", "PublisherId", "ReleasedOn", "Title" },
+                values: new object[] { 1, "Assassin's Creed Mirage is a 2023 action-adventure game developed by Ubisoft Bordeaux and published by Ubisoft.The game is the thirteenth major installment in the Assassin's Creed series and the successor to 2020's Assassin's Creed Valhalla.While its historical timeframe precedes that of", 1, "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimages.wallpapersden.com%2Fimage%2Fdownload%2Fofficial-assassin-s-creed-mirage-hd_bWtoZmiUmZqaraWkpJRobWllrWdma2VnZWc.jpg&f=1&nofb=1&ipt=72fbe60bee574d188b5189ac5f601188088d9beaf9d22af8f42488f8bf052da9&ipo=images", "5615c548-7c51-4df4-8630-187395bc1c01", new DateTime(2023, 10, 5, 0, 0, 0, 0, DateTimeKind.Unspecified), "Assassin's Creed Mirage" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_GamersGames_GamerId",
@@ -127,12 +131,12 @@ namespace GameZone.Migrations
             migrationBuilder.DeleteData(
                 table: "AspNetUsers",
                 keyColumn: "Id",
-                keyValue: "d9b49728-4852-4699-958d-64d79549b736");
+                keyValue: "5067afe2-1093-4328-ac98-34ecfdf90937");
 
-            migrationBuilder.InsertData(
+            migrationBuilder.DeleteData(
                 table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "ConcurrencyStamp", "Email", "EmailConfirmed", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "06b1c132-083d-4566-aaa0-a76d31934bd2", 0, "eeb9f48c-a06d-41e5-8624-e3fc274cfa7c", "guest@mail.com", false, false, null, "GUEST@MAIL.COM", "GUEST@MAIL.COM", "AQAAAAEAACcQAAAAEPDGcQQun6eeU32ejjar2U/L5bIVMcOF+8iuMR3oTMeceY/uVb7gtB4RxH1DhBUszw==", null, false, "0389d778-6e85-4869-bccb-5a278c7b072f", false, "guest@mail.com" });
+                keyColumn: "Id",
+                keyValue: "5615c548-7c51-4df4-8630-187395bc1c01");
         }
     }
 }

@@ -11,7 +11,9 @@ namespace GameZone.Profiles
 			CreateMap<GameCreateModel, Game>();
 			CreateMap<Game, GameViewModel>()
 				.ForMember(s => s.Publisher, opt =>
-					opt.MapFrom(src => src.Publisher.UserName));
+					opt.MapFrom(src => src.Publisher.UserName))
+				.ForMember(s => s.Genre, opt => 
+					opt.MapFrom(d => d.Genre.Name));
 		}
 	}
 }

@@ -4,7 +4,9 @@ using GameZone.Data;
 using GameZone.Data.Models;
 using GameZone.Models;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.Runtime.CompilerServices;
 
 namespace GameZone.Core
 {
@@ -71,6 +73,27 @@ namespace GameZone.Core
 		public async Task<ICollection<Genre>> GetGenres()
 		{
 			return await _context.Genres.ToListAsync();
+		}
+
+		public async Task<GameViewModel?> GetGameById(int gameId)
+		{
+			var game = await _context.Games
+				.FirstOrDefaultAsync(g => g.Id == gameId);
+
+			if (game == null)
+			{
+				return null;
+			}
+
+			_context.Entry(game)
+				.Reference(g => g.Genre)
+				.Load();
+			_context.Entry(game)
+				.Reference(g => g.Publisher)
+				.Load();
+
+			var model = _mapper.Map<GameViewModel>(game);
+			return model;
 		}
 	}
 }

@@ -22,9 +22,21 @@ namespace GameZone.Controllers
 		}
 
 		[HttpGet]
-		public IActionResult Details()
+		public async Task<IActionResult> Details([FromRoute] int id)
 		{
-			return View();
+			if (id == 0)
+			{
+				return BadRequest();
+			}
+
+			var model = await _gameService.GetGameById(id);
+
+			if (model == null)
+			{
+				return BadRequest();
+			}
+
+			return View(model);
 		}
 
 		[HttpGet]
@@ -43,7 +55,7 @@ namespace GameZone.Controllers
 		}
 
 		[HttpPost]
-		public async Task<IActionResult> Add(GameCreateModel model)
+		public async Task<IActionResult> Add([FromBody]GameCreateModel model)
 		{
 			if (ModelState.IsValid == false)
 			{

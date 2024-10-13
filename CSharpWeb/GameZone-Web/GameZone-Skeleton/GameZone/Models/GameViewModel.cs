@@ -9,7 +9,7 @@ namespace GameZone.Models
 		public string Description { get; set; } = null!;
 		public string ImageUrl { get; set; } = null!;
 		public DateTime ReleasedOn { get; set; }
-		public Genre Genre { get; set; } = null!;
+		public string Genre { get; set; } = null!;
 		public string Publisher { get; set; } = null!;
 	}
 }

@@ -9,6 +9,7 @@ namespace GameZone.Contracts
 		public Task<IEnumerable<GameViewModel>> AllGames();
 		public Task AddGame(GameCreateModel model, string publisherId);
 		public Task EditGame(GameCreateModel model);
+		public Task<GameViewModel?> GetGameById(int gameId);
 		public Task<IdentityUser?> GetGamePublisher(string publisherId);
 		public Task<ICollection<Genre>> GetGenres();
 		public Task AddToZone(int gameId, string userId);

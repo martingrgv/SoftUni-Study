@@ -50,9 +50,17 @@ namespace GameZone.Core
 		}
 
 
-		public Task DeleteGame(int gameId)
+		public async Task DeleteGame(int gameId)
 		{
-			throw new NotImplementedException();
+			var game = _context.Games.Find(gameId);
+
+			if (game == null)
+			{
+				return;
+			}
+
+			_context.Games.Remove(game);
+			await _context.SaveChangesAsync();
 		}
 
 		public Task EditGame(GameCreateModel model)
@@ -65,9 +73,25 @@ namespace GameZone.Core
 			throw new NotImplementedException();
 		}
 
-		public Task<IdentityUser?> GetGamePublisher(string publisherId)
+		public async Task<bool> GameHasPublisher(int gameId, string publisherId)
 		{
-			throw new NotImplementedException();
+			var game = _context.Games.Find(gameId);
+			
+			if (game == null)
+			{
+				throw new InvalidOperationException("Game not found!");
+			}
+
+			//await _context.Entry(game)
+			//	.Reference(g => g.Publisher)
+			//	.LoadAsync();
+
+			if (game.PublisherId != publisherId)
+			{
+				return false;
+			}
+
+			return true;
 		}
 
 		public async Task<ICollection<Genre>> GetGenres()
@@ -75,14 +99,14 @@ namespace GameZone.Core
 			return await _context.Genres.ToListAsync();
 		}
 
-		public async Task<GameViewModel?> GetGameById(int gameId)
+		public Task<GameViewModel?> GetGameViewModelById(int gameId)
 		{
-			var game = await _context.Games
-				.FirstOrDefaultAsync(g => g.Id == gameId);
+			var game = _context.Games
+				.Find(gameId);
 
 			if (game == null)
 			{
-				return null;
+				return Task.FromResult((GameViewModel?)null);
 			}
 
 			_context.Entry(game)
@@ -93,7 +117,7 @@ namespace GameZone.Core
 				.Load();
 
 			var model = _mapper.Map<GameViewModel>(game);
-			return model;
+			return Task.FromResult((GameViewModel?)model);
 		}
 	}
 }

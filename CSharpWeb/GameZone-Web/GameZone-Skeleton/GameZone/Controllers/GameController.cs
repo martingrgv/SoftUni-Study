@@ -1,6 +1,7 @@
 ﻿using GameZone.Contracts;
 using GameZone.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Diagnostics.HealthChecks;
 using System.Security.Claims;
 
 namespace GameZone.Controllers
@@ -29,7 +30,7 @@ namespace GameZone.Controllers
 				return BadRequest();
 			}
 
-			var model = await _gameService.GetGameById(id);
+			var model = await _gameService.GetGameViewModelById(id);
 
 			if (model == null)
 			{
@@ -86,9 +87,38 @@ namespace GameZone.Controllers
 			return View();
 		}
 
-		public IActionResult Delete()
+		[HttpGet]
+		public async Task<IActionResult> Delete([FromRoute] int id)
 		{
-			return View();
+			if (id == 0)
+			{
+				return BadRequest();
+			}
+
+			if (await _gameService.GameHasPublisher(id, User.Id()) == false)
+			{
+				return Unauthorized();
+			}
+
+			var model = await _gameService.GetGameViewModelById(id);
+			return View(model);
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> DeleteConfirmed([FromForm] int id)
+		{
+			if (id == 0)
+			{
+				return BadRequest();
+			}
+
+			if (await _gameService.GameHasPublisher(id, User.Id()) == false)
+			{
+				return Unauthorized();
+			}
+
+			await _gameService.DeleteGame(id);
+			return RedirectToAction(nameof(All), "Game");
 		}
 	}
 }

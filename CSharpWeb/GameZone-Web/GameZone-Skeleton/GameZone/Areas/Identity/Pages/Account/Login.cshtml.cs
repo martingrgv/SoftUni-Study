@@ -14,6 +14,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using GameZone.Controllers;
 
 namespace GameZone.Areas.Identity.Pages.Account
 {
@@ -115,7 +116,7 @@ namespace GameZone.Areas.Identity.Pages.Account
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User logged in.");
-                    return LocalRedirect(returnUrl);
+                    return RedirectToAction("All", "Game");
                 }
                 if (result.RequiresTwoFactor)
                 {

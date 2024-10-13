@@ -5,8 +5,8 @@ namespace GameZone.Data.Seed
 {
     public static class DbSeeder
     {
-        public static IdentityUser GuestUser { get; set; }
-        public static List<Genre> Genres { get; set; }
+        public static IdentityUser GuestUser { get; set; } = null!;
+        public static List<Genre> Genres { get; set; } = null!;
 
         public static void SeedUsers()
         {

@@ -1,7 +1,10 @@
-﻿using GameZone.Data;
+﻿using GameZone.Contracts;
+using GameZone.Core;
+using GameZone.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
+using System.Reflection;
 
 namespace GameZone.Extensions
 {
@@ -9,6 +12,9 @@ namespace GameZone.Extensions
 	{
 		public static IServiceCollection AddServices(this IServiceCollection services)
 		{
+			services.AddAutoMapper(typeof(Program).Assembly);
+			services.AddScoped<IGameService, GameService>();
+
 			return services;
 		}
 

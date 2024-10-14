@@ -15,5 +15,7 @@ namespace GameZone.Contracts
 		Task RemoveFromZone(int gameId, string userId);
 		Task DeleteGame(int gameId);
 		Task<Game?> GetGameById(int gameId);
+		Task<bool> UserZonedGame(int gameId, string userId);
+		Task<IEnumerable<GameViewModel?>> GetUserZone(string userId);
 	}
 }

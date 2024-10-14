@@ -1,6 +1,4 @@
-﻿using GameZone.Data.Models;
-
-namespace GameZone.Models
+﻿namespace GameZone.Models
 {
 	public class GameViewModel
 	{

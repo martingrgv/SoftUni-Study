@@ -15,11 +15,11 @@ namespace GameZone.Core
 		private GameZoneDbContext _context;
 		private IMapper _mapper;
 
-        public GameService(GameZoneDbContext context, IMapper mapper)
-        {
+		public GameService(GameZoneDbContext context, IMapper mapper)
+		{
 			_context = context;
 			_mapper = mapper;
-        }
+		}
 
 		public async Task<IEnumerable<GameViewModel>> AllGames()
 		{
@@ -36,7 +36,7 @@ namespace GameZone.Core
 			return models;
 		}
 
-        public async Task AddGame(GameCreateModel model, string publisherId)
+		public async Task AddGame(GameCreateModel model, string publisherId)
 		{
 			var game = _mapper.Map<Game>(model);
 			game.PublisherId = publisherId;
@@ -45,9 +45,25 @@ namespace GameZone.Core
 			await _context.SaveChangesAsync();
 		}
 
-		public Task AddToZone(int gameId, string userId)
+		public Task<bool> UserZonedGame(int gameId, string userId)
 		{
-			throw new NotImplementedException();
+			if (_context.GamersGames.Find(gameId, userId) == null)
+			{
+				return Task.FromResult(false);
+			}
+
+			return Task.FromResult(true);
+		}
+
+		public async Task AddToZone(int gameId, string userId)
+		{
+			_context.Add(new GamerGame
+			{
+				GameId = gameId,
+				GamerId = userId
+			});
+
+			await _context.SaveChangesAsync();
 		}
 
 
@@ -122,6 +138,25 @@ namespace GameZone.Core
 				.Load();
 
 			return Task.FromResult((Game?)game);
+		}
+
+		public async Task<IEnumerable<GameViewModel?>> GetUserZone(string userId)
+		{
+			var gamersGames = await _context.GamersGames
+				.Where(gg => gg.GamerId == userId)
+				.Include(gg => gg.Game)
+				.ToListAsync();
+
+			var games = _mapper.Map<IEnumerable<GameViewModel?>>(gamersGames
+				.Select(gg => gg.Game)
+				.ToList());
+
+			if (games.Count() == 0)
+			{
+				return null!;
+			}
+
+			return games;
 		}
 	}
 }

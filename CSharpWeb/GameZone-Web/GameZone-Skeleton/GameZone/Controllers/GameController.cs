@@ -45,9 +45,10 @@ namespace GameZone.Controllers
 		}
 
 		[HttpGet]
-		public IActionResult MyZone()
+		public async Task<IActionResult> MyZone()
 		{
-			return View();
+			var model = await _gameService.GetUserZone(User.Id());
+			return View(model);
 		}
 
 		[HttpGet]
@@ -116,9 +117,21 @@ namespace GameZone.Controllers
 			return RedirectToAction(nameof(All), "Game");
 		}
 
-		public IActionResult AddToMyZone()
+		[HttpGet]
+		public async Task<IActionResult> AddToMyZone([FromQuery]int id)
 		{
-			return View();
+			if (id == 0)
+			{
+				return BadRequest();
+			}
+
+			if (await _gameService.UserZonedGame(id, User.Id()))
+			{
+				return RedirectToAction(nameof(MyZone), "Game");
+			}
+
+			await _gameService.AddToZone(id, User.Id());
+			return RedirectToAction(nameof(MyZone), "Game");
 		}
 
 		public IActionResult StrikeOut()

@@ -9,6 +9,7 @@ namespace GameZone.Profiles
 		public GameProfile()
 		{
 			CreateMap<GameCreateModel, Game>();
+			CreateMap<Game, GameCreateModel>();
 			CreateMap<Game, GameViewModel>()
 				.ForMember(s => s.Publisher, opt =>
 					opt.MapFrom(src => src.Publisher.UserName))

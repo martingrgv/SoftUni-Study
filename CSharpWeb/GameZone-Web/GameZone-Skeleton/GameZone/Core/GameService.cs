@@ -20,6 +20,7 @@ namespace GameZone.Core
 			_context = context;
 			_mapper = mapper;
         }
+
 		public async Task<IEnumerable<GameViewModel>> AllGames()
 		{
 			var games = await _context.Games
@@ -63,17 +64,25 @@ namespace GameZone.Core
 			await _context.SaveChangesAsync();
 		}
 
-		public Task EditGame(GameCreateModel model)
+		public async Task EditGame(int gameId, GameCreateModel model)
 		{
-			throw new NotImplementedException();
-		}
+			var game = _context.Games.Find(gameId);
+
+			if (game == null)
+			{
+				throw new InvalidOperationException("Game not found!");
+			}
+
+			_mapper.Map(model, game);
+			await _context.SaveChangesAsync();
+		}	
 
 		public Task RemoveFromZone(int gameId, string userId)
 		{
 			throw new NotImplementedException();
 		}
 
-		public async Task<bool> GameHasPublisher(int gameId, string publisherId)
+		public Task<bool> GameHasPublisher(int gameId, string publisherId)
 		{
 			var game = _context.Games.Find(gameId);
 			
@@ -82,16 +91,12 @@ namespace GameZone.Core
 				throw new InvalidOperationException("Game not found!");
 			}
 
-			//await _context.Entry(game)
-			//	.Reference(g => g.Publisher)
-			//	.LoadAsync();
-
 			if (game.PublisherId != publisherId)
 			{
-				return false;
+				return Task.FromResult(false);
 			}
 
-			return true;
+			return Task.FromResult(true);
 		}
 
 		public async Task<ICollection<Genre>> GetGenres()
@@ -99,14 +104,14 @@ namespace GameZone.Core
 			return await _context.Genres.ToListAsync();
 		}
 
-		public Task<GameViewModel?> GetGameViewModelById(int gameId)
+		public Task<Game?> GetGameById(int gameId)
 		{
 			var game = _context.Games
 				.Find(gameId);
 
 			if (game == null)
 			{
-				return Task.FromResult((GameViewModel?)null);
+				return Task.FromResult((Game?)null);
 			}
 
 			_context.Entry(game)
@@ -116,8 +121,7 @@ namespace GameZone.Core
 				.Reference(g => g.Publisher)
 				.Load();
 
-			var model = _mapper.Map<GameViewModel>(game);
-			return Task.FromResult((GameViewModel?)model);
+			return Task.FromResult((Game?)game);
 		}
 	}
 }

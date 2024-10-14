@@ -1,4 +1,5 @@
-﻿using GameZone.Contracts;
+﻿using AutoMapper;
+using GameZone.Contracts;
 using GameZone.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
@@ -9,10 +10,12 @@ namespace GameZone.Controllers
 	public class GameController : BaseController
 	{
 		private IGameService _gameService;
+		private IMapper _mapper;
 
-		public GameController(IGameService gameService)
+        public GameController(IGameService gameService, IMapper mapper)
 		{
 			_gameService = gameService;
+			_mapper = mapper;
 		}
 
 		[HttpGet]
@@ -30,13 +33,14 @@ namespace GameZone.Controllers
 				return BadRequest();
 			}
 
-			var model = await _gameService.GetGameViewModelById(id);
+			var game = await _gameService.GetGameById(id);
 
-			if (model == null)
+			if (game == null)
 			{
 				return BadRequest();
 			}
 
+			var model = _mapper.Map<GameViewModel>(game);
 			return View(model);
 		}
 
@@ -72,9 +76,44 @@ namespace GameZone.Controllers
 
 
 		[HttpGet]
-		public IActionResult Edit()
+		public async Task<IActionResult> Edit([FromRoute] int id)
 		{
-			return View();
+			if (id == 0)
+			{
+				return BadRequest();
+			}
+
+			if (await _gameService.GameHasPublisher(id, User.Id()) == false)
+			{
+				return Unauthorized();
+			}
+
+			var game = await _gameService.GetGameById(id);
+			if (game == null)
+			{
+				return BadRequest();
+			}
+
+			var model = _mapper.Map<GameCreateModel>(game);
+			model.Genres = await _gameService.GetGenres();
+			return View(model);
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> Edit([FromRoute]int id, [FromForm]GameCreateModel model)
+		{
+			if (ModelState.IsValid == false)
+			{
+				return View(model);
+			}
+
+			if (await _gameService.GameHasPublisher(id, User.Id()) == false)
+			{
+				return Unauthorized();
+			}
+
+			await _gameService.EditGame(id, model);
+			return RedirectToAction(nameof(All), "Game");
 		}
 
 		public IActionResult AddToMyZone()
@@ -100,7 +139,14 @@ namespace GameZone.Controllers
 				return Unauthorized();
 			}
 
-			var model = await _gameService.GetGameViewModelById(id);
+			var game = await _gameService.GetGameById(id);
+			if (game == null)
+			{
+				return BadRequest();
+			}
+
+			var model = _mapper.Map<GameViewModel>(game);
+
 			return View(model);
 		}
 

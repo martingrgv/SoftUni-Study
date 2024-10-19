@@ -108,5 +108,18 @@ namespace DeskMarket.Services
 
 			return product;
 		}
+
+		public async Task RemoveAsync(int productId)
+		{
+			var product = await GetProductByIdAsync(productId);
+
+			if (product == null)
+			{
+				throw new InvalidOperationException($"Could not find product with Id {productId}");
+			}
+
+			_context.Products.Remove(product);
+			await _context.SaveChangesAsync();
+		}
 	}
 }

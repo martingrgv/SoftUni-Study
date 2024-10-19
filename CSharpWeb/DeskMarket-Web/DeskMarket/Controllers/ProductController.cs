@@ -66,7 +66,7 @@ namespace DeskMarket.Controllers
 			}
 
 			await _shopService.AddProductAsync(model, User.Id()!);
-			return RedirectToAction(nameof(Index), "Product");
+			return RedirectToAction(nameof(Index));
 		}
 
 		public async Task<IActionResult> Edit([FromRoute] int id)
@@ -112,6 +112,36 @@ namespace DeskMarket.Controllers
 
 			await _shopService.EditProductAsync(id, model);
 			return RedirectToAction(nameof(Index));
+		}
+
+		public async Task<IActionResult> Delete([FromRoute] int id, [FromForm]ProductDeleteModel? model)
+		{
+			var product = await _shopService.GetProductByIdAsync(id);
+
+			if (product == null)
+			{
+				return BadRequest();
+			}
+			if (product.SellerId != User.Id())
+			{
+				return Unauthorized();
+			}
+
+			if (model.Id != 0)
+			{
+				await _shopService.RemoveAsync(id);
+				return RedirectToAction(nameof(Index));
+			}
+
+			model = new ProductDeleteModel
+			{
+				Id = product.Id,
+				ProductName = product.ProductName,
+				SellerId = product.SellerId,
+				Seller = product.Seller.UserName!
+			};
+
+			return View(model);
 		}
 	}
 }

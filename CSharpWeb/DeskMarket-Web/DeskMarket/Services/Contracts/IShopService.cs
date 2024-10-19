@@ -10,5 +10,6 @@ namespace DeskMarket.Services.Contracts
 		Task AddProductAsync(ProductCreateModel model, string sellerId);
 		Task<Product?> GetProductByIdAsync(int productId);
 		Task EditProductAsync(int productId, ProductCreateModel model);
+		Task RemoveAsync(int productId);
 	}
 }

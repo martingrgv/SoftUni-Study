@@ -32,6 +32,26 @@ namespace DeskMarket.Services
 			await _context.SaveChangesAsync();
 		}
 
+		public async Task EditProductAsync(int productId, ProductCreateModel model)
+		{
+			var product = await GetProductByIdAsync(productId);
+
+			if (product == null)
+			{
+				throw new InvalidOperationException($"Could not find product with Id {productId}");
+			}
+
+			product.ProductName = model.ProductName;
+			product.Description = model.Description;
+			product.Price = model.Price;
+			product.AddedOn = DateTime.Parse(model.AddedOn);
+			product.ImageUrl = model.ImageUrl;
+			product.CategoryId = model.CategoryId;
+			product.SellerId = model.SellerId!;
+
+			await _context.SaveChangesAsync();
+		}
+
 		public async Task<IEnumerable<CategoryViewModel>> GetAllCategoriesAsync()
 		{
 			if (_context.Categories.Count() == 0)
@@ -70,13 +90,13 @@ namespace DeskMarket.Services
 				.ToListAsync();
 		}
 
-		public async Task<ProductDetailViewModel> GetProductDetails(int productId)
+		public async Task<Product?> GetProductByIdAsync(int productId)
 		{
 			var product = await _context.Products.FindAsync(productId);
 
 			if (product == null)
 			{
-				throw new InvalidOperationException($"Could not find product with id {productId}!");
+				return null;
 			}
 
 			await _context.Entry(product)
@@ -86,18 +106,7 @@ namespace DeskMarket.Services
 				.Reference(p => p.Seller)
 				.LoadAsync();
 
-			return new ProductDetailViewModel
-			{
-				Id = product.Id,
-				ProductName = product.ProductName,
-				Description = product.Description,
-				Price = product.Price,
-				ImageUrl = product.ImageUrl,
-				HasBought = product.IsDeleted,
-				CategoryName = product.Category.Name,
-				AddedOn = product.AddedOn.ToString("dd-MM-yyyy"),
-				Seller = product.Seller.UserName!
-			};
+			return product;
 		}
 	}
 }

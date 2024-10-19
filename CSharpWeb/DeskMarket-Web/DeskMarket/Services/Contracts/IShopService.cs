@@ -1,4 +1,5 @@
-﻿using DeskMarket.Models;
+﻿using DeskMarket.Data.Models;
+using DeskMarket.Models;
 
 namespace DeskMarket.Services.Contracts
 {
@@ -7,6 +8,7 @@ namespace DeskMarket.Services.Contracts
 		Task<IEnumerable<ProductViewModel>> GetAllProductsAsync(string userId);
 		Task<IEnumerable<CategoryViewModel>> GetAllCategoriesAsync();
 		Task AddProductAsync(ProductCreateModel model, string sellerId);
-		Task<ProductDetailViewModel> GetProductDetails(int productId);
+		Task<Product?> GetProductByIdAsync(int productId);
+		Task EditProductAsync(int productId, ProductCreateModel model);
 	}
 }

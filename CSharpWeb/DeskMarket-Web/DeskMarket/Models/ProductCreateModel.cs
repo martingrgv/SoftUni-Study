@@ -35,6 +35,8 @@ namespace DeskMarket.Models
 		[Required]
 		public int CategoryId { get; set; }
 
+		public string? SellerId { get; set; }
+
 		public IEnumerable<CategoryViewModel> Categories { get; set; }
 	}
 }

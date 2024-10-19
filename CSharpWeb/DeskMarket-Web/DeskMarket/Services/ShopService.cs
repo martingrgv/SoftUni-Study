@@ -10,10 +10,10 @@ namespace DeskMarket.Services
 	{
 		private readonly ApplicationDbContext _context;
 
-        public ShopService(ApplicationDbContext context)
-        {
+		public ShopService(ApplicationDbContext context)
+		{
 			_context = context;
-        }
+		}
 
 		public async Task AddProductAsync(ProductCreateModel model, string sellerId)
 		{
@@ -48,7 +48,7 @@ namespace DeskMarket.Services
 				.ToListAsync();
 		}
 
-		public async Task<IEnumerable<ProductViewModel>> GetAllProductsAsync()
+		public async Task<IEnumerable<ProductViewModel>> GetAllProductsAsync(string userId)
 		{
 			if (_context.Products.Count() == 0)
 			{
@@ -56,6 +56,7 @@ namespace DeskMarket.Services
 			}
 
 			return await _context.Products
+				.Include(p => p.Seller)
 				.Select(p => new ProductViewModel
 				{
 					Id = p.Id,
@@ -63,8 +64,8 @@ namespace DeskMarket.Services
 					Description = p.Description,
 					Price = p.Price,
 					ImageUrl = p.ImageUrl,
-					IsSeller = false,
-					HasBought = false
+					IsSeller = p.SellerId == userId,
+					HasBought = p.IsDeleted
 				})
 				.ToListAsync();
 		}

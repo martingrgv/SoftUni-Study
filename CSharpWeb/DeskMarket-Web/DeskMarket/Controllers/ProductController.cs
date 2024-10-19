@@ -18,7 +18,7 @@ namespace DeskMarket.Controllers
 		[HttpGet]
         public async Task<IActionResult> Index()
 		{
-			var model = await _shopService.GetAllProductsAsync();
+			var model = await _shopService.GetAllProductsAsync(User.Id()!);
 			return View(model);
 		}
 

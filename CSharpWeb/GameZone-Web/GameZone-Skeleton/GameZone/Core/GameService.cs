@@ -158,5 +158,18 @@ namespace GameZone.Core
 
 			return games;
 		}
+
+		public async Task StrikeOutGame(int id, string userId)
+		{
+			var gamerGame = await _context.GamersGames.FindAsync(id, userId);
+
+			if (gamerGame == null)
+			{
+				return;
+			}
+
+			_context.Remove(gamerGame);
+			await _context.SaveChangesAsync();
+		}
 	}
 }

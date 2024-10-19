@@ -17,5 +17,6 @@ namespace GameZone.Contracts
 		Task<Game?> GetGameById(int gameId);
 		Task<bool> UserZonedGame(int gameId, string userId);
 		Task<IEnumerable<GameViewModel?>> GetUserZone(string userId);
+		Task StrikeOutGame(int id, string userId);
 	}
 }

@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using GameZone.Contracts;
+using GameZone.Data.Models;
 using GameZone.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Diagnostics.HealthChecks;
@@ -48,6 +49,12 @@ namespace GameZone.Controllers
 		public async Task<IActionResult> MyZone()
 		{
 			var model = await _gameService.GetUserZone(User.Id());
+
+			if (model == null)
+			{
+				return View(new List<GameViewModel>());
+			}
+
 			return View(model);
 		}
 
@@ -134,9 +141,15 @@ namespace GameZone.Controllers
 			return RedirectToAction(nameof(MyZone), "Game");
 		}
 
-		public IActionResult StrikeOut()
+		public async Task<IActionResult> StrikeOut([FromQuery] int id)
 		{
-			return View();
+			if (id == 0)
+			{
+				return BadRequest();
+			}
+
+			await _gameService.StrikeOutGame(id, User.Id());
+			return RedirectToAction(nameof(MyZone), "Game");
 		}
 
 		[HttpGet]

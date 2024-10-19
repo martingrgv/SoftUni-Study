@@ -102,7 +102,7 @@ namespace DeskMarket.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
-            returnUrl ??= Url.Content("~/");
+            returnUrl ??= Url.Content("~/Product/Index");
             if (ModelState.IsValid)
             {
                 var user = CreateUser();

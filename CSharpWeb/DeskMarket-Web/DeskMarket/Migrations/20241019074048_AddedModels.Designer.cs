@@ -4,6 +4,7 @@ using DeskMarket.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace DeskMarket.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241019074048_AddedModels")]
+    partial class AddedModels
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,33 +41,6 @@ namespace DeskMarket.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Categories");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Name = "Laptops"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Name = "Workstations"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            Name = "Accessories"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            Name = "Desktops"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            Name = "Monitors"
-                        });
                 });
 
             modelBuilder.Entity("DeskMarket.Data.Models.Product", b =>
@@ -113,20 +89,6 @@ namespace DeskMarket.Migrations
                     b.HasIndex("SellerId");
 
                     b.ToTable("Products");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            AddedOn = new DateTime(2024, 10, 19, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            CategoryId = 1,
-                            Description = "The best gaming laptop on the market!",
-                            ImageUrl = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmac24h.vn%2Fimages%2Fcompanies%2F1%2FLaptop%25201%2FAlienware%2520m15x%2Falienware%2520m16%2520r1.jpeg%3F1687623368228&f=1&nofb=1&ipt=31a2688bb6806164bc21e1ad12ee22fc66fc6a4886b17d32710cc760735a5b86&ipo=images",
-                            IsDeleted = false,
-                            Price = 2100m,
-                            ProductName = "ALIENWARE M15 R6",
-                            SellerId = "5615c548-7c51-4df4-8630-187395bc1c01"
-                        });
                 });
 
             modelBuilder.Entity("DeskMarket.Data.Models.ProductClient", b =>
@@ -259,40 +221,6 @@ namespace DeskMarket.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers", (string)null);
-
-                    b.HasData(
-                        new
-                        {
-                            Id = "5067afe2-1093-4328-ac98-34ecfdf90937",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "cb930112-5751-4b83-959f-b3e78917c59a",
-                            Email = "guest@mail.com",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "GUEST@MAIL.COM",
-                            NormalizedUserName = "GUEST@MAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEMuHsby48JiDYWvfQB3e/Q49SV6Nvx34mruxH9jrqdkpFB2LUxGJT0tkwffHpYEi+w==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "bdf5a9d3-a182-4fc3-a6c2-e917b8c04453",
-                            TwoFactorEnabled = false,
-                            UserName = "guest@mail.com"
-                        },
-                        new
-                        {
-                            Id = "5615c548-7c51-4df4-8630-187395bc1c01",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "341e9758-8e14-4d3b-886e-6d5e67aeb141",
-                            Email = "seller@mail.com",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            NormalizedEmail = "SELLER@MAIL.COM",
-                            NormalizedUserName = "SELLER@MAIL.COM",
-                            PasswordHash = "AQAAAAIAAYagAAAAEFW5VUVPTbytAhc2zOjavEugZ/joLRL0K3aCqw/ULV7xjEPEofilzu892/H0aAR4vw==",
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "fc1d7dfd-de72-4e83-bb72-e49921658bde",
-                            TwoFactorEnabled = false,
-                            UserName = "seller@mail.com"
-                        });
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>

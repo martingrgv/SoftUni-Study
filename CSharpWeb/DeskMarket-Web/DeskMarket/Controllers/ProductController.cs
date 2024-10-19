@@ -23,6 +23,13 @@ namespace DeskMarket.Controllers
 		}
 
 		[HttpGet]
+		public async Task<IActionResult> Details([FromRoute] int id)
+		{
+			var model = await _shopService.GetProductDetails(id);
+			return View(model);
+		}
+
+		[HttpGet]
 		public async Task<IActionResult> Add()
 		{
 			var model = new ProductCreateModel();

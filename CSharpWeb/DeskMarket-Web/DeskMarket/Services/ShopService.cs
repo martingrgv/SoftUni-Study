@@ -69,5 +69,35 @@ namespace DeskMarket.Services
 				})
 				.ToListAsync();
 		}
+
+		public async Task<ProductDetailViewModel> GetProductDetails(int productId)
+		{
+			var product = await _context.Products.FindAsync(productId);
+
+			if (product == null)
+			{
+				throw new InvalidOperationException($"Could not find product with id {productId}!");
+			}
+
+			await _context.Entry(product)
+				.Reference(p => p.Category)
+				.LoadAsync();
+			await _context.Entry(product)
+				.Reference(p => p.Seller)
+				.LoadAsync();
+
+			return new ProductDetailViewModel
+			{
+				Id = product.Id,
+				ProductName = product.ProductName,
+				Description = product.Description,
+				Price = product.Price,
+				ImageUrl = product.ImageUrl,
+				HasBought = product.IsDeleted,
+				CategoryName = product.Category.Name,
+				AddedOn = product.AddedOn.ToString("dd-MM-yyyy"),
+				Seller = product.Seller.UserName!
+			};
+		}
 	}
 }

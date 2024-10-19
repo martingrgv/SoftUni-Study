@@ -143,5 +143,30 @@ namespace DeskMarket.Controllers
 
 			return View(model);
 		}
+
+		[HttpGet]
+		public async Task<IActionResult> Cart()
+		{
+			var model = await _shopService.GetCartProductsAsync(User.Id()!);
+			return View(model);
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> AddToCart(int id)
+		{
+			await _shopService.AddToCartAsync(id, User.Id()!);
+			return RedirectToAction(nameof(Cart));
+		}
+
+		[HttpPost]
+		public async Task<IActionResult> RemoveFromCart(int id)
+		{
+			if (await _shopService.UserHasProductAsync(id, User.Id()!))
+			{
+				await _shopService.RemoveFromCartAsync(id, User.Id()!);
+			}
+
+			return RedirectToAction(nameof(Cart));
+		}
 	}
 }

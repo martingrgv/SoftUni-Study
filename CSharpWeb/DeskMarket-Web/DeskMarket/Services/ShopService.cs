@@ -32,6 +32,16 @@ namespace DeskMarket.Services
 			await _context.SaveChangesAsync();
 		}
 
+		public async Task AddToCartAsync(int productId, string userId)
+		{
+			_context.ProductsClients.Add(new ProductClient
+			{
+				ProductId = productId,
+				ClientId = userId
+			});
+			await _context.SaveChangesAsync();
+		}
+
 		public async Task EditProductAsync(int productId, ProductCreateModel model)
 		{
 			var product = await GetProductByIdAsync(productId);
@@ -77,6 +87,7 @@ namespace DeskMarket.Services
 
 			return await _context.Products
 				.Include(p => p.Seller)
+				.Where(p => p.IsDeleted == false)
 				.Select(p => new ProductViewModel
 				{
 					Id = p.Id,
@@ -86,6 +97,25 @@ namespace DeskMarket.Services
 					ImageUrl = p.ImageUrl,
 					IsSeller = p.SellerId == userId,
 					HasBought = p.IsDeleted
+				})
+				.ToListAsync();
+		}
+
+		public async Task<IEnumerable<ProductViewModel>> GetCartProductsAsync(string userId)
+		{
+			return await _context.ProductsClients
+				.Include(pc => pc.Product)
+				.Include(pc => pc.Client)
+				.Where(pc => pc.ClientId == userId)
+				.Select(pc => new ProductViewModel
+				{
+					Id = pc.ProductId,
+					ProductName = pc.Product.ProductName,
+					Description = pc.Product.Description,
+					Price = pc.Product.Price,
+					ImageUrl = pc.Product.ImageUrl,
+					IsSeller = pc.Product.SellerId == userId,
+					HasBought = pc.Product.IsDeleted
 				})
 				.ToListAsync();
 		}
@@ -118,8 +148,26 @@ namespace DeskMarket.Services
 				throw new InvalidOperationException($"Could not find product with Id {productId}");
 			}
 
-			_context.Products.Remove(product);
+			product.IsDeleted = true;
 			await _context.SaveChangesAsync();
+		}
+
+		public async Task RemoveFromCartAsync(int productId, string userId)
+		{
+			var productClient = await _context.ProductsClients.FindAsync(productId, userId);
+			if (productClient == null)
+			{
+				return;
+			}
+
+			_context.Remove(productClient);
+			await _context.SaveChangesAsync();
+		}
+
+		public async Task<bool> UserHasProductAsync(int productId, string userId)
+		{
+			return await _context.ProductsClients
+				.AnyAsync(pc => pc.ProductId == productId && pc.ClientId == userId);
 		}
 	}
 }

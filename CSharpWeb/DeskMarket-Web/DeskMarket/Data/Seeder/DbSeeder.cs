@@ -64,6 +64,30 @@ namespace DeskMarket.Data.Seed
                     AddedOn = new DateTime(2024, 10, 19),
                     CategoryId = 1,
                     IsDeleted = false
+                },
+                new Product
+                {
+                    Id = 2,
+                    ProductName = "Macbook Pro 14",
+                    Description = "NEW!!! BEST!!! Macbook Pro 14 with M3 CHIP!!! CHIP REMAP AT TOSHOMACS!'not overpriced'",
+                    Price = 2999.99m,
+                    ImageUrl = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fmacfinder.co.uk%2Fwp-content%2Fuploads%2F2022%2F12%2Fimg-MacBook-Pro-Retina-14-Inch-23934.jpg&f=1&nofb=1&ipt=02616d587eadae93c5847e57417fd50aff3d58046e2bc3c2c507c32750e0b78a&ipo=images",
+                    SellerId = "5615c548-7c51-4df4-8630-187395bc1c01",
+                    AddedOn = new DateTime(2024, 10, 19),
+                    CategoryId = 1,
+                    IsDeleted = false
+                },
+                new Product
+                {
+                    Id = 3,
+                    ProductName = "Hamster cable holder",
+                    Description = "Hamster holding your cables",
+                    Price = 5.99m,
+                    ImageUrl = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpbs.twimg.com%2Fmedia%2FFZlrXO2XgAE2JjC.jpg&f=1&nofb=1&ipt=1202248bad871aafac655c8e11f148bf9b614bbfc4784bcca147402901caee3b&ipo=images",
+                    SellerId = "5615c548-7c51-4df4-8630-187395bc1c01",
+                    AddedOn = new DateTime(2024, 10, 19),
+                    CategoryId = 3,
+                    IsDeleted = false
                 }
             };
         }

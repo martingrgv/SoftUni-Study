@@ -8,7 +8,7 @@ namespace DeskMarket.Controllers
     public class HomeController : BaseController
     {
         [AllowAnonymous]
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             return View();
         }

@@ -15,7 +15,40 @@ namespace DeskMarket.Services
 			_context = context;
         }
 
-        public async Task<IEnumerable<ProductViewModel>> AllProductsAsync()
+		public async Task AddProductAsync(ProductCreateModel model, string sellerId)
+		{
+			Product product = new Product
+			{
+				ProductName = model.ProductName,
+				Description = model.Description,
+				Price = model.Price,
+				ImageUrl = model.ImageUrl,
+				AddedOn = DateTime.Parse(model.AddedOn),
+				CategoryId = model.CategoryId,
+				SellerId = sellerId
+			};
+
+			_context.Products.Add(product);
+			await _context.SaveChangesAsync();
+		}
+
+		public async Task<IEnumerable<CategoryViewModel>> GetAllCategoriesAsync()
+		{
+			if (_context.Categories.Count() == 0)
+			{
+				return new List<CategoryViewModel>();
+			}
+
+			return await _context.Categories
+				.Select(c => new CategoryViewModel
+				{
+					Id = c.Id,
+					Name = c.Name
+				})
+				.ToListAsync();
+		}
+
+		public async Task<IEnumerable<ProductViewModel>> GetAllProductsAsync()
 		{
 			if (_context.Products.Count() == 0)
 			{

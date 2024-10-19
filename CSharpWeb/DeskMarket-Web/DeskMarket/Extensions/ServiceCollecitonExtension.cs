@@ -1,4 +1,6 @@
 ﻿using DeskMarket.Data;
+using DeskMarket.Services;
+using DeskMarket.Services.Contracts;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -8,7 +10,7 @@ namespace DeskMarket.Extensions
 	{
 		public static IServiceCollection AddServices(this IServiceCollection services)
 		{
-
+			services.AddScoped<IShopService, ShopService>();
 			return services;
 		}
 
@@ -23,11 +25,6 @@ namespace DeskMarket.Extensions
 
 		public static IServiceCollection AddIdentity(this IServiceCollection services)
 		{
-			//•	Require confirmed account: false
-			//•	Require digits: false
-			//•	Require non-alphanumeric characters: false
-			//•	Required uppercase letters: false
-
 			services.AddDefaultIdentity<IdentityUser>(options =>
 			{
 				options.SignIn.RequireConfirmedAccount = false;

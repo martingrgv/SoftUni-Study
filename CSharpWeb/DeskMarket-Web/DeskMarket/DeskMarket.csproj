@@ -23,9 +23,6 @@
   <ItemGroup>
     <Folder Include="Data\Seeder\" />
     <Folder Include="Extensions\" />
-    <Folder Include="Common\" />
-    <Folder Include="Contracts\" />
-    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

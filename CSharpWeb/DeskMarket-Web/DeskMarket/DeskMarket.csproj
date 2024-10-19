@@ -22,6 +22,10 @@
 
   <ItemGroup>
     <Folder Include="Data\Models\" />
+    <Folder Include="Extensions\" />
+    <Folder Include="Common\" />
+    <Folder Include="Contracts\" />
+    <Folder Include="Services\" />
   </ItemGroup>
 
 </Project>

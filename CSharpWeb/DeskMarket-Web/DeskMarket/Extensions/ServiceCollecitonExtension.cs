@@ -1,8 +1,6 @@
 ﻿using DeskMarket.Data;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection;
 
 namespace DeskMarket.Extensions
 {
@@ -25,6 +23,11 @@ namespace DeskMarket.Extensions
 
 		public static IServiceCollection AddIdentity(this IServiceCollection services)
 		{
+			//•	Require confirmed account: false
+			//•	Require digits: false
+			//•	Require non-alphanumeric characters: false
+			//•	Required uppercase letters: false
+
 			services.AddDefaultIdentity<IdentityUser>(options =>
 			{
 				options.SignIn.RequireConfirmedAccount = false;
